@@ -1,0 +1,2 @@
+/* Responsive rules are consolidated in style.css to keep the critical path to one request.
+   This file remains as an optional extension point for prospect-specific breakpoints. */
