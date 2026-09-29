@@ -5,8 +5,8 @@
   --color-blue: #0e6fbf;
   --color-blue-dark: #095995;
   --color-blue-soft: #e8f3fb;
-  --color-orange: #f47c20;
-  --color-orange-dark: #d85f0b;
+  --color-orange: #b94a0b;
+  --color-orange-dark: #963907;
   --color-bg: #f5f8fb;
   --color-white: #fff;
   --color-text: #182230;
@@ -147,6 +147,12 @@ p{color:var(--color-muted)}
 .equipment-visual{position:relative;width:64%;aspect-ratio:1/1.08;border:12px solid #d9e1e8;border-radius:20px;background:linear-gradient(90deg,#aebbc5 3%,#eef3f6 3% 7%,#aebbc5 7% 10%,#eef3f6 10% 90%,#aebbc5 90% 93%,#eef3f6 93% 97%,#aebbc5 97%);box-shadow:0 25px 45px rgba(11,39,72,.2)}
 .equipment-visual::before{content:"";position:absolute;left:50%;top:50%;width:52%;aspect-ratio:1;transform:translate(-50%,-50%);border:11px solid #8799a7;border-radius:50%;background:repeating-conic-gradient(#778b99 0 8deg,#c9d4db 9deg 19deg)}
 .equipment-visual::after{content:"";position:absolute;left:50%;top:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--color-navy)}
+.decision-card{padding:42px;border:1px solid var(--color-line);border-radius:var(--radius-lg);background:var(--color-white);box-shadow:var(--shadow-sm)}
+.decision-card h3{max-width:390px;font-size:1.8rem}
+.decision-card ul{display:grid;gap:13px;padding:0;margin:26px 0;list-style:none}
+.decision-card li{display:flex;gap:11px;color:var(--color-text);font-weight:700}
+.decision-card li::before{content:"→";color:var(--color-orange);font-weight:900}
+.decision-card p:last-child{margin-bottom:0;font-size:.9rem}
 
 .membership{overflow:hidden;border-radius:var(--radius-lg);background:var(--color-navy);color:var(--color-white);box-shadow:var(--shadow-lg)}
 .membership-grid{display:grid;grid-template-columns:.8fr 1.2fr}
@@ -186,7 +192,8 @@ p{color:var(--color-muted)}
 .final-cta::after{content:"";position:absolute;right:-100px;top:-160px;width:420px;height:420px;border:70px solid rgba(255,255,255,.07);border-radius:50%}
 .final-cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:50px}
 .final-cta h2,.final-cta p{color:var(--color-white)}
-.final-cta p{max-width:700px;margin-bottom:0;opacity:.87}
+.final-cta .eyebrow{color:#fff}
+.final-cta p{max-width:700px;margin-bottom:0;opacity:1}
 
 .site-footer{padding:70px 0 105px;background:var(--color-navy-deep);color:#b9c9d9}
 .footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.2fr;gap:50px}
@@ -271,6 +278,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-blue);outline:3
   .trust-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.trust-item{min-width:0;min-height:80px;border-bottom:1px solid var(--color-line)}.trust-item:nth-child(odd){border-left:1px solid var(--color-line)}
   .services-grid,.feature-grid{grid-template-columns:1fr}.service-card{min-height:0;padding:25px}.urgent-panel{grid-template-columns:1fr;padding:31px 25px}.urgent-actions{justify-content:flex-start}.urgent-actions .button{width:100%}
   .split{gap:35px}.split .media-panel{min-height:330px}.equipment-art{min-height:360px}.membership-content,.membership-brand{padding:30px 24px}.membership-brand strong{font-size:1.9rem}.membership-content .check-list{grid-template-columns:1fr}
+  .decision-card{padding:28px 24px}.decision-card h3{font-size:1.55rem}
   .finance-inner,.final-cta-inner{display:block}.finance-inner .button,.final-cta .button-row{margin-top:25px}.process-grid{grid-template-columns:1fr}.process-step{padding:18px 0 18px 58px}.process-step::before{top:13px}.process-step:not(:last-child)::after{display:none}.area-grid{grid-template-columns:1fr 1fr}.final-cta{padding:58px 0}
   .footer-grid{grid-template-columns:1fr 1fr;gap:38px 25px}.footer-brand{grid-column:1/-1}.footer-contact{grid-column:1/-1}.footer-bottom{display:block}.legal-links{margin-top:15px}
   .page-hero{padding:55px 0}.content-grid{gap:40px}.symptom-grid,.all-services{grid-template-columns:1fr}.form-shell{padding:24px 18px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.radio-row{display:grid;grid-template-columns:repeat(3,1fr)}.radio-option span{padding:10px 6px;text-align:center}
