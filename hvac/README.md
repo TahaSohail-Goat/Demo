@@ -6,18 +6,20 @@ All company information, testimonials, cities, availability, and offerings are f
 
 ## Direct URL architecture
 
-- `/hvac/` — HVAC homepage
-- `/hvac/services/` — all services
-- `/hvac/ac-repair/`
-- `/hvac/heating/`
-- `/hvac/hvac-installation/`
-- `/hvac/maintenance/`
-- `/hvac/indoor-air-quality/`
-- `/hvac/about/`
-- `/hvac/service-area/`
-- `/hvac/contact/`
+Served at `https://hvac.webdemos.app`:
 
-The source uses relative `.html` links so it also works from disk. Vercel's root `cleanUrls` and `trailingSlash` settings expose clean production paths.
+- `/` — HVAC homepage
+- `/services` — all services
+- `/ac-repair`
+- `/heating`
+- `/hvac-installation`
+- `/maintenance`
+- `/indoor-air-quality`
+- `/about`
+- `/service-area`
+- `/contact`
+
+The source uses relative `.html` links so it also works from disk. `hvac/vercel.json` enables `cleanUrls` without trailing slashes, which exposes clean production paths while keeping relative asset paths valid on every page.
 
 ## Technology
 
@@ -81,7 +83,7 @@ The hero image was generated specifically for this concept and optimized locally
 
 ## Deployment assumptions
 
-Deploy the repository root as one static Vercel project. Do not set `hvac/` as a separate project root if the collection launcher and boutique demo should remain available.
+Deploy as its own static Vercel project with `hvac` as the Root Directory and `hvac.webdemos.app` as its domain. The collection launcher and boutique demo are separate projects from the same repository (see the root README).
 
 ## Prospect workflow
 
