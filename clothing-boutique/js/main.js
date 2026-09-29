@@ -7,57 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const RATES = Object.freeze({ PKR: 1, USD: 0.0036, GBP: 0.0028, AED: 0.0132, CAD: 0.0049, EUR: 0.0033 });
   const SIZES = Object.freeze(['S', 'M', 'L', 'XL', 'Custom']);
   const CATEGORIES = Object.freeze({ pret: 'Everyday', festive: 'Festive', wedding: 'Wedding' });
+  const createProduct = (id, name, subtitle, category, price, description, fabric, color, pieces, fit, care) => Object.freeze({
+    name, subtitle, category, price, description, fabric, color, pieces, fit, care,
+    image: `./images/product-${id}.webp`,
+    leadTime: 'Production timing confirmed with your enquiry'
+  });
   const CATALOG = Object.freeze({
-    noor: {
-      name: 'Noor', subtitle: 'Ivory silk set', category: 'pret', price: 18500,
-      image: './images/product-noor.webp',
-      description: 'A softly structured ivory set with a relaxed silhouette and delicate tonal detail. Easy to dress up for lunch, an intimate gathering, or an evening out.',
-      fabric: 'Silk blend with a soft drape', color: 'Warm ivory',
-      pieces: 'Kurta, straight trousers, and dupatta',
-      fit: 'Relaxed fit; choose your usual size or request custom sizing',
-      care: 'Professional dry clean; steam on a low setting',
-      leadTime: 'Production timing confirmed with your enquiry'
-    },
-    mehr: {
-      name: 'Mehr', subtitle: 'Burgundy peshwas', category: 'wedding', price: 38500,
-      image: './images/product-mehr.webp',
-      description: 'A flowing burgundy peshwas with warm metallic detail and a generous flare. Designed for wedding celebrations, with a coordinating dupatta to complete the look.',
-      fabric: 'Silk blend peshwas with an organza dupatta', color: 'Deep burgundy',
-      pieces: 'Peshwas, trousers, and dupatta',
-      fit: 'Fitted through the bodice with a flared skirt; custom sizing available',
-      care: 'Professional dry clean; protect embellishments when steaming',
-      leadTime: 'Production timing confirmed with your enquiry'
-    },
-    gul: {
-      name: 'Gul', subtitle: 'Rose organza set', category: 'festive', price: 26900,
-      image: './images/product-gul.webp',
-      description: 'Rose organza brings a light, layered feel to this festive set. Fine detailing and a coordinating dupatta make it an easy choice for celebrations from afternoon to evening.',
-      fabric: 'Lined organza with silk blend trousers', color: 'Muted rose',
-      pieces: 'Lined kurta, trousers, and dupatta',
-      fit: 'Straight silhouette with room to move; custom sizing available',
-      care: 'Professional dry clean; avoid direct heat on organza',
-      leadTime: 'Production timing confirmed with your enquiry'
-    },
-    sahar: {
-      name: 'Sahar', subtitle: 'Sage everyday silk', category: 'pret', price: 16900,
-      image: './images/product-sahar.webp',
-      description: 'An uncomplicated sage set with clean lines and a fluid finish. A considered everyday piece for work, visiting family, and everything in between.',
-      fabric: 'Lightweight silk blend', color: 'Soft sage',
-      pieces: 'Kurta and straight trousers',
-      fit: 'Easy, relaxed fit; choose your usual size or request custom sizing',
-      care: 'Professional dry clean; steam on a low setting',
-      leadTime: 'Production timing confirmed with your enquiry'
-    },
-    neel: {
-      name: 'Neel', subtitle: 'Midnight festive set', category: 'festive', price: 29500,
-      image: './images/product-neel.webp',
-      description: 'Deep midnight blue, a fluid silhouette, and restrained metallic accents. A festive set with enough presence for a celebration and enough ease to wear all evening.',
-      fabric: 'Silk blend with an organza dupatta', color: 'Midnight blue',
-      pieces: 'Kurta, trousers, and dupatta',
-      fit: 'Straight silhouette; custom sizing available',
-      care: 'Professional dry clean; protect embellishments when steaming',
-      leadTime: 'Production timing confirmed with your enquiry'
-    }
+    noor: createProduct('noor', 'Noor', 'Ivory silk set', 'pret', 18500, 'A softly structured ivory set with a relaxed silhouette and delicate tonal detail. Easy to dress up for lunch, an intimate gathering, or an evening out.', 'Silk blend with a soft drape', 'Warm ivory', 'Kurta, straight trousers, and dupatta', 'Relaxed fit; choose your usual size or request custom sizing', 'Professional dry clean; steam on a low setting'),
+    mehr: createProduct('mehr', 'Mehr', 'Burgundy peshwas', 'wedding', 38500, 'A flowing burgundy peshwas with warm metallic detail and a generous flare. Designed for wedding celebrations, with a coordinating dupatta to complete the look.', 'Silk blend peshwas with an organza dupatta', 'Deep burgundy', 'Peshwas, trousers, and dupatta', 'Fitted through the bodice with a flared skirt; custom sizing available', 'Professional dry clean; protect embellishments when steaming'),
+    gul: createProduct('gul', 'Gul', 'Rose organza set', 'festive', 26900, 'Rose organza brings a light, layered feel to this festive set. Fine detailing and a coordinating dupatta make it an easy choice for celebrations from afternoon to evening.', 'Lined organza with silk blend trousers', 'Muted rose', 'Lined kurta, trousers, and dupatta', 'Straight silhouette with room to move; custom sizing available', 'Professional dry clean; avoid direct heat on organza'),
+    sahar: createProduct('sahar', 'Sahar', 'Sage everyday silk', 'pret', 16900, 'An uncomplicated sage set with clean lines and a fluid finish. A considered everyday piece for work, visiting family, and everything in between.', 'Lightweight silk blend', 'Soft sage', 'Kurta and straight trousers', 'Easy, relaxed fit; choose your usual size or request custom sizing', 'Professional dry clean; steam on a low setting'),
+    neel: createProduct('neel', 'Neel', 'Midnight festive set', 'festive', 29500, 'Deep midnight blue, a fluid silhouette, and restrained metallic accents. A festive set with enough presence for a celebration and enough ease to wear all evening.', 'Silk blend with an organza dupatta', 'Midnight blue', 'Kurta, trousers, and dupatta', 'Straight silhouette; custom sizing available', 'Professional dry clean; protect embellishments when steaming')
   });
 
   const $ = (selector, scope = document) => scope.querySelector(selector);
