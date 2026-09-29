@@ -1,0 +1,6 @@
+# Local browser-test screenshots and reports
+output/
+
+# Legacy local source material, not used by this demo
+images/real-dress-*.jpg
+images/products_list.json
