@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Morrow Coffee Roasters</title>
+<meta name="description" content="Specialty coffee roasted in-house every Tuesday. Espresso, filter, fresh bakes and brunch, open from 7 am.">
+<meta name="theme-color" content="#eceee6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Karla:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-espresso: var(--espresso);
+    --color-crema: var(--crema);
+    --color-steam: var(--steam);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-espresso focus:text-steam focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Morrow Coffee, home"><i></i>Morrow</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#menu">Menu</a><a href="#brew">Brew guide</a><a href="#beans">Beans</a><a href="#rewards">Rewards</a><a href="#visit">Visit</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#menu" class="btn btn-solid" data-magnetic>Order ahead</a>
+      <button class="bag" id="bagBtn" aria-label="Bag, 0 items"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="bagCount" hidden>0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#menu">Menu</a><a href="#brew">Brew guide</a><a href="#beans">Beans</a><a href="#rewards">Rewards</a><a href="#visit">Visit</a>
+  <p class="tag mt-auto" style="color:var(--espresso)">Open daily from 7 am</p>
+</div>
+
+<main id="main">
+<!-- ================= BEAN-TO-CUP FILM ================= -->
+<section class="film" id="top" aria-label="From green bean to cup">
+  <div class="film-sticky">
+    <div class="film-bg" aria-hidden="true"></div>
+    <div class="film-word" aria-hidden="true" id="filmWord">Morrow</div>
+    <canvas id="cupCanvas" aria-hidden="true"></canvas>
+
+    <aside class="readout" aria-hidden="true">
+      <div class="stage"><span id="rdStage">Roasted Tuesday</span><i></i></div>
+      <dl>
+        <dt>Bean temp</dt><dd class="num" id="rdTemp">—</dd>
+        <dt>Dose</dt><dd class="num" id="rdDose">18.0 g</dd>
+        <dt>Yield</dt><dd class="num" id="rdYield">—</dd>
+        <dt>Time</dt><dd class="num" id="rdTime">—</dd>
+      </dl>
+      <div class="roastbar"><i id="rdBar"></i></div>
+      <div class="roast-labels"><span>Green</span><span>Light</span><span>Medium</span><span>Dark</span></div>
+    </aside>
+
+    <div class="ch" data-ch="0">
+      <span class="tag">Morrow Coffee · Roasters &amp; café</span>
+      <h1 data-split>Good mornings, <span class="hl">roasted</span> on Tuesdays.</h1>
+      <p data-hero-fade>Specialty coffee we roast ourselves, fresh bakes from 7 am and a table you can stay at. Scroll to follow one bean all the way to your cup.</p>
+      <div class="ctas" data-hero-fade><a href="#menu" class="btn btn-solid" data-magnetic>See the menu</a><a href="#visit" class="btn btn-ghost">Find a café</a></div>
+    </div>
+    <div class="ch" data-ch="1">
+      <span class="tag">01 · Origin</span>
+      <h2>Every bean <span class="hl">starts green.</span></h2>
+      <p>This one grew at 2,100 m in Guji, Ethiopia. Picked ripe, dried on raised beds, shipped to us raw.</p>
+    </div>
+    <div class="ch" data-ch="2">
+      <span class="tag">02 · Roast</span>
+      <h2>Eleven minutes <span class="hl">in the drum.</span></h2>
+      <p>We roast in small batches every Tuesday. Around 196 °C the beans crack like popcorn, and that's where the flavour is decided.</p>
+    </div>
+    <div class="ch" data-ch="3">
+      <span class="tag">03 · Extract</span>
+      <h2>18 grams in. <span class="hl">36 out.</span></h2>
+      <p>Ground fresh for every shot and pulled in about 28 seconds. Your barista weighs every one.</p>
+    </div>
+    <div class="ch" data-ch="4">
+      <span class="tag">04 · Pour</span>
+      <h2>Steamed to 60 °C, <span class="hl">poured by hand.</span></h2>
+      <p>Oat, almond or whole milk, all the same price. The rosetta is free.</p>
+    </div>
+    <div class="ch" data-ch="5">
+      <span class="tag">05 · Yours</span>
+      <h2>Skip the queue. <span class="hl">Order ahead.</span></h2>
+      <p>Order from the menu below and it's on the counter when you walk in.</p>
+      <div class="ctas"><a href="#menu" class="btn btn-solid" data-magnetic>Order now</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-clip"><div class="marquee" aria-label="Café highlights">
+  <div class="marquee-track">
+    <span>Open 7 am daily</span><span>Roasted every Tuesday</span><span>Oat milk, no extra charge</span><span>Laptops welcome till 2 pm</span><span>Dogs welcome</span>
+    <span aria-hidden="true">Open 7 am daily</span><span aria-hidden="true">Roasted every Tuesday</span><span aria-hidden="true">Oat milk, no extra charge</span><span aria-hidden="true">Laptops welcome till 2 pm</span><span aria-hidden="true">Dogs welcome</span>
+  </div>
+</div></div>
+
+<!-- ================= MENU ================= -->
+<section class="section" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag">The menu</span><h2 id="menu-h" data-reveal>Coffee, cake &amp; eggs.</h2></div>
+      <p data-reveal>Tap any item to add it to your order. Pick it up at the counter, no queue.</p>
+    </div>
+    <div class="board" data-reveal>
+      <div class="board-tabs" role="tablist" aria-label="Menu sections">
+        <button class="btab" role="tab" aria-selected="true" data-cat="coffee">Coffee</button>
+        <button class="btab" role="tab" aria-selected="false" data-cat="other">Not coffee</button>
+        <button class="btab" role="tab" aria-selected="false" data-cat="bakery">Bakery</button>
+        <button class="btab" role="tab" aria-selected="false" data-cat="brunch">Brunch</button>
+      </div>
+      <div class="board-body" id="boardBody" role="tabpanel" aria-live="polite">
+        <div class="item"><h3>Espresso</h3><span class="price num">$3.20</span><p>Double shot of this week's house blend.</p></div>
+        <div class="item"><h3>Flat white</h3><span class="price num">$4.40</span><p>Double shot, 5 oz of silky milk.</p></div>
+      </div>
+      <div class="board-foot"><span>Oat, almond &amp; whole milk all cost the same</span><span>Kitchen serves until 3 pm</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BREW CALCULATOR ================= -->
+<section class="section flush-top" id="brew" aria-labelledby="brew-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag">Brew guide</span><h2 id="brew-h" data-reveal>Make it like we do.</h2></div>
+      <p data-reveal>Pick a brewer and how much coffee you have. We'll give you the water, time and grind we use behind the bar.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-panel" data-reveal>
+        <div><span class="tag" id="lblMethod">Brewer</span>
+          <div class="methods mt-3" role="group" aria-labelledby="lblMethod">
+            <button type="button" class="method" data-m="espresso" aria-pressed="false">Espresso</button>
+            <button type="button" class="method" data-m="v60" aria-pressed="true">V60</button>
+            <button type="button" class="method" data-m="aeropress" aria-pressed="false">AeroPress</button>
+            <button type="button" class="method" data-m="french" aria-pressed="false">French press</button>
+            <button type="button" class="method" data-m="cold" aria-pressed="false">Cold brew</button>
+          </div>
+        </div>
+        <div class="range-row"><div class="top"><label for="dose" class="tag">Coffee</label><output id="doseOut" class="num" for="dose">20 g</output></div><input type="range" id="dose" min="10" max="60" step="1" value="20"></div>
+        <div class="range-row"><div class="top"><label for="cups" class="tag">Strength</label><output id="strOut" for="cups">Balanced</output></div><input type="range" id="cups" min="0" max="2" step="1" value="1"></div>
+        <p class="tag" style="text-transform:none;letter-spacing:0;font-size:.8rem">Water just off the boil (93–96 °C) unless it says otherwise. Weigh, don't scoop.</p>
+      </div>
+      <div class="calc-out" data-reveal aria-live="polite">
+        <div><span class="tag" style="color:#b9ab9c" id="calcTitle">V60 · 1 : 16 · water</span><div class="big num mt-2" id="water">320<small>g</small></div></div>
+        <div class="grid">
+          <div>Brew time<b class="num" id="time">3:00</b></div>
+          <div>Temp<b class="num" id="temp">94 °C</b></div>
+          <div>Makes<b class="num" id="makes">1 mug</b></div>
+        </div>
+        <div class="grind"><span class="tag" style="color:#b9ab9c">Grind size</span><div class="scale" id="grindScale"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ends"><span>Fine</span><span>Coarse</span></div></div>
+        <p class="calc-note" id="calcNote">Bloom with 60 g of water for 40 seconds, then pour slowly in circles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEANS ================= -->
+<section class="section flush-top" id="beans" aria-labelledby="beans-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag">On the shelf</span><h2 id="beans-h" data-reveal>This week's beans.</h2></div>
+      <p data-reveal>250 g bags, roasted Tuesday, ground to order if you like. Best within four weeks of roasting.</p>
+    </div>
+    <div class="beans">
+      <article class="bean-card" data-reveal>
+        <div class="bag-art" style="background:#e8c9a4"><span class="alt">2,100 m</span><svg viewBox="0 0 120 150" aria-hidden="true"><path d="M20 20h80l8 120H12z" fill="#f8f9f4" stroke="#22150d" stroke-width="3"/><path d="M20 20l10-12h60l10 12" fill="#22150d"/><text x="60" y="80" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-size="16" text-anchor="middle" fill="#22150d">GUJI</text><circle cx="60" cy="108" r="10" fill="#d9823a"/></svg></div>
+        <h3>Guji Hambela</h3>
+        <div class="notes"><span class="pill">Peach</span><span class="pill">Jasmine</span><span class="pill">Honey</span></div>
+        <dl class="spec"><dt>Origin</dt><dd>Ethiopia</dd><dt>Process</dt><dd>Natural</dd><dt>Roast</dt><dd>Light</dd><dt>Best for</dt><dd>Filter</dd></dl>
+        <div class="bean-foot"><span class="price num">$19</span><button class="btn btn-solid" data-add="Guji Hambela">Add to bag</button></div>
+      </article>
+      <article class="bean-card" data-reveal>
+        <div class="bag-art" style="background:#c9d6b6"><span class="alt">1,750 m</span><svg viewBox="0 0 120 150" aria-hidden="true"><path d="M20 20h80l8 120H12z" fill="#f8f9f4" stroke="#22150d" stroke-width="3"/><path d="M20 20l10-12h60l10 12" fill="#22150d"/><text x="60" y="80" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-size="16" text-anchor="middle" fill="#22150d">HUILA</text><circle cx="60" cy="108" r="10" fill="#4d7a48"/></svg></div>
+        <h3>Huila Pink Bourbon</h3>
+        <div class="notes"><span class="pill">Red apple</span><span class="pill">Cane sugar</span><span class="pill">Cocoa</span></div>
+        <dl class="spec"><dt>Origin</dt><dd>Colombia</dd><dt>Process</dt><dd>Washed</dd><dt>Roast</dt><dd>Medium-light</dd><dt>Best for</dt><dd>Both</dd></dl>
+        <div class="bean-foot"><span class="price num">$18</span><button class="btn btn-solid" data-add="Huila Pink Bourbon">Add to bag</button></div>
+      </article>
+      <article class="bean-card" data-reveal>
+        <div class="bag-art" style="background:#b99a86"><span class="alt">House blend</span><svg viewBox="0 0 120 150" aria-hidden="true"><path d="M20 20h80l8 120H12z" fill="#f8f9f4" stroke="#22150d" stroke-width="3"/><path d="M20 20l10-12h60l10 12" fill="#22150d"/><text x="60" y="80" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-size="14" text-anchor="middle" fill="#22150d">MORROW</text><circle cx="60" cy="108" r="10" fill="#22150d"/></svg></div>
+        <h3>Daybreak Blend</h3>
+        <div class="notes"><span class="pill">Milk chocolate</span><span class="pill">Hazelnut</span><span class="pill">Toffee</span></div>
+        <dl class="spec"><dt>Origin</dt><dd>Brazil · Guatemala</dd><dt>Process</dt><dd>Natural · Washed</dd><dt>Roast</dt><dd>Medium</dd><dt>Best for</dt><dd>Espresso &amp; milk</dd></dl>
+        <div class="bean-foot"><span class="price num">$16</span><button class="btn btn-solid" data-add="Daybreak Blend">Add to bag</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REWARDS ================= -->
+<section class="section flush-top" id="rewards" aria-labelledby="rew-h">
+  <div class="wrap stamp">
+    <div>
+      <span class="tag">Morrow rewards</span>
+      <h2 id="rew-h" class="mt-4" style="font-size:var(--step-3)" data-reveal>Nine coffees. The tenth is ours.</h2>
+      <p class="mt-5" style="color:var(--muted);font-size:var(--step-1);max-width:40ch" data-reveal>A stamp for every drink, in the app or on a paper card. Try it: tap the button to add a visit.</p>
+    </div>
+    <div class="card-loyal" data-reveal>
+      <header><b>Morrow</b><span class="tag" style="color:var(--espresso)" id="stampCount">3 of 9</span></header>
+      <div class="stamps" id="stamps"></div>
+      <footer><span id="stampMsg">6 more until a free drink</span><button class="btn btn-solid" id="addStamp" type="button">Add a visit</button></footer>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="section flush-top" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag">Visit</span><h2 id="visit-h" data-reveal>Two cafés, one roaster.</h2></div>
+      <p data-reveal>Status is based on your device's clock.</p>
+    </div>
+    <div class="visit">
+      <article class="shop" data-reveal data-open="7:00-18:00" data-weekend="8:00-17:00">
+        <header><div><span class="tag">Roastery café</span><h3 class="mt-2">Canal St.</h3></div><span class="status">—</span></header>
+        <p style="color:var(--muted)">18 Canal Street. The roaster is behind the glass; Tuesdays smell incredible.</p>
+        <dl class="hours"><dt data-d="wk">Mon–Fri</dt><dd>7:00–18:00</dd><dt data-d="we">Sat–Sun</dt><dd>8:00–17:00</dd></dl>
+      </article>
+      <article class="shop" data-reveal data-open="7:00-16:00" data-weekend="9:00-15:00">
+        <header><div><span class="tag">Kiosk</span><h3 class="mt-2">Station Sq.</h3></div><span class="status">—</span></header>
+        <p style="color:var(--muted)">Platform 1 entrance. Espresso, filter and pastries to go, fast.</p>
+        <dl class="hours"><dt data-d="wk">Mon–Fri</dt><dd>7:00–16:00</dd><dt data-d="we">Sat–Sun</dt><dd>9:00–15:00</dd></dl>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><span class="tag" style="color:#8f8174">Roast notes</span><p class="mt-2">One email a month: new beans, brew tips, no spam.</p>
+        <form class="news" id="newsForm" novalidate><label for="nEmail" class="sr-only">Email</label><input id="nEmail" type="email" placeholder="you@email.com" autocomplete="email"><button type="submit">Join</button></form>
+      </div>
+      <div><span class="tag" style="color:#8f8174">Explore</span><a href="#menu" class="mt-2">Menu</a><a href="#brew">Brew guide</a><a href="#beans">Beans</a></div>
+      <div><span class="tag" style="color:#8f8174">Say hello</span><p class="mt-2">hello@morrow.coffee<br>@morrowcoffee</p></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Morrow</div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Morrow Coffee Roasters</span><span>Demo brand. Names, prices and hours are placeholders.</span></div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

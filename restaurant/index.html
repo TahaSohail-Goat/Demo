@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verdell Tasting Kitchen</title>
+<meta name="description" content="A 42-seat seasonal tasting kitchen. Seven courses, cooked over fire, with an optional wine pairing. Reserve online.">
+<meta name="theme-color" content="#2a0f13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-wine: var(--wine);
+    --color-cream: var(--cream);
+    --color-brass: var(--brass);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-brass focus:text-wine focus:px-4 focus:py-2">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#menu">Menu</a><a href="#chef">Kitchen</a><a href="#rooms">Rooms</a><a href="#faq">Visit</a>
+    </nav>
+    <a href="#top" class="logo" aria-label="Verdell, home">Verdell</a>
+    <div class="nav-right">
+      <span class="hours" id="navHours">Tue–Sat · 17:30</span>
+      <a href="#reserve" class="btn btn-brass" data-magnetic>Reserve</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#menu">Menu</a><a href="#chef">Kitchen</a><a href="#rooms">Rooms</a><a href="#reserve">Reserve</a><a href="#faq">Visit</a>
+  <p class="label mt-auto">124 Wharf Street · Tue–Sat from 17:30</p>
+</div>
+
+<main id="main">
+<!-- ================= PLATING FILM ================= -->
+<section class="film" id="top" aria-label="A course being plated">
+  <div class="film-sticky">
+    <div class="film-glow" aria-hidden="true"></div>
+    <canvas id="plateCanvas" aria-hidden="true"></canvas>
+
+    <div class="ch" data-ch="0">
+      <span class="label brass">Verdell · Seasonal tasting kitchen</span>
+      <h1 data-split>Seven courses, <em>plated</em> in front of you.</h1>
+      <p data-hero-fade>A 42-seat dining room built around an open kitchen. The menu follows eleven farms and one coastline, and changes every month.</p>
+      <div class="ctas" data-hero-fade>
+        <a href="#reserve" class="btn btn-brass" data-magnetic>Reserve a table</a>
+        <a href="#menu" class="btn btn-line">See this month's menu</a>
+      </div>
+    </div>
+    <div class="ch" data-ch="1">
+      <span class="label brass">I — The plate</span>
+      <h2>Thrown by hand, <em>two streets away.</em></h2>
+      <p>Every plate comes from a potter on Kiln Lane. No two are the same shape, so no two courses look quite alike.</p>
+    </div>
+    <div class="ch" data-ch="2">
+      <span class="label brass">II — The sauce</span>
+      <h2>Saffron beurre blanc, <em>whisked to order.</em></h2>
+      <p>Shallot, white wine and cold butter, mounted at the pass the moment your table is called. It never sits in a pan.</p>
+    </div>
+    <div class="ch" data-ch="3">
+      <span class="label brass">III — The scallop</span>
+      <h2>Ninety seconds <em>a side.</em></h2>
+      <p>Hand-dived that morning and seared in brown butter until the crust is three millimetres deep and the centre is barely set.</p>
+    </div>
+    <div class="ch" data-ch="4">
+      <span class="label brass">IV — The garden</span>
+      <h2>Pea shoots, viola, <em>sea salt.</em></h2>
+      <p>Picked at 4 pm by the grower, on the pass by 6. The last thing on the plate, and the first thing you taste.</p>
+    </div>
+    <div class="ch" data-ch="5">
+      <span class="label brass">Course four of seven</span>
+      <h2>Now imagine the <em>other six.</em></h2>
+      <p>Tasting menu $135 per guest. Wine pairing $85. Tables open 30 days ahead at 10 am.</p>
+      <div class="ctas"><a href="#reserve" class="btn btn-brass" data-magnetic>Book your table</a></div>
+    </div>
+
+    <aside class="menu-card" id="menuCard" aria-hidden="true">
+      <span class="label brass">Course 04</span>
+      <h3>Scallop, saffron, pea</h3>
+      <p>Hand-dived scallop, saffron beurre blanc, pea shoots, viola, parsley oil.</p>
+      <div class="pair"><span class="label">Pairing</span><br>Chenin blanc, Loire 2022</div>
+    </aside>
+
+    <div class="film-foot"><span>Plating</span><span class="bar"><i id="filmBar"></i></span><span class="num" id="filmPct">00%</span></div>
+    <div class="course-tag"><span>Now plating</span><b id="courseTag">An empty plate</b></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><span class="label">Open</span><span class="num">Tue–Sat · 17:30–23:00</span></div>
+    <div><span class="label">Find us</span>124 Wharf Street</div>
+    <div><span class="label">Tasting</span><span class="num">$135 · 7 courses</span></div>
+    <div><span class="label">No booking?</span>Walk-ins at the bar</div>
+  </div>
+</div>
+
+<!-- ================= MENU ================= -->
+<section class="section" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label brass">October menu</span><h2 id="menu-h" data-reveal>What the coast and the farms sent us <em>this month.</em></h2></div>
+      <p data-reveal>Vegetarian version of every course on request. Tell us about allergies when you book and we'll plan around them.</p>
+    </div>
+    <div class="menu-tools">
+      <div class="tabs" role="tablist" aria-label="Menu type">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="tastingList" id="tabTasting">Tasting · 7 courses</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="alcList" id="tabAlc">À la carte · bar</button>
+      </div>
+      <label class="switch" id="pairSwitch"><input type="checkbox" id="pairToggle"><span class="track" aria-hidden="true"></span>Show wine pairing</label>
+    </div>
+    <div id="tastingList" role="tabpanel" aria-labelledby="tabTasting">
+      <ol class="courses">
+        <li class="course" data-reveal><span class="n">01</span><div><h3>Oyster, green apple</h3><p class="desc">Rock oyster, fermented apple granita, dill oil.</p></div><p class="pairing">English sparkling, Sussex NV</p><div class="diet"><span>GF</span></div></li>
+        <li class="course" data-reveal><span class="n">02</span><div><h3>Tomato, smoked ricotta</h3><p class="desc">Last of the heritage tomatoes, ricotta smoked over apple wood, basil.</p></div><p class="pairing">Rosé, Provence 2023</p><div class="diet"><span>V</span><span>GF</span></div></li>
+        <li class="course" data-reveal><span class="n">03</span><div><h3>Sourdough, cultured butter</h3><p class="desc">48-hour sourdough from our oven, brown butter with sea salt.</p></div><p class="pairing">—</p><div class="diet"><span>V</span></div></li>
+        <li class="course" data-reveal><span class="n">04</span><div><h3>Scallop, saffron, pea</h3><p class="desc">Hand-dived scallop, saffron beurre blanc, pea shoots, viola.</p></div><p class="pairing">Chenin blanc, Loire 2022</p><div class="diet"><span>GF</span></div></li>
+        <li class="course" data-reveal><span class="n">05</span><div><h3>Hake, mussels, cider</h3><p class="desc">Line-caught hake, mussel and cider broth, charred leek.</p></div><p class="pairing">Albariño, Rías Baixas 2023</p><div class="diet"><span>GF</span></div></li>
+        <li class="course" data-reveal><span class="n">06</span><div><h3>Lamb, black garlic</h3><p class="desc">Saddle of lamb cooked over embers, black garlic, sweetbread, turnip.</p></div><p class="pairing">Syrah, Northern Rhône 2020</p><div class="diet"><span>GF</span></div></li>
+        <li class="course" data-reveal><span class="n">07</span><div><h3>Fig leaf, honey, rye</h3><p class="desc">Fig leaf ice cream, honey from the roof, toasted rye crumb.</p></div><p class="pairing">Tokaji Aszú, 5 puttonyos</p><div class="diet"><span>V</span></div></li>
+      </ol>
+      <div class="menu-foot"><span>Served to the whole table · about 2 h 30 min</span><span class="total num" id="menuTotal"><small>Per guest</small>$135</span></div>
+    </div>
+    <div id="alcList" role="tabpanel" aria-labelledby="tabAlc" hidden>
+      <ul class="courses">
+        <li class="course"><span class="n">—</span><div><h3>Rock oysters</h3><p class="desc">Three or six, with shallot vinegar.</p></div><p class="pairing"></p><span class="price num">$14 / $26</span></li>
+        <li class="course"><span class="n">—</span><div><h3>Sourdough &amp; butter</h3><p class="desc">Half loaf from our oven.</p></div><p class="pairing"></p><span class="price num">$7</span></li>
+        <li class="course"><span class="n">—</span><div><h3>Scallop, saffron</h3><p class="desc">The course from the film above, at the bar.</p></div><p class="pairing"></p><span class="price num">$24</span></li>
+        <li class="course"><span class="n">—</span><div><h3>Ember lamb, flatbread</h3><p class="desc">Lamb shoulder, yoghurt, pickled chilli.</p></div><p class="pairing"></p><span class="price num">$29</span></li>
+        <li class="course"><span class="n">—</span><div><h3>Fig leaf ice cream</h3><p class="desc">Honey, rye crumb.</p></div><p class="pairing"></p><span class="price num">$11</span></li>
+      </ul>
+      <div class="menu-foot"><span>Bar seats only · no booking needed</span><span>Kitchen closes 22:30</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHEF ================= -->
+<section class="section flush-top" id="chef" aria-labelledby="chef-h">
+  <div class="wrap chef">
+    <div class="chef-portrait" data-reveal>
+      <canvas id="embers" aria-hidden="true"></canvas>
+      <span class="label ph">Chef portrait</span>
+    </div>
+    <div>
+      <span class="label brass" id="chef-h">The kitchen</span>
+      <blockquote class="mt-6" data-reveal>“We cook what arrived this morning. If the boat doesn't go out, the menu changes. That's the deal.”</blockquote>
+      <p class="sig" data-reveal>Elena Marsh, chef and owner. Twelve years in coastal kitchens before opening Verdell in 2019.</p>
+      <div class="chef-stats">
+        <div data-reveal><b class="num" data-count="42">42</b><span>seats, so every plate leaves the pass warm</span></div>
+        <div data-reveal><b class="num" data-count="11">11</b><span>farms and fishers within 80 km</span></div>
+        <div data-reveal><b class="num" data-count="12">12</b><span>new menus a year, one per month</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROOMS ================= -->
+<section class="section flush-top" id="rooms" aria-labelledby="rooms-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label brass">Where to sit</span><h2 id="rooms-h" data-reveal>Three rooms, <em>three evenings.</em></h2></div>
+      <p data-reveal>Choose where you'd like to sit when you book. Private hire is available for the garden room.</p>
+    </div>
+    <div class="rooms">
+      <article class="room" data-reveal>
+        <svg viewBox="0 0 300 130" fill="none" stroke="#cdb9a6" stroke-width="1.2" aria-hidden="true"><rect x="20" y="20" width="260" height="34" stroke="#c9a05a"/><text x="150" y="42" fill="#a08579" stroke="none" font-family="DM Mono, monospace" font-size="9" text-anchor="middle">THE PASS</text><g id="stools"><circle cx="40" cy="80" r="8"/><circle cx="72" cy="80" r="8"/><circle cx="104" cy="80" r="8"/><circle cx="136" cy="80" r="8"/><circle cx="168" cy="80" r="8"/><circle cx="200" cy="80" r="8"/><circle cx="232" cy="80" r="8"/><circle cx="264" cy="80" r="8"/></g></svg>
+        <h3>Chef's counter</h3><p>Eight stools facing the pass. Watch every course being plated and talk to the cooks who made it.</p>
+        <div class="meta"><span>8 seats</span><span>Parties of 1–4</span></div>
+      </article>
+      <article class="room" data-reveal>
+        <svg viewBox="0 0 300 130" fill="none" stroke="#cdb9a6" stroke-width="1.2" aria-hidden="true"><rect x="10" y="10" width="280" height="110"/><rect x="40" y="30" width="40" height="26"/><rect x="130" y="30" width="40" height="26"/><rect x="220" y="30" width="40" height="26"/><circle cx="60" cy="92" r="14"/><circle cx="150" cy="92" r="14" stroke="#c9a05a"/><circle cx="240" cy="92" r="14"/></svg>
+        <h3>Dining room</h3><p>Oxblood walls, candlelight and a view of the fire. Best for couples and small groups.</p>
+        <div class="meta"><span>26 seats</span><span>Parties of 2–6</span></div>
+      </article>
+      <article class="room" data-reveal>
+        <svg viewBox="0 0 300 130" fill="none" stroke="#cdb9a6" stroke-width="1.2" aria-hidden="true"><rect x="10" y="10" width="280" height="110" stroke-dasharray="4 4"/><rect x="50" y="48" width="200" height="34" stroke="#c9a05a"/><g><circle cx="70" cy="36" r="6"/><circle cx="110" cy="36" r="6"/><circle cx="150" cy="36" r="6"/><circle cx="190" cy="36" r="6"/><circle cx="230" cy="36" r="6"/><circle cx="70" cy="94" r="6"/><circle cx="110" cy="94" r="6"/><circle cx="150" cy="94" r="6"/><circle cx="190" cy="94" r="6"/><circle cx="230" cy="94" r="6"/></g></svg>
+        <h3>Garden room</h3><p>One long table under the fig tree. Heated in winter. Book it for birthdays, rehearsal dinners or a team night.</p>
+        <div class="meta"><span>Up to 18</span><span>From $1,800 min. spend</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GUEST NOTES ================= -->
+<section class="section flush-top" aria-labelledby="notes-h">
+  <div class="wrap">
+    <span class="label brass" id="notes-h">Guest notes</span>
+    <div class="notes mt-10">
+      <div class="note" data-reveal><p>“We sat at the counter and the chef talked us through the scallop while she plated it. Best seat in the city.”</p><div class="who label">Anjali &amp; Tom · Anniversary</div></div>
+      <div class="note" data-reveal><p>“I'm vegetarian and never felt like an afterthought. Seven courses, all of them thought through.”</p><div class="who label">Farah K. · Tasting menu</div></div>
+      <div class="note" data-reveal><p>“Booked the garden room for twelve. They handled the allergies, the cake and a very loud uncle.”</p><div class="who label">Daniel O. · Private dinner</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESERVE ================= -->
+<section class="section reserve" id="reserve" aria-labelledby="res-h">
+  <div class="wrap reserve-grid">
+    <div>
+      <span class="label">Reservations</span>
+      <h2 id="res-h" class="mt-6">Your <em>table.</em></h2>
+      <p class="summary" id="summary" aria-live="polite">Table for 2</p>
+      <p class="policy">Tables open 30 days ahead at 10 am. We hold a card for bookings; cancellations inside 48 hours are charged $50 per guest.</p>
+    </div>
+    <form class="rform" id="resForm" novalidate>
+      <div class="rrow"><span class="label" id="lblParty">Guests</span>
+        <div class="stepper" role="group" aria-labelledby="lblParty"><button type="button" id="minus" aria-label="Fewer guests">−</button><output id="party" aria-live="polite">2 guests</output><button type="button" id="plus" aria-label="More guests">+</button></div>
+      </div>
+      <div class="rrow"><span class="label" id="lblDate">Date</span><div class="dates" id="dates" role="group" aria-labelledby="lblDate"></div></div>
+      <div class="rrow"><span class="label" id="lblTime">Time</span><div class="times" id="times" role="group" aria-labelledby="lblTime"></div></div>
+      <div class="rrow"><span class="label" id="lblSeat">Seating</span>
+        <div class="seats" role="group" aria-labelledby="lblSeat">
+          <button type="button" class="seat" aria-pressed="false">Chef's counter</button>
+          <button type="button" class="seat" aria-pressed="true">Dining room</button>
+          <button type="button" class="seat" aria-pressed="false">Garden room</button>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="field"><label for="r-name">Name</label><input id="r-name" autocomplete="name"></div>
+        <div class="field"><label for="r-phone">Phone</label><input id="r-phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="r-email">Email</label><input id="r-email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="r-occ">Occasion</label><select id="r-occ"><option>None</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Proposal (we'll be discreet)</option></select></div>
+        <div class="field full"><label for="r-diet">Allergies or dietary needs</label><input id="r-diet" placeholder="e.g. one vegetarian, no shellfish"></div>
+      </div>
+      <button type="submit" class="btn btn-dark">Request this table</button>
+      <p class="rnote" id="rnote">We confirm every booking by text within 30 minutes during opening hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div><span class="label brass">Visiting</span><h2 id="faq-h" class="mt-5" style="font-size:var(--step-3)" data-reveal>Good to know <em>before you come.</em></h2></div>
+    <div>
+      <details><summary>Can you cater for dietary requirements?<i aria-hidden="true">+</i></summary><div class="answer">Yes. Every course has a vegetarian version, and we can work around most allergies if you tell us when you book. We can't guarantee a nut-free kitchen.</div></details>
+      <details><summary>Is there a dress code?<i aria-hidden="true">+</i></summary><div class="answer">No. Come as you are. Most guests dress smart-casual.</div></details>
+      <details><summary>Can we bring children?<i aria-hidden="true">+</i></summary><div class="answer">Children over 10 are welcome for the tasting menu. Younger guests are very welcome at the bar before 19:00.</div></details>
+      <details><summary>What if I need to cancel?<i aria-hidden="true">+</i></summary><div class="answer">Cancel or change up to 48 hours before at no charge. Inside 48 hours we charge $50 per guest, as we buy produce for every booked seat.</div></details>
+      <details><summary>Do you sell gift vouchers?<i aria-hidden="true">+</i></summary><div class="answer">Yes, for any amount or for a full tasting menu with pairing. Ask at the bar or call us.</div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><span class="label">Address</span><p class="mt-2">124 Wharf Street<br>Harbour district</p></div>
+      <div><span class="label">Hours</span><p class="mt-2 num">Tue–Sat · 17:30–23:00<br>Bar from 17:00</p></div>
+      <div><span class="label">Contact</span><p class="mt-2"><a href="tel:+13125550191" class="num">+1 (312) 555 0191</a><br>table@verdell.kitchen</p></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Verdell</div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Verdell Tasting Kitchen</span><span>Demo brand. Names, reviews and prices are placeholders.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

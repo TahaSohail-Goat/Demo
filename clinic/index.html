@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aldena Health Clinic</title>
+<meta name="description" content="Multi-specialty clinic with same-day appointments, an in-house lab and 38 specialists across 12 departments.">
+<meta name="theme-color" content="#050b18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-ink: var(--ink);
+    --color-slate: var(--slate);
+    --color-cobalt: var(--cobalt);
+    --color-sky: var(--sky);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-cobalt focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Aldena Health, home">
+      <span class="logo-mark"><svg viewBox="0 0 14 14" fill="#fff"><path d="M5 0h4v5h5v4H9v5H5V9H0V5h5z"/></svg></span>Aldena
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#specialties">Specialties</a>
+      <a href="#app">Patient app</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#visit">Your visit</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone num" href="tel:+15125550148">(512) 555-0148</a>
+      <a href="#book" class="btn btn-primary btn-nav" data-magnetic>Book appointment</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#specialties">Specialties</a>
+  <a href="#app">Patient app</a>
+  <a href="#doctors">Doctors</a>
+  <a href="#visit">Your visit</a>
+  <a href="#book">Book appointment</a>
+  <p class="mt-auto mono text-sm" style="color:#8ea3cc">Urgent care open today until 10 pm</p>
+</div>
+
+<main id="main">
+<!-- ================= HERO FILM ================= -->
+<section class="film" id="top" aria-label="Aldena Health introduction">
+  <div class="film-sticky">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="film-grid" aria-hidden="true"></div>
+    <div class="film-vignette" aria-hidden="true"></div>
+
+    <div class="hud hud-tl" aria-hidden="true">
+      <span>Specimen <b id="hudName">DNA · double helix</b></span>
+      <span>Particles <b class="num" id="hudCount">16,000</b></span>
+    </div>
+
+    <div class="ch" data-ch="0">
+      <span class="eyebrow">Aldena Health · Multi-specialty clinic</span>
+      <h1 data-split>Care that reads you from genome to <span class="sky">heartbeat.</span></h1>
+      <p data-hero-fade>38 specialists, an in-house lab and same-day appointments, seven days a week. One clinic, one record, one team that talks to each other.</p>
+      <div class="ctas" data-hero-fade>
+        <a href="#book" class="btn btn-primary" data-magnetic>Book an appointment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#doctors" class="btn btn-outline-dark">Find a doctor</a>
+      </div>
+    </div>
+
+    <div class="ch" data-ch="1">
+      <span class="eyebrow">01 · Prevention</span>
+      <h2>Prevention starts in your <span class="sky">genes.</span></h2>
+      <p>Screening panels for inherited heart, metabolic and cancer risk, read by a genetic counsellor who explains every line of the report.</p>
+    </div>
+
+    <div class="ch" data-ch="2">
+      <span class="eyebrow">02 · Cardiology</span>
+      <h2>A heart team that can see you <span class="sky">this week.</span></h2>
+      <p>ECG, echocardiogram and stress testing under one roof, with a cardiologist reviewing your results the same day.</p>
+    </div>
+    <div class="vitals" id="vitals" aria-hidden="true">
+      <div class="row"><span>Heart rate</span><b class="num"><span id="bpm">72</span><small>bpm</small></b></div>
+      <div class="row"><span>SpO₂</span><b class="num">98<small>%</small></b></div>
+      <div class="row"><span>Blood pressure</span><b class="num">118/76<small>mmHg</small></b></div>
+      <svg class="ecg" viewBox="0 0 360 70" preserveAspectRatio="none"><path id="ecgPath" d="M0 40 H40 l6 -4 6 4 H70 l4 6 6 -38 6 46 4 -10 H120 q10 -14 20 0 H180 l6 -4 6 4 H210 l4 6 6 -38 6 46 4 -10 H260 q10 -14 20 0 H320 l6 -4 6 4 H360"/></svg>
+    </div>
+
+    <div class="ch" data-ch="3">
+      <span class="eyebrow">03 · Diagnostics</span>
+      <h2>Lab results in <span class="sky">hours,</span> not days.</h2>
+      <p>Our in-house lab runs 400+ tests on site. Most blood panels are back in four hours, straight to your phone.</p>
+    </div>
+
+    <div class="ch" data-ch="4">
+      <span class="eyebrow">04 · One clinic</span>
+      <h2>Twelve specialties. <span class="serif-i sky">One</span> shared record.</h2>
+      <p>Your GP, cardiologist and lab see the same notes, so you never repeat your history twice.</p>
+      <div class="ctas"><a href="#specialties" class="btn btn-light">Explore specialties</a></div>
+    </div>
+
+    <div class="hud hud-bottom">
+      <span class="scroll-hint"><span></span>Scroll</span>
+      <div class="progress" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= URGENT STRIP ================= -->
+<div class="urgent">
+  <div class="wrap">
+    <span class="live"><i></i>Urgent care open · 8 am – 10 pm daily</span>
+    <span>Walk-ins welcome. Current wait: <b class="num">11 min</b></span>
+    <span class="note"><b>Life-threatening emergency?</b> Call your local emergency number now.</span>
+  </div>
+</div>
+
+<!-- ================= SPECIALTIES ================= -->
+<section class="section" id="specialties" aria-labelledby="spec-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Specialties</span><h2 id="spec-h" data-reveal>Every department you need, down one corridor.</h2></div>
+      <p data-reveal>Book any specialist directly, no referral needed for most departments. Live availability updates through the day.</p>
+    </div>
+    <div class="bento">
+      <a href="#book" class="tile big" data-dept="family" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <svg class="pulse-canvas" viewBox="0 0 340 340" aria-hidden="true"><circle cx="170" cy="170" r="60" fill="none" stroke="rgba(169,196,255,.18)"/><circle cx="170" cy="170" r="110" fill="none" stroke="rgba(169,196,255,.1)"/><circle cx="170" cy="170" r="160" fill="none" stroke="rgba(169,196,255,.06)"/><circle cx="170" cy="170" r="6" fill="#a9c4ff"><animate attributeName="r" values="6;9;6" dur="1.2s" repeatCount="indefinite"/></circle></svg>
+        <h3>Family medicine</h3>
+        <p>Your GP for everything from a cough to a chronic condition. Same-day slots held every morning.</p>
+        <div class="wait">
+          <div>Median wait<b class="num">11 min</b></div>
+          <div>GPs on today<b class="num">9</b></div>
+          <div>Slots left<b class="num" data-count="23">23</b></div>
+        </div>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Cardiology</h3><p>ECG, echo and stress tests.</p><span class="slot"><i></i>Next: Tomorrow 09:40</span>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Pediatrics</h3><p>Newborn to 18, with a separate waiting area.</p><span class="slot"><i></i>Next: Today 15:20</span>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="5"/><path d="M12 14v8M9 19h6"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Women's health</h3><p>Gynaecology, fertility and prenatal care.</p><span class="slot"><i></i>Next: Today 17:00</span>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Lab &amp; imaging</h3><p>400+ tests, X-ray and ultrasound on site.</p><span class="slot"><i></i>Walk in · 7 am – 7 pm</span>
+      </a>
+      <a href="#book" class="tile wide" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a7 7 0 0 0-4 12.7V19h8v-3.3A7 7 0 0 0 12 3z"/><path d="M10 22h4"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Mental health</h3><p>Psychiatry, therapy and counselling, in person or by video. First appointment within a week.</p><span class="slot"><i></i>Next: Thu 11:00</span>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3l-3 9 4 1-2 8M16 3l3 9-4 1 2 8"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Orthopedics</h3><p>Joints, sports injuries and physio.</p><span class="slot"><i></i>Next: Tomorrow 14:10</span>
+      </a>
+      <a href="#book" class="tile" data-reveal>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="14" r="1.4"/><circle cx="15" cy="9" r=".8"/></svg></span>
+        <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <h3>Dermatology</h3><p>Skin checks, acne and mole mapping.</p><span class="slot"><i></i>Next: Fri 10:30</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS BAND ================= -->
+<section class="band" aria-label="Aldena in numbers">
+  <div class="wrap">
+    <div class="stat" data-reveal><b><span data-count="38">38</span></b><span>Specialists across 12 departments</span></div>
+    <div class="stat" data-reveal><b><span data-count="4">4</span>h</b><span>Typical blood panel turnaround</span></div>
+    <div class="stat" data-reveal><b><span data-count="7">7</span>/7</b><span>Days a week with same-day GP slots</span></div>
+    <div class="stat" data-reveal><b><span data-count="4.8" data-decimals="1">4.8</span></b><span>Average rating from 2,300+ patients</span></div>
+  </div>
+</section>
+
+<!-- ================= PATIENT APP ================= -->
+<section class="section" id="app" aria-labelledby="app-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Patient app</span><h2 id="app-h" data-reveal>Your whole clinic, in your pocket.</h2></div>
+      <p data-reveal>Book, check results and renew prescriptions without calling reception. Free on iOS and Android.</p>
+    </div>
+    <div class="app">
+      <div class="app-sticky">
+        <div class="phone" id="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="pane" data-pane="0">
+              <div class="sub">Tuesday · 14 Oct</div>
+              <h4>Good morning, Aisha</h4>
+              <div class="card blue"><div class="t">Dr. Noor Farooqi</div><div class="m">Cardiology · Today 16:30 · Room 204</div></div>
+              <div class="card"><div class="t">Blood panel</div><div class="m">Lab · Fasting · 07:45</div></div>
+              <div class="card"><div class="t">Physio follow-up</div><div class="m">Orthopedics · Fri 10:00</div></div>
+              <div class="card" style="margin-top:auto"><div class="t">+ Book new appointment</div><div class="m">Next GP slot: today 11:20</div></div>
+            </div>
+            <div class="pane" data-pane="1" aria-hidden="true">
+              <div class="sub">Results · ready 11:04</div>
+              <h4>Lipid panel</h4>
+              <div class="card">
+                <div class="lab-row"><span>Total cholesterol</span><span class="v">4.6 mmol/L</span><div class="bar"><i style="left:44%"></i></div></div>
+                <div class="lab-row"><span>LDL</span><span class="v">2.7 mmol/L</span><div class="bar"><i style="left:52%"></i></div></div>
+                <div class="lab-row"><span>HDL</span><span class="v">1.4 mmol/L</span><div class="bar"><i style="left:40%"></i></div></div>
+                <div class="lab-row"><span>Triglycerides</span><span class="v">1.2 mmol/L</span><div class="bar"><i style="left:36%"></i></div></div>
+              </div>
+              <div class="card"><div class="t">Note from Dr. Farooqi</div><div class="m" style="opacity:1;font-family:var(--font-body);font-size:.74rem;margin-top:4px">All in range. Keep up the walks, recheck in 12 months.</div></div>
+            </div>
+            <div class="pane" data-pane="2" aria-hidden="true">
+              <div class="sub">Prescriptions</div>
+              <h4>Refills</h4>
+              <div class="card"><div class="t">Repeat prescription</div><div class="m">30 days · 2 refills left</div></div>
+              <div class="card blue"><div class="t">Refill requested</div><div class="m">Ready for pickup at 15:00</div></div>
+              <div class="card"><div class="t">Pharmacy</div><div class="m">Ground floor · open until 21:00</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="feat" data-feat="0">
+          <span class="k">Book</span>
+          <h3>Appointments in three taps.</h3>
+          <p>See every open slot across all 12 departments and book the one that suits you. Reminders arrive the day before.</p>
+          <ul><li>Live availability for 38 specialists</li><li>Video visits for follow-ups</li><li>Reschedule without a phone call</li></ul>
+        </div>
+        <div class="feat" data-feat="1">
+          <span class="k">Results</span>
+          <h3>Lab results with a doctor's note.</h3>
+          <p>Every result shows your reference range and a plain-language comment from the doctor who ordered it.</p>
+          <ul><li>Blood panels usually in 4 hours</li><li>Imaging reports within 24 hours</li><li>Share securely with any doctor</li></ul>
+        </div>
+        <div class="feat" data-feat="2">
+          <span class="k">Refills</span>
+          <h3>Prescriptions, renewed on time.</h3>
+          <p>Request a repeat prescription and pick it up from our pharmacy downstairs, or have it delivered.</p>
+          <ul><li>Refill reminders before you run out</li><li>On-site pharmacy open until 9 pm</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCTORS ================= -->
+<section class="section flush-top" id="doctors" aria-labelledby="doc-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Doctors</span><h2 id="doc-h" data-reveal>Meet the people you'll see.</h2></div>
+      <p data-reveal>Filter by department. Every profile shows the languages spoken and the next free appointment.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter doctors by department">
+      <button class="filter" aria-pressed="true" data-filter="all">All</button>
+      <button class="filter" aria-pressed="false" data-filter="family">Family medicine</button>
+      <button class="filter" aria-pressed="false" data-filter="cardio">Cardiology</button>
+      <button class="filter" aria-pressed="false" data-filter="peds">Pediatrics</button>
+      <button class="filter" aria-pressed="false" data-filter="women">Women's health</button>
+      <button class="filter" aria-pressed="false" data-filter="derm">Dermatology</button>
+    </div>
+    <div class="docs" id="docs">
+      <article class="doc" data-dept="cardio"><div class="avatar">NF</div><div><h3>Dr. Noor Farooqi</h3><p class="role">Consultant cardiologist</p><div class="meta"><span class="tag">EN · UR</span><span class="tag ok">Tomorrow 09:40</span></div></div><a href="#book" class="book-link" data-doctor="Dr. Noor Farooqi">Book with Dr. Farooqi <span aria-hidden="true">→</span></a></article>
+      <article class="doc" data-dept="family"><div class="avatar">JM</div><div><h3>Dr. James Moreno</h3><p class="role">Family physician</p><div class="meta"><span class="tag">EN · ES</span><span class="tag ok">Today 11:20</span></div></div><a href="#book" class="book-link" data-doctor="Dr. James Moreno">Book with Dr. Moreno <span aria-hidden="true">→</span></a></article>
+      <article class="doc" data-dept="peds"><div class="avatar">AO</div><div><h3>Dr. Ada Okafor</h3><p class="role">Pediatrician</p><div class="meta"><span class="tag">EN · FR</span><span class="tag ok">Today 15:20</span></div></div><a href="#book" class="book-link" data-doctor="Dr. Ada Okafor">Book with Dr. Okafor <span aria-hidden="true">→</span></a></article>
+      <article class="doc" data-dept="women"><div class="avatar">SK</div><div><h3>Dr. Sara Khan</h3><p class="role">Obstetrician &amp; gynaecologist</p><div class="meta"><span class="tag">EN · UR · AR</span><span class="tag ok">Today 17:00</span></div></div><a href="#book" class="book-link" data-doctor="Dr. Sara Khan">Book with Dr. Khan <span aria-hidden="true">→</span></a></article>
+      <article class="doc" data-dept="family"><div class="avatar">LC</div><div><h3>Dr. Lena Choi</h3><p class="role">Family physician</p><div class="meta"><span class="tag">EN · KO</span><span class="tag ok">Today 13:50</span></div></div><a href="#book" class="book-link" data-doctor="Dr. Lena Choi">Book with Dr. Choi <span aria-hidden="true">→</span></a></article>
+      <article class="doc" data-dept="derm"><div class="avatar">MB</div><div><h3>Dr. Marc Bauer</h3><p class="role">Dermatologist</p><div class="meta"><span class="tag">EN · DE</span><span class="tag ok">Fri 10:30</span></div></div><a href="#book" class="book-link" data-doctor="Dr. Marc Bauer">Book with Dr. Bauer <span aria-hidden="true">→</span></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= YOUR VISIT ================= -->
+<section class="section flush-top" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Your visit</span><h2 id="visit-h" data-reveal>From booking to follow-up.</h2></div>
+      <p data-reveal>What happens at each stage, so nothing about your appointment is a surprise.</p>
+    </div>
+    <ol class="steps steps-wrap">
+      <li data-reveal><span class="n">STEP 01</span><h3>Book</h3><p>Online, in the app or by phone. Pick a doctor or the first free slot.</p></li>
+      <li data-reveal><span class="n">STEP 02</span><h3>Check in</h3><p>Check in on your phone when you arrive. We'll text you when the room is ready.</p></li>
+      <li data-reveal><span class="n">STEP 03</span><h3>See your doctor</h3><p>Tests happen on site, often in the same visit. No second trip to a lab.</p></li>
+      <li data-reveal><span class="n">STEP 04</span><h3>Follow up</h3><p>Results, notes and next steps land in the app, with a direct line to your care team.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section flush-top reviews" aria-labelledby="rev-h">
+  <div class="wrap"><div class="head"><div><span class="eyebrow">Patients</span><h2 id="rev-h" data-reveal>What people say after their visit.</h2></div><p data-reveal>4.8 average from more than 2,300 reviews.</p></div></div>
+  <div class="rev-row" id="revA"></div>
+  <div class="rev-row rev" id="revB"></div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div><span class="eyebrow">FAQ</span><h2 id="faq-h" class="mt-4" style="font-size:var(--step-3)" data-reveal>Before you come in.</h2></div>
+    <div>
+      <details><summary>Do I need a referral?<span class="pm" aria-hidden="true">+</span></summary><div class="answer">Not for most departments. You can book a GP, pediatrician, dermatologist or women's health appointment directly. Some insurers ask for a GP referral for cardiology and orthopedics, and our reception team can check this for you.</div></details>
+      <details><summary>Which insurance do you accept?<span class="pm" aria-hidden="true">+</span></summary><div class="answer">We work with most major insurers and corporate health plans, and offer fixed self-pay prices for everyone else. Bring your insurance card and we'll confirm your cover at check-in.</div></details>
+      <details><summary>Can I walk in without an appointment?<span class="pm" aria-hidden="true">+</span></summary><div class="answer">Yes. Urgent care is open 8 am to 10 pm every day, and the live wait time is shown at the top of this page. For a life-threatening emergency, call your local emergency number.</div></details>
+      <details><summary>How do I get my test results?<span class="pm" aria-hidden="true">+</span></summary><div class="answer">Results appear in the patient app as soon as your doctor has reviewed them, with a short note explaining what they mean. You can also request a printed copy at reception.</div></details>
+      <details><summary>Is there parking?<span class="pm" aria-hidden="true">+</span></summary><div class="answer">Free underground parking for patients, with step-free lift access to every floor.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="section book-sec" id="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">Book an appointment</span>
+      <h2 id="book-h" class="mt-6">See a doctor <span class="serif-i" style="color:var(--sky)">today.</span></h2>
+      <div class="locs">
+        <div class="loc"><b>Aldena Central</b><span class="open">Open now</span><span>410 Lakeview Avenue · Floors 1–4</span><span class="num">8:00–22:00</span></div>
+        <div class="loc"><b>Aldena Northgate</b><span class="open">Open now</span><span>12 Northgate Plaza · GP, pediatrics, lab</span><span class="num">8:00–20:00</span></div>
+        <div class="loc"><b>Call reception</b><span></span><a href="tel:+15125550148" class="num" style="text-decoration:none">(512) 555-0148</a><span class="num">7 days</span></div>
+      </div>
+    </div>
+    <form class="form" id="bookForm" novalidate>
+      <div class="field"><label for="f-dept">Department</label>
+        <select id="f-dept" name="dept"><option value="family">Family medicine</option><option value="cardio">Cardiology</option><option value="peds">Pediatrics</option><option value="women">Women's health</option><option value="lab">Lab &amp; imaging</option><option value="mental">Mental health</option><option value="ortho">Orthopedics</option><option value="derm">Dermatology</option></select>
+      </div>
+      <div class="field"><label for="f-doc">Doctor</label>
+        <select id="f-doc" name="doctor"><option>First available</option><option>Dr. James Moreno</option><option>Dr. Lena Choi</option><option>Dr. Noor Farooqi</option><option>Dr. Ada Okafor</option><option>Dr. Sara Khan</option><option>Dr. Marc Bauer</option></select>
+      </div>
+      <div class="field full">
+        <span class="lbl" id="slotLbl">Available today</span>
+        <div class="slots" role="group" aria-labelledby="slotLbl">
+          <button type="button" class="slot-btn" disabled>09:00</button>
+          <button type="button" class="slot-btn">11:20</button>
+          <button type="button" class="slot-btn" disabled>12:40</button>
+          <button type="button" class="slot-btn">13:50</button>
+          <button type="button" class="slot-btn" aria-pressed="true">15:20</button>
+          <button type="button" class="slot-btn">16:30</button>
+          <button type="button" class="slot-btn">17:00</button>
+          <button type="button" class="slot-btn">18:10</button>
+        </div>
+      </div>
+      <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" placeholder="Aisha Rahman"></div>
+      <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(512) 555-0100"></div>
+      <button class="btn btn-primary" type="submit">Confirm appointment request</button>
+      <p class="form-note" id="formNote">You'll get a text confirmation within a few minutes. No payment needed now.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><a href="#top" class="logo" style="color:#e8eeff"><span class="logo-mark"><svg viewBox="0 0 14 14" fill="#fff"><path d="M5 0h4v5h5v4H9v5H5V9H0V5h5z"/></svg></span>Aldena</a><p class="mt-4" style="max-width:32ch">Multi-specialty clinic. Same-day appointments, seven days a week.</p></div>
+      <div><h4>Care</h4><a href="#specialties">Specialties</a><a href="#doctors">Doctors</a><a href="#visit">Your visit</a></div>
+      <div><h4>Patients</h4><a href="#app">Patient app</a><a href="#faq">FAQ</a><a href="#book">Book</a></div>
+      <div><h4>Contact</h4><a href="tel:+15125550148" class="num">(512) 555-0148</a><span>hello@aldena.health</span></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">aldena<span>+</span></div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Aldena Health</span><span>Demo brand. Names, reviews, times and prices are placeholders.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

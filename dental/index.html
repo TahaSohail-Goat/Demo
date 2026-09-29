@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ivora Dental Studio</title>
+<meta name="description" content="Implants, veneers and clear aligners planned in 3D. Calm rooms, transparent prices, evening and weekend appointments.">
+<meta name="theme-color" content="#eef1ef">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-porcelain: var(--porcelain);
+    --color-graphite: var(--graphite);
+    --color-titanium: var(--titanium);
+    --color-gumline: var(--gumline);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-graphite focus:text-porcelain focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Ivora Dental Studio, home">Ivora <small>Dental Studio</small></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#treatments">Treatments</a>
+      <a href="#whitening">Whitening</a>
+      <a href="#team">Dentists</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#book" class="btn btn-primary btn-nav" data-magnetic><span class="dot"></span>Book a visit</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#treatments">Treatments</a>
+  <a href="#whitening">Whitening</a>
+  <a href="#team">Dentists</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#book">Book a visit</a>
+  <p class="mt-auto mono text-sm text-titanium">+1 (415) 555 0136 · Open until 8 pm</p>
+</div>
+
+<main id="main">
+<!-- ================= 3D STORY ================= -->
+<section class="story" id="top" aria-label="Inside a dental implant">
+  <div class="story-sticky">
+    <div class="story-bg"></div>
+    <div class="story-ghost" aria-hidden="true">36</div>
+    <canvas class="story-canvas" id="toothCanvas" aria-hidden="true"></canvas>
+
+    <svg class="webgl-fallback" viewBox="0 0 150 170" aria-hidden="true">
+      <defs><linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9ddd9"/></linearGradient></defs>
+      <path fill="url(#fbg)" stroke="#121819" stroke-opacity=".15" d="M60 20C45 8 30 14 26 34C22 54 30 70 36 84C40 100 38 130 46 150C50 160 60 158 62 146C65 128 66 112 75 106C84 112 85 128 88 146C90 158 100 160 104 150C112 130 110 100 114 84C120 70 128 54 124 34C120 14 105 8 90 20C84 25 66 25 60 20Z"/>
+    </svg>
+
+    <!-- labels projected from 3D anchors -->
+    <div class="anchor-labels" aria-hidden="true">
+      <div class="anchor-label" data-anchor="fdi"><div class="tag"><strong>FDI 36</strong><span>Mandibular first molar</span></div></div>
+      <div class="anchor-label" data-anchor="crown"><div class="tag"><strong>Zirconia crown</strong><span>~1,200 MPa flexural strength</span></div></div>
+      <div class="anchor-label" data-anchor="abutment"><div class="tag"><strong>Abutment</strong><span>Anodised titanium connector</span></div></div>
+      <div class="anchor-label" data-anchor="fixture"><div class="tag"><strong>Implant fixture</strong><span>Grade 5 titanium · 4.1 × 10 mm</span></div></div>
+    </div>
+
+    <!-- Chapter 0: hero -->
+    <div class="chapter" data-ch="0">
+      <span class="eyebrow">Ivora Dental Studio · Evening &amp; weekend care</span>
+      <h1 data-split>Dentistry, engineered to the <span class="italic-soft">micron.</span></h1>
+      <p data-hero-fade>Implants, veneers and aligners planned in 3D before we touch a single tooth. Calm rooms, prices on the wall, results you can see.</p>
+      <div class="ctas" data-hero-fade>
+        <a href="#book" class="btn btn-primary" data-magnetic><span class="dot"></span>Book a consultation</a>
+        <a href="#story-1" class="btn btn-ghost" data-scroll-story>Look inside an implant ↓</a>
+      </div>
+    </div>
+
+    <div class="chapter" data-ch="1" id="story-1">
+      <span class="eyebrow">01 — Scan</span>
+      <h2>Every tooth has a number. We know all&nbsp;32.</h2>
+      <p>This is 36, your lower-left first molar. A four-minute intraoral scan maps every surface to within 20 microns, so your plan is exact, not approximate.</p>
+    </div>
+
+    <div class="chapter" data-ch="2">
+      <span class="eyebrow">02 — Replace</span>
+      <h2>When a root fails, titanium takes its place.</h2>
+      <p>A Grade 5 titanium implant bonds with your jawbone over three to six months. Nothing else comes as close to growing a tooth back.</p>
+    </div>
+
+    <div class="chapter" data-ch="3">
+      <span class="eyebrow">03 — Rebuild</span>
+      <h2>Three parts. One tooth. Built for decades.</h2>
+      <p>Fixture, abutment and a milled zirconia crown, shade-matched to the teeth beside it. Published long-term survival rates sit above 95%.</p>
+    </div>
+
+    <div class="chapter" data-ch="4">
+      <span class="eyebrow">04 — Smile</span>
+      <h2>Guided by the scan. Finished by <span class="italic-soft">hand.</span></h2>
+      <p>Free implant consultation with a 3D scan and a written quote. No pressure, no surprises on the invoice.</p>
+      <div class="ctas"><a href="#book" class="btn btn-primary" data-magnetic><span class="dot"></span>Book your free scan</a></div>
+    </div>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-item is-active" data-rail="0">Intro<b></b></div>
+      <div class="rail-item" data-rail="1">Scan<b></b></div>
+      <div class="rail-item" data-rail="2">Replace<b></b></div>
+      <div class="rail-item" data-rail="3">Rebuild<b></b></div>
+      <div class="rail-item" data-rail="4">Smile<b></b></div>
+    </div>
+
+    <div class="hero-meta">
+      <span class="scroll-cue"><i></i>Scroll to explore</span>
+      <span class="mono text-xs text-titanium hidden md:inline">4.9 ★ from 1,180 patient reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-label="Why patients choose Ivora">
+  <div class="marquee-track">
+    <span>Digital 3D scanning</span><span>Same-day crowns</span><span>Sedation available</span><span>Open until 8 pm</span><span>0% finance over 12 months</span><span>Emergency slots every day</span>
+    <span aria-hidden="true">Digital 3D scanning</span><span aria-hidden="true">Same-day crowns</span><span aria-hidden="true">Sedation available</span><span aria-hidden="true">Open until 8 pm</span><span aria-hidden="true">0% finance over 12 months</span><span aria-hidden="true">Emergency slots every day</span>
+  </div>
+</div>
+
+<!-- ================= STATS ================= -->
+<section class="section" aria-labelledby="stats-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">The practice</span>
+        <h2 id="stats-h" class="mt-5" data-reveal>A studio built for people who <span class="italic-soft">dread</span> the dentist.</h2>
+      </div>
+      <p data-reveal>Noise-cancelling headphones, a ceiling you can actually look at, and a dentist who explains each step before it happens. We plan slowly so treatment is quick.</p>
+    </div>
+    <div class="stats">
+      <div class="stat" data-reveal><div class="figure num"><span data-count="12400" data-format="comma">0</span><sup>+</sup></div><p>Patients treated since the studio opened</p></div>
+      <div class="stat" data-reveal><div class="figure num"><span data-count="4.9" data-decimals="1">0</span></div><p>Average rating across 1,180 verified reviews</p></div>
+      <div class="stat" data-reveal><div class="figure num"><span data-count="18">0</span><sup>yrs</sup></div><p>Clinical experience of our lead implantologist</p></div>
+      <div class="stat" data-reveal><div class="figure num">&lt;<span data-count="10">0</span><sup>min</sup></div><p>Average time in the waiting room</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TREATMENTS (horizontal) ================= -->
+<section class="section treatments" id="treatments" aria-labelledby="treat-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Treatments</span>
+        <h2 id="treat-h" class="mt-5">Everything your smile needs, under one roof.</h2>
+      </div>
+      <p>From a six-monthly clean to a full-arch rebuild. Every plan starts with the same free 3D scan and a written quote.</p>
+    </div>
+  </div>
+  <div class="h-viewport">
+    <div class="h-track">
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M36 28c6-10 18-10 24-4 6-6 18-6 24 4 5 9 1 20-4 24H40c-5-4-9-15-4-24z"/><path d="M46 56h28l-3 8H49z" stroke="#d64f67"/><path d="M52 64v38l8 8 8-8V64"/><path d="M52 72l16-4M52 80l16-4M52 88l16-4M52 96l16-4"/></svg></div>
+        <h3>Dental implants</h3>
+        <p>A permanent replacement root with a crown shade-matched to your own teeth. Guided surgery, usually one short visit.</p>
+        <dl><dt>Visits</dt><dd>2–3</dd><dt>Healing</dt><dd>3–6 months</dd><dt>From</dt><dd class="price">$2,400</dd></dl>
+      </article>
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 24h40c6 0 10 6 9 14l-6 52c-1 8-8 12-15 12h-16c-7 0-14-4-15-12l-6-52c-1-8 3-14 9-14z"/><path d="M48 30h24c4 0 6 4 5 9l-4 40" stroke="#d64f67"/></svg></div>
+        <h3>Porcelain veneers</h3>
+        <p>Wafer-thin shells, 0.3 to 0.5 mm, designed on screen with you before a single one is made.</p>
+        <dl><dt>Visits</dt><dd>2</dd><dt>Lifespan</dt><dd>10–15 yrs</dd><dt>From</dt><dd class="price">$850 / tooth</dd></dl>
+      </article>
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 70c0-22 18-38 40-38s40 16 40 38"/><path d="M30 70c0-16 13-28 30-28s30 12 30 28" stroke="#d64f67"/><path d="M34 52v10M44 44v10M56 40v10M68 40v10M78 44v10M88 52v10"/></svg></div>
+        <h3>Clear aligners</h3>
+        <p>Near-invisible trays that move teeth a fraction of a millimetre at a time. We show you the finished result before you start.</p>
+        <dl><dt>Wear</dt><dd>22 h / day</dd><dt>Typical</dt><dd>6–18 months</dd><dt>From</dt><dd class="price">$3,200</dd></dl>
+      </article>
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M42 30c6-8 14-8 18-3 4-5 12-5 18 3 5 8 2 20-2 28-3 8-2 30-8 34-4 3-6-4-8-14-2 10-4 17-8 14-6-4-5-26-8-34-4-8-7-20-2-28z"/><path d="M26 30l-8-4M22 48h-9M26 66l-8 4M94 30l8-4M98 48h9M94 66l8 4" stroke="#d64f67"/></svg></div>
+        <h3>Whitening</h3>
+        <p>In-chair or take-home, supervised by a dentist and measured on the VITA shade scale so you see the real change.</p>
+        <dl><dt>In-chair</dt><dd>75 min</dd><dt>Result</dt><dd>Several shades</dd><dt>From</dt><dd class="price">$350</dd></dl>
+      </article>
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 26c6-8 14-8 20-3 6-5 14-5 20 3 6 9 1 20-2 28-3 9-2 34-9 38-4 2-6-6-9-16-3 10-5 18-9 16-7-4-6-29-9-38-3-8-8-19-2-28z"/><path d="M52 50v28M68 50v28" stroke="#d64f67"/></svg></div>
+        <h3>Root canal therapy</h3>
+        <p>Microscope-guided and fully numbed. Most patients say it felt like a long filling, and the tooth stays yours.</p>
+        <dl><dt>Visits</dt><dd>1–2</dd><dt>Microscope</dt><dd>Always</dd><dt>From</dt><dd class="price">$690</dd></dl>
+      </article>
+      <article class="t-card" data-tilt>
+        <div class="icon"><svg viewBox="0 0 120 120" fill="none" stroke="#eef1ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="58" r="30"/><path d="M48 66c6 7 18 7 24 0" stroke="#d64f67"/><circle cx="49" cy="52" r="2.5"/><circle cx="71" cy="52" r="2.5"/><path d="M36 30l-6-8M84 30l6-8"/></svg></div>
+        <h3>Family &amp; kids</h3>
+        <p>First visits from age one. Short appointments, a ceiling projector and a sticker drawer that has never run out.</p>
+        <dl><dt>First visit</dt><dd>From age 1</dd><dt>Duration</dt><dd>30 min</dd><dt>From</dt><dd class="price">$60</dd></dl>
+      </article>
+      <div class="t-end">
+        <h3>Not sure what you need?</h3>
+        <p class="text-[#b7c1c2]">Book a free scan. We'll show you the images and talk through the options, no obligation.</p>
+        <a href="#book" class="btn btn-primary self-start" data-magnetic>Book a free scan →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHITENING / SHADE GUIDE ================= -->
+<section class="section" id="whitening" aria-labelledby="shade-h">
+  <div class="wrap shade">
+    <div class="shade-visual" data-reveal>
+      <svg viewBox="0 0 150 170" aria-hidden="true">
+        <defs>
+          <linearGradient id="enamelShine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path id="shadeTooth" fill="#dfc7a0" d="M60 20C45 8 30 14 26 34C22 54 30 70 36 84C40 100 38 130 46 150C50 160 60 158 62 146C65 128 66 112 75 106C84 112 85 128 88 146C90 158 100 160 104 150C112 130 110 100 114 84C120 70 128 54 124 34C120 14 105 8 90 20C84 25 66 25 60 20Z" style="transition: fill .5s"/>
+        <path fill="url(#enamelShine)" d="M60 20C45 8 30 14 26 34C22 54 30 70 36 84C40 100 38 130 46 150C50 160 60 158 62 146C65 128 66 112 75 106C84 112 85 128 88 146C90 158 100 160 104 150C112 130 110 100 114 84C120 70 128 54 124 34C120 14 105 8 90 20C84 25 66 25 60 20Z"/>
+      </svg>
+      <div class="readout"><span>Shade now <b id="shadeNowCode">A3</b></span><span>Projected <b id="shadeAfterCode">A1</b></span></div>
+    </div>
+    <div>
+      <span class="eyebrow">Whitening, measured</span>
+      <h2 id="shade-h" class="mt-5" style="font-size: var(--step-3)" data-reveal>We don't say "whiter". We tell you the shade.</h2>
+      <p class="mt-5 text-[var(--graphite-2)]" style="max-width: 48ch" data-reveal>Dentists grade tooth colour on the 16-tab VITA classical scale, ordered here from lightest to darkest. Drag to the shade closest to yours and see a typical in-chair result.</p>
+      <div class="shade-scale" id="shadeScale" aria-hidden="true"></div>
+      <div class="shade-codes" id="shadeCodes" aria-hidden="true"></div>
+      <label for="shadeRange" class="sr-only">Your current tooth shade</label>
+      <input type="range" id="shadeRange" class="range" min="0" max="15" value="8" step="1">
+      <p class="shade-result" id="shadeResult" aria-live="polite">From <b>A3</b>, in-chair whitening typically lifts you to around <b>A1</b>.</p>
+      <div class="legend"><span><i style="box-shadow:0 0 0 2px var(--graphite)"></i>Today</span><span><i style="box-shadow:0 0 0 2px var(--gumline)"></i>Typical result</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section flush-top" aria-labelledby="process-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Your first visit</span>
+        <h2 id="process-h" class="mt-5" data-reveal>Four steps. No surprises.</h2>
+      </div>
+      <p data-reveal>You'll know the plan, the price and the timeline before any treatment begins.</p>
+    </div>
+    <div class="process" id="process">
+      <div class="process-line" aria-hidden="true"><i id="processLine"></i></div>
+      <div class="step" data-reveal><div class="n">01</div><h3>Scan</h3><p>A 3D intraoral scan and low-dose X-ray. No impression putty, no gagging.</p><div class="meta">≈ 15 min</div></div>
+      <div class="step" data-reveal><div class="n">02</div><h3>Plan</h3><p>We walk you through your scan on screen and preview the finished result together.</p><div class="meta">≈ 20 min</div></div>
+      <div class="step" data-reveal><div class="n">03</div><h3>Treat</h3><p>Gentle, fully numbed treatment. Sedation and headphones if you'd like them.</p><div class="meta">Scheduled around you</div></div>
+      <div class="step" data-reveal><div class="n">04</div><h3>Aftercare</h3><p>A follow-up call within 48 hours and a direct number for any worries.</p><div class="meta">Included</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="section flush-top" id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Dentists</span>
+        <h2 id="team-h" class="mt-5" data-reveal>The hands behind the plan.</h2>
+      </div>
+      <p data-reveal>Specialists in implants, cosmetic and family dentistry who treat nervous patients every day.</p>
+    </div>
+    <div class="team">
+      <article class="doc" data-reveal>
+        <div class="portrait"><span class="badge">Clinical director</span><span class="initials">SM</span><span class="ph">Portrait</span></div>
+        <h3>Dr. Sana Malik</h3><p>Implants &amp; full-arch restoration</p><div class="creds">BDS · MSc Implant Dentistry</div>
+      </article>
+      <article class="doc" data-reveal>
+        <div class="portrait" style="background: linear-gradient(160deg, #e6e2e3, #d4cdcf)"><span class="badge">Cosmetic lead</span><span class="initials">OR</span><span class="ph">Portrait</span></div>
+        <h3>Dr. Omar Rehman</h3><p>Veneers, aligners &amp; smile design</p><div class="creds">BDS · MClinDent Prosthodontics</div>
+      </article>
+      <article class="doc" data-reveal>
+        <div class="portrait" style="background: linear-gradient(160deg, #e1e5e8, #cdd4d9)"><span class="badge">Family dentist</span><span class="initials">LH</span><span class="ph">Portrait</span></div>
+        <h3>Dr. Leila Haddad</h3><p>Children, prevention &amp; anxious patients</p><div class="creds">DDS · Paediatric certificate</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <span class="eyebrow" id="rev-h">Patient stories</span>
+    <div class="quote-wrap mt-8">
+      <div>
+        <blockquote class="quote" id="quoteText">I hadn't been to a dentist in nine years. They showed me my scan, told me the exact cost, and the implant was done before I'd finished my playlist.</blockquote>
+        <div class="quote-by"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><span id="quoteBy">Hamza K. · Single implant</span></div>
+      </div>
+      <div>
+        <div class="quote-count num" id="quoteCount">01 / 03</div>
+        <div class="quote-nav">
+          <button class="round" id="qPrev" aria-label="Previous review"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="round" id="qNext" aria-label="Next review"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section" id="pricing" aria-labelledby="price-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Transparent pricing</span>
+        <h2 id="price-h" class="mt-5" data-reveal>Prices on the wall, not buried in the fine print.</h2>
+      </div>
+      <p data-reveal>Every quote is written and fixed before treatment. Spread any plan over 12 months at 0% APR.</p>
+    </div>
+    <div class="price-table">
+      <div class="price-row" data-reveal><h3>New patient exam</h3><p>Full check, 3D scan, X-rays and a written treatment plan.</p><div class="amt"><small>Fixed</small>$95</div></div>
+      <div class="price-row" data-reveal><h3>Hygiene clean</h3><p>Scale, polish and airflow stain removal with our hygienist.</p><div class="amt"><small>Fixed</small>$110</div></div>
+      <div class="price-row" data-reveal><h3>Whitening</h3><p>In-chair session with take-home trays for top-ups.</p><div class="amt"><small>From</small>$350</div></div>
+      <div class="price-row" data-reveal><h3>Porcelain veneer</h3><p>Per tooth, including digital smile design and trial smile.</p><div class="amt"><small>From</small>$850</div></div>
+      <div class="price-row" data-reveal><h3>Single implant</h3><p>Fixture, abutment and zirconia crown. Scan and guide included.</p><div class="amt"><small>From</small>$2,400</div></div>
+      <div class="price-row" data-reveal><h3>Emergency visit</h3><p>Same-day slot, pain relief and a clear next step.</p><div class="amt"><small>Fixed</small>$120</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section flush-top" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq">
+    <div>
+      <span class="eyebrow">Questions</span>
+      <h2 id="faq-h" class="mt-5" style="font-size: var(--step-3)" data-reveal>Things people ask before their first visit.</h2>
+    </div>
+    <div>
+      <details><summary>Does getting an implant hurt?<span class="pm" aria-hidden="true"></span></summary><div class="answer">The area is fully numbed, so you'll feel pressure rather than pain. Most patients take over-the-counter pain relief for a day or two afterwards. Sedation is available if you're anxious.</div></details>
+      <details><summary>How long does the whole implant process take?<span class="pm" aria-hidden="true"></span></summary><div class="answer">Placement takes about an hour. The implant then bonds with the bone for three to six months, and the final crown is fitted in a short visit. You'll wear a temporary tooth in between.</div></details>
+      <details><summary>Can I pay in instalments?<span class="pm" aria-hidden="true"></span></summary><div class="answer">Yes. Any treatment over $500 can be spread over 12 months at 0% APR, subject to a quick eligibility check at reception.</div></details>
+      <details><summary>Do you see nervous patients?<span class="pm" aria-hidden="true"></span></summary><div class="answer">Every day. Tell us when you book and we'll allow extra time, explain each step before it happens and agree a stop signal with you.</div></details>
+      <details><summary>What if I have a dental emergency?<span class="pm" aria-hidden="true"></span></summary><div class="answer">We hold emergency slots every day. Call before 11 am and we'll aim to see you the same day.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="section book" id="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">Book a visit</span>
+      <h2 id="book-h" class="mt-6">Let's look<br>at your <span class="italic-soft" style="color:#f08a9c">smile.</span></h2>
+      <div class="info">
+        <div><h4>Studio</h4>24 Harbour Lane, Suite 3<br>Ground floor, step-free access</div>
+        <div><h4>Call</h4><a href="tel:+14155550136" class="num">+1 (415) 555 0136</a><br>Emergencies before 11 am</div>
+        <div><h4>Hours</h4><span class="num">Mon–Fri 8:00–20:00<br>Sat 9:00–16:00</span></div>
+        <div><h4>Email</h4>hello@ivora.dental</div>
+      </div>
+    </div>
+    <form class="form" id="bookForm" novalidate>
+      <div class="field full">
+        <label id="concernLabel">What can we help with?</label>
+        <div class="chips" role="group" aria-labelledby="concernLabel">
+          <button type="button" class="chip" aria-pressed="true">Check-up</button>
+          <button type="button" class="chip" aria-pressed="false">Implants</button>
+          <button type="button" class="chip" aria-pressed="false">Veneers</button>
+          <button type="button" class="chip" aria-pressed="false">Aligners</button>
+          <button type="button" class="chip" aria-pressed="false">Whitening</button>
+          <button type="button" class="chip" aria-pressed="false">Emergency</button>
+        </div>
+      </div>
+      <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="field"><label for="f-date">Preferred day</label><input id="f-date" name="date" type="date"></div>
+      <div class="field"><label for="f-time">Time of day</label><select id="f-time" name="time"><option>Morning</option><option>Afternoon</option><option>Evening (after 5 pm)</option><option>Saturday</option></select></div>
+      <div class="field full"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" placeholder="e.g. I'm nervous about needles"></textarea></div>
+      <button class="btn btn-primary" type="submit">Request appointment →</button>
+      <p class="form-note" id="formNote">We'll call you within one working hour to confirm a time.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <p>Ivora Dental Studio · 24 Harbour Lane, Suite 3</p>
+      <nav aria-label="Footer"><a href="#treatments">Treatments</a><a href="#pricing">Pricing</a><a href="#team">Dentists</a><a href="#book">Book</a></nav>
+    </div>
+    <div class="footer-word" aria-hidden="true">Ivora</div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Ivora Dental Studio</span><span>Demo brand. Names, reviews and prices are placeholders.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

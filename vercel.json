@@ -8,7 +8,15 @@
     { "source": "/clothing-boutique", "destination": "https://boutique.webdemos.app/", "permanent": false },
     { "source": "/clothing-boutique/:path*", "destination": "https://boutique.webdemos.app/:path*", "permanent": false },
     { "source": "/real-estate", "destination": "https://realestate.webdemos.app/", "permanent": false },
-    { "source": "/real-estate/:path*", "destination": "https://realestate.webdemos.app/:path*", "permanent": false }
+    { "source": "/real-estate/:path*", "destination": "https://realestate.webdemos.app/:path*", "permanent": false },
+    { "source": "/restaurant", "destination": "https://restaurant.webdemos.app/", "permanent": false },
+    { "source": "/restaurant/:path*", "destination": "https://restaurant.webdemos.app/:path*", "permanent": false },
+    { "source": "/cafe", "destination": "https://cafe.webdemos.app/", "permanent": false },
+    { "source": "/cafe/:path*", "destination": "https://cafe.webdemos.app/:path*", "permanent": false },
+    { "source": "/dental", "destination": "https://dental.webdemos.app/", "permanent": false },
+    { "source": "/dental/:path*", "destination": "https://dental.webdemos.app/:path*", "permanent": false },
+    { "source": "/clinic", "destination": "https://clinic.webdemos.app/", "permanent": false },
+    { "source": "/clinic/:path*", "destination": "https://clinic.webdemos.app/:path*", "permanent": false }
   ],
   "headers": [
     {

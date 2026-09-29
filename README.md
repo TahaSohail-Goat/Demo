@@ -8,6 +8,10 @@ Independent niche demos, with everything specific to a niche kept in its own fol
 | Pakistani clothing / boutique | SŪRA Atelier | [clothing-boutique/index.html](clothing-boutique/index.html) | https://boutique.webdemos.app/ |
 | U.S. HVAC contractor | Summit Comfort | [hvac/index.html](hvac/index.html) | https://hvac.webdemos.app/ |
 | Luxury real estate agency | Calder Hale | [real-estate/index.html](real-estate/index.html) | https://realestate.webdemos.app/ |
+| Fine-dining restaurant | Verdell Tasting Kitchen | [restaurant/index.html](restaurant/index.html) | https://restaurant.webdemos.app/ |
+| Specialty café / roastery | Morrow Coffee Roasters | [cafe/index.html](cafe/index.html) | https://cafe.webdemos.app/ |
+| Dental practice | Ivora Dental Studio | [dental/index.html](dental/index.html) | https://dental.webdemos.app/ |
+| Multi-specialty clinic | Aldena Health Clinic | [clinic/index.html](clinic/index.html) | https://clinic.webdemos.app/ |
 
 Open the root `index.html` for the demo directory, or open any niche HTML entry point directly. No install or build step is required to preview or deploy. The real estate demo commits its compiled Tailwind CSS and bundled JavaScript; its sources and build command are in [real-estate/README.md](real-estate/README.md). Its 3D section needs a local server, and shows a photograph instead when opened from disk.
 
@@ -25,6 +29,7 @@ Visit:
 - `http://localhost:4173/clothing-boutique/` — boutique demo
 - `http://localhost:4173/hvac/` — HVAC contractor demo
 - `http://localhost:4173/real-estate/` — real estate agency demo
+- `http://localhost:4173/restaurant/`, `/cafe/`, `/dental/`, `/clinic/` — hospitality and medical demos
 
 ## Vercel
 
@@ -36,8 +41,12 @@ This repository is deployed as one Vercel project per folder, all connected to t
 | Boutique | `clothing-boutique` | `boutique.webdemos.app` |
 | HVAC | `hvac` | `hvac.webdemos.app` |
 | Real estate | `real-estate` | `realestate.webdemos.app` |
+| Restaurant | `restaurant` | `restaurant.webdemos.app` |
+| Café | `cafe` | `cafe.webdemos.app` |
+| Dental | `dental` | `dental.webdemos.app` |
+| Clinic | `clinic` | `clinic.webdemos.app` |
 
-Each folder has its own `vercel.json`, which Vercel reads from the project's Root Directory. The demo folders use clean URLs without trailing slashes so relative stylesheet, script, and image paths resolve from every page. The root `vercel.json` redirects the `/hvac/…`, `/clothing-boutique/…` and `/real-estate/…` folder paths to the matching subdomain. See [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json).
+Each folder has its own `vercel.json`, which Vercel reads from the project's Root Directory. The demo folders use clean URLs without trailing slashes so relative stylesheet, script, and image paths resolve from every page. The root `vercel.json` redirects each niche's folder path (for example `/hvac/…`) to the matching subdomain. See [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json).
 
 Each niche is self-contained and works as a direct prospect URL.
 
