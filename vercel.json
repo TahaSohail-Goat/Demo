@@ -6,7 +6,9 @@
     { "source": "/hvac", "destination": "https://hvac.webdemos.app/", "permanent": false },
     { "source": "/hvac/:path*", "destination": "https://hvac.webdemos.app/:path*", "permanent": false },
     { "source": "/clothing-boutique", "destination": "https://boutique.webdemos.app/", "permanent": false },
-    { "source": "/clothing-boutique/:path*", "destination": "https://boutique.webdemos.app/:path*", "permanent": false }
+    { "source": "/clothing-boutique/:path*", "destination": "https://boutique.webdemos.app/:path*", "permanent": false },
+    { "source": "/real-estate", "destination": "https://realestate.webdemos.app/", "permanent": false },
+    { "source": "/real-estate/:path*", "destination": "https://realestate.webdemos.app/:path*", "permanent": false }
   ],
   "headers": [
     {

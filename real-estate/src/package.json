@@ -1,0 +1,20 @@
+{
+  "name": "calder-hale-assets",
+  "private": true,
+  "description": "Authoring-time build for the real-estate demo. Outputs are committed; the deployed site needs no build step.",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "tailwindcss -i input.css -o ../css/styles.css --minify",
+    "build:js": "esbuild main.js --bundle --minify --format=iife --target=es2020 --outfile=../js/main.js && esbuild residence-3d.js --bundle --minify --format=esm --target=es2020 --outfile=../js/residence-3d.js",
+    "watch:css": "tailwindcss -i input.css -o ../css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "esbuild": "0.28.2",
+    "lenis": "1.3.26",
+    "motion": "13.4.6",
+    "tailwindcss": "4.3.3",
+    "three": "0.186.1"
+  }
+}

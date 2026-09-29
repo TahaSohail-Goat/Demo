@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calder Hale | Luxury Real Estate in Los Angeles</title>
+  <meta name="description" content="Calder Hale is a boutique Los Angeles brokerage for considered homes in Malibu, Pacific Palisades, Santa Monica, Brentwood, Beverly Hills and the Hollywood Hills.">
+  <meta name="theme-color" content="#141311">
+  <!-- CUSTOMIZE: canonical and Open Graph URLs for the client's domain -->
+  <link rel="canonical" href="https://realestate.webdemos.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calder Hale | Luxury Real Estate in Los Angeles">
+  <meta property="og:description" content="Fewer listings. Complete attention. Homes for sale and lease across LA’s coast and canyons.">
+  <meta property="og:url" content="https://realestate.webdemos.app/">
+  <meta property="og:image" content="https://realestate.webdemos.app/assets/images/villa-serein.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141311'/%3E%3Ctext x='32' y='44' text-anchor='middle' fill='%23d1a676' font-family='Georgia,serif' font-size='34'%3ECH%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Calder Hale",
+    "description": "Demo brokerage template. CUSTOMIZE all values before production.",
+    "url": "https://realestate.webdemos.app/",
+    "telephone": "+1-310-555-0148",
+    "areaServed": ["Malibu", "Pacific Palisades", "Santa Monica", "Brentwood", "Beverly Hills", "Hollywood Hills"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Santa Monica", "addressRegion": "CA", "addressCountry": "US" }
+  }
+  </script>
+</head>
+<body data-page="home">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-paper">Skip to content</a>
+
+  <header class="site-header fixed inset-x-0 top-0 z-50" data-header>
+    <div class="shell flex h-[76px] items-center justify-between gap-6">
+      <a href="index.html" class="flex items-baseline gap-2.5" aria-label="Calder Hale, home">
+        <span class="display text-[30px] leading-none">Calder Hale</span>
+        <span class="eyebrow hidden text-[9px] opacity-70 sm:inline">Estates</span>
+      </a>
+      <nav aria-label="Primary" class="hidden lg:block">
+        <ul class="flex items-center gap-9 text-[12px] font-bold uppercase tracking-[0.16em]">
+          <li><a class="nav-link" href="listings.html?status=sale">Buy</a></li>
+          <li><a class="nav-link" href="listings.html?status=lease">Lease</a></li>
+          <li><a class="nav-link" href="#sell">Sell</a></li>
+          <li><a class="nav-link" href="#residences">New development</a></li>
+          <li><a class="nav-link" href="#neighborhoods">Neighborhoods</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="tel:+13105550148" class="hidden text-[13px] font-semibold xl:inline" data-cta="header-call">(310) 555-0148</a>
+        <a href="#contact" class="btn header-cta hidden min-h-11 px-5 sm:inline-flex" data-cta="header-consultation">Private consultation</a>
+        <button type="button" class="grid size-11 place-items-center rounded-full border border-current/30 lg:hidden" aria-expanded="false" aria-controls="menu-panel" data-menu-toggle>
+          <span class="sr-only">Open menu</span>
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true"><path d="M0 1h20M0 11h20" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="menu-panel" class="menu-panel on-dark fixed inset-0 z-[60] flex flex-col bg-ink text-paper" role="dialog" aria-modal="true" aria-label="Site menu" data-menu-panel>
+    <div class="shell flex h-[76px] shrink-0 items-center justify-between">
+      <span class="display text-[30px] leading-none">Calder Hale</span>
+      <button type="button" class="grid size-11 place-items-center rounded-full border border-white/30" data-menu-close>
+        <span class="sr-only">Close menu</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m1 1 14 14M15 1 1 15" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <nav class="shell mt-6 flex-1 overflow-y-auto" aria-label="Mobile">
+      <ul class="space-y-1">
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none" href="listings.html?status=sale">Buy</a></li>
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none" href="listings.html?status=lease">Lease</a></li>
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none" href="#sell">Sell</a></li>
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none" href="#residences">New development</a></li>
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none" href="#neighborhoods">Neighborhoods</a></li>
+        <li data-menu-link><a class="display block py-2 text-[clamp(2.6rem,11vw,4.5rem)] leading-none italic text-bronze-light" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="shell flex shrink-0 flex-wrap gap-x-8 gap-y-2 border-t border-white/15 py-6 text-sm text-white/70">
+      <a href="tel:+13105550148">(310) 555-0148</a>
+      <a href="mailto:hello@calderhale.example">hello@calderhale.example</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Scroll-scrubbed arrival film: canvas frame sequence (see src/sequence.js) -->
+    <section class="hero-seq on-dark relative bg-ink text-white" data-sequence data-frames="148" aria-label="Introduction">
+      <div class="sticky top-0 h-svh overflow-hidden">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" srcset="assets/sequence/mobile/f001.webp">
+          <img src="assets/sequence/desktop/f001.webp" alt="The landscaped rear patio of a modern Santa Monica home, with a covered loggia and walls of glass" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high" data-seq-poster>
+        </picture>
+        <canvas class="absolute inset-0 h-full w-full opacity-0" aria-hidden="true" data-seq-canvas></canvas>
+        <div class="pointer-events-none absolute inset-0 bg-linear-to-b from-ink/60 via-ink/5 to-ink/80"></div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-full bg-linear-to-r from-ink/50 to-transparent md:w-2/3"></div>
+
+        <div class="relative z-10 h-full">
+          <div class="hero-chapter shell absolute inset-x-0 bottom-0 pb-[15vh] md:pb-[11vh]" data-chapter="0">
+            <p class="eyebrow text-white/80" data-hero-in>Los Angeles · Coast &amp; Canyons</p>
+            <h1 class="display mt-5 max-w-[11ch] text-[clamp(3.6rem,10.5vw,10.5rem)]" data-hero-in>Homes that stay <em class="italic text-bronze-light">with you.</em></h1>
+            <div class="mt-8 flex flex-col gap-7 md:flex-row md:items-end md:justify-between" data-hero-in>
+              <p class="max-w-md text-[17px] leading-relaxed text-white/85">A boutique brokerage for the most considered homes in Malibu, Santa Monica, Beverly Hills and the Hills. Fewer listings. Complete attention.</p>
+              <div class="flex flex-wrap gap-3">
+                <a href="listings.html" class="btn btn-light" data-cta="hero-explore">Explore homes <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#sell" class="btn btn-ghost-light" data-cta="hero-valuation">Request a valuation</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-chapter shell absolute inset-x-0 top-1/2 -translate-y-1/2" data-chapter="1">
+            <p class="eyebrow text-white/75">Chapter 01</p>
+            <p class="display mt-4 text-[clamp(4.5rem,15vw,14rem)] leading-[0.85]">Arrive.</p>
+            <p class="mt-6 max-w-sm text-[17px] leading-relaxed text-white/85">Every Calder Hale listing is filmed, lit and written like this one, so buyers feel the home before they ever tour it.</p>
+          </div>
+
+          <div class="hero-chapter shell absolute inset-x-0 bottom-0 pb-[12vh]" data-chapter="2">
+            <p class="eyebrow text-white/75">Chapter 02 · Just listed</p>
+            <p class="display mt-4 text-[clamp(4.5rem,15vw,14rem)] leading-[0.85]">Step inside.</p>
+            <a href="property.html?id=linden-residence" class="group mt-8 inline-flex flex-wrap items-center gap-x-6 gap-y-2 rounded-full border border-white/35 bg-ink/30 py-3 pl-6 pr-3 backdrop-blur-md transition hover:border-white" data-cta="hero-linden">
+              <span class="text-[15px] font-semibold">The Linden Residence, Santa Monica</span>
+              <span class="text-sm text-white/75">4 Beds · 5 Baths · $4,875,000</span>
+              <span class="grid size-10 place-items-center rounded-full bg-white text-ink transition-transform duration-500 group-hover:translate-x-1" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="seq-progress absolute bottom-6 right-5 z-10 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white/80 sm:right-8 lg:right-12" aria-hidden="true">
+          <span data-seq-label>Scroll</span>
+          <span class="relative h-px w-20 bg-white/30 sm:w-28"><span class="absolute inset-0 origin-left scale-x-0 bg-white" data-seq-bar></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement + search -->
+    <section id="search" class="bg-paper pt-24 md:pt-36" aria-labelledby="search-title">
+      <div class="shell grid gap-8 lg:grid-cols-12">
+        <p class="eyebrow text-bronze lg:col-span-3 lg:pt-4">The Calder Hale way</p>
+        <p class="display text-[clamp(2.1rem,4.4vw,4.4rem)] leading-[1.06] lg:col-span-9" data-lit>We represent fewer homes, and we represent them completely: from the first private valuation to the final walkthrough, with cinematic film, honest advice and one advisor who always answers the phone.</p>
+      </div>
+
+      <div class="shell mt-16 md:mt-24" data-reveal>
+        <h2 id="search-title" class="sr-only">Search homes</h2>
+        <form action="listings.html" method="get" role="search" aria-label="Search homes" class="grid gap-4 rounded-[28px] border border-line bg-white p-4 shadow-[0_40px_90px_-50px_rgb(20_19_17/0.45)] md:grid-cols-2 md:p-5 lg:grid-cols-[1.35fr_1fr_1fr_1fr_auto] lg:items-end">
+          <div>
+            <label class="field-label" for="search-area">Neighborhood</label>
+            <select class="field" id="search-area" name="area">
+              <option value="">All neighborhoods</option>
+              <option>Malibu</option>
+              <option>Pacific Palisades</option>
+              <option>Santa Monica</option>
+              <option>Brentwood</option>
+              <option>Beverly Hills</option>
+              <option>Hollywood Hills</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="search-status">Looking to</label>
+            <select class="field" id="search-status" name="status">
+              <option value="sale">Buy</option>
+              <option value="lease">Lease</option>
+              <option value="">Buy or lease</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="search-beds">Bedrooms</label>
+            <select class="field" id="search-beds" name="beds">
+              <option value="">Any</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5+</option>
+              <option value="6">6+</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="search-max">Max price</label>
+            <select class="field" id="search-max" name="max">
+              <option value="">No maximum</option>
+              <option value="5000000">$5,000,000</option>
+              <option value="7500000">$7,500,000</option>
+              <option value="10000000">$10,000,000</option>
+              <option value="15000000">$15,000,000</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-dark min-h-[3.25rem] md:col-span-2 lg:col-span-1" data-cta="home-search">Search homes <span class="arrow" aria-hidden="true">→</span></button>
+        </form>
+      </div>
+
+      <div class="shell pb-24 pt-20 md:pb-36 md:pt-28">
+        <dl class="grid grid-cols-2 border-t border-line lg:grid-cols-4">
+          <div class="flex flex-col-reverse gap-2 border-b border-line py-8 pr-4 lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0" data-reveal>
+            <dt class="text-sm font-semibold text-stone">Median days to contract</dt>
+            <dd class="display text-[clamp(3.2rem,6vw,5.6rem)] leading-none"><span data-count="38">38</span></dd>
+          </div>
+          <div class="flex flex-col-reverse gap-2 border-b border-line py-8 pl-4 lg:border-b-0 lg:border-r lg:px-8" data-reveal data-delay="0.08">
+            <dt class="text-sm font-semibold text-stone">Average sale-to-list price</dt>
+            <dd class="display text-[clamp(3.2rem,6vw,5.6rem)] leading-none"><span data-count="99.1" data-decimals="1">99.1</span>%</dd>
+          </div>
+          <div class="flex flex-col-reverse gap-2 border-line py-8 pr-4 lg:border-r lg:px-8" data-reveal data-delay="0.16">
+            <dt class="text-sm font-semibold text-stone">Residential sales represented</dt>
+            <dd class="display text-[clamp(3.2rem,6vw,5.6rem)] leading-none">$<span data-count="1.4" data-decimals="1">1.4</span>B</dd>
+          </div>
+          <div class="flex flex-col-reverse gap-2 py-8 pl-4 lg:px-8 lg:pr-0" data-reveal data-delay="0.24">
+            <dt class="text-sm font-semibold text-stone">Neighborhoods, one team</dt>
+            <dd class="display text-[clamp(3.2rem,6vw,5.6rem)] leading-none"><span data-count="6">6</span></dd>
+          </div>
+        </dl>
+        <p class="mt-6 text-xs text-stone">Illustrative figures for this demonstration. <!-- CUSTOMIZE: replace with verified brokerage data and its source/date. --> Replace with verified brokerage data before launch.</p>
+      </div>
+    </section>
+
+    <!-- Featured listings: pinned horizontal rail on desktop, swipe on mobile -->
+    <section id="featured" class="bg-ivory" data-hscroll aria-labelledby="featured-title">
+      <div class="rail-viewport py-20 md:py-28">
+        <div class="shell flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="eyebrow text-bronze">Featured residences</p>
+            <h2 id="featured-title" class="display mt-4 text-[clamp(2.8rem,6vw,6rem)]">Currently <em class="italic">represented</em></h2>
+          </div>
+          <a href="listings.html" class="btn btn-ghost-dark self-start md:self-auto" data-cta="featured-all">View all homes <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="rail-track mt-12 flex gap-5 overflow-x-auto px-5 pb-6 sm:px-8 lg:gap-8 lg:px-12" data-rail tabindex="0" aria-label="Featured residences, scrollable">
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=linden-residence" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/linden-patio-sm.webp" srcset="assets/images/linden-patio-sm.webp 800w, assets/images/linden-patio.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="Covered loggia and lawn at The Linden Residence" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">Just listed</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">The Linden Residence</h3>
+                  <p class="mt-2 text-sm text-stone">Santa Monica · North of Montana</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$4,875,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">4 Beds · 5 Baths · 3,950 Sq Ft</p>
+            </a>
+          </article>
+
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=villa-serein" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/villa-serein-sm.webp" srcset="assets/images/villa-serein-sm.webp 800w, assets/images/villa-serein.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="White contemporary villa with palms beside a long swimming pool" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">For sale</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">Villa Serein</h3>
+                  <p class="mt-2 text-sm text-stone">Malibu · Point Dume</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$14,950,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">6 Beds · 8 Baths · 7,850 Sq Ft</p>
+            </a>
+          </article>
+
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=cedar-pavilion" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/cedar-pavilion-sm.webp" srcset="assets/images/cedar-pavilion-sm.webp 800w, assets/images/cedar-pavilion.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="Timber pergola shading a deck beside a swimming pool" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">For sale</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">The Cedar Pavilion</h3>
+                  <p class="mt-2 text-sm text-stone">Pacific Palisades · Riviera</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$8,450,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">5 Beds · 6 Baths · 5,900 Sq Ft</p>
+            </a>
+          </article>
+
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=courtyard-house" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/courtyard-house-sm.webp" srcset="assets/images/courtyard-house-sm.webp 800w, assets/images/courtyard-house.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="White gated home with timber screens and a paved motor court" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">For sale</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">The Courtyard House</h3>
+                  <p class="mt-2 text-sm text-stone">Beverly Hills · The Flats</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$11,200,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">5 Beds · 7 Baths · 6,400 Sq Ft</p>
+            </a>
+          </article>
+
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=sunset-terrace" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/sunset-terrace-sm.webp" srcset="assets/images/sunset-terrace-sm.webp 800w, assets/images/sunset-terrace.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="Modern home with teak screens and glass balconies in evening light" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">In escrow</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">Sunset Terrace House</h3>
+                  <p class="mt-2 text-sm text-stone">Hollywood Hills · Bird Streets</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$6,295,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">4 Beds · 5 Baths · 4,700 Sq Ft</p>
+            </a>
+          </article>
+
+          <article class="w-[80vw] shrink-0 [perspective:1400px] sm:w-[46vw] lg:w-[29vw]" data-tilt>
+            <a href="property.html?id=graphite-house" class="tilt-card group block" data-tilt-target>
+              <div class="tilt-media relative aspect-[4/5] overflow-hidden rounded-[22px] bg-sand">
+                <img src="assets/images/graphite-house-sm.webp" srcset="assets/images/graphite-house-sm.webp 800w, assets/images/graphite-house.webp 1600w" sizes="(min-width: 1024px) 29vw, 80vw" alt="Charcoal single-level home with floor-to-ceiling glass beside a manicured lawn" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
+                <span class="glare absolute inset-0" aria-hidden="true"></span>
+                <span class="chip absolute left-4 top-4">For sale</span>
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="display text-[2rem] leading-none">Graphite House</h3>
+                  <p class="mt-2 text-sm text-stone">Brentwood · Brentwood Park</p>
+                </div>
+                <p class="shrink-0 pt-1 text-[15px] font-bold">$5,750,000</p>
+              </div>
+              <p class="mt-3 text-[13px] font-semibold tracking-wide text-stone">4 Beds · 4.5 Baths · 4,100 Sq Ft</p>
+            </a>
+          </article>
+
+          <a href="listings.html" class="group flex w-[80vw] shrink-0 flex-col justify-between rounded-[22px] bg-ink p-8 text-paper sm:w-[46vw] lg:w-[22vw]" data-cta="rail-all">
+            <span class="eyebrow text-bronze-light">Seven residences</span>
+            <span>
+              <span class="display block text-[clamp(2.6rem,4vw,3.8rem)] leading-[0.95]">See every home we represent</span>
+              <span class="mt-8 grid size-14 place-items-center rounded-full bg-paper text-xl text-ink transition-transform duration-500 group-hover:translate-x-2" aria-hidden="true">→</span>
+            </span>
+          </a>
+          <span class="w-1 shrink-0" aria-hidden="true"></span>
+        </div>
+
+        <div class="shell mt-6 hidden items-center gap-5 lg:flex" aria-hidden="true">
+          <span class="relative h-px flex-1 bg-line"><span class="absolute inset-0 origin-left scale-x-0 bg-ink" data-rail-bar></span></span>
+          <span class="eyebrow text-stone">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D development explorer (Three.js, loaded on approach) -->
+    <section id="residences" class="on-dark relative bg-ink text-paper" data-residences aria-labelledby="residences-title">
+      <div class="res-stage relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_68%_45%,#3b3027_0%,#1b1916_45%,#141311_75%)]" aria-hidden="true"></div>
+        <canvas class="absolute inset-0 h-full w-full" data-res-canvas aria-hidden="true"></canvas>
+        <div class="res-fallback absolute inset-0" aria-hidden="true">
+          <img src="assets/images/sunset-terrace.webp" alt="" loading="lazy" class="h-full w-full object-cover opacity-40">
+        </div>
+        <div class="pointer-events-none absolute inset-0 hidden bg-linear-to-r from-ink/85 via-ink/10 to-transparent lg:block" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-[46%] bg-linear-to-b from-ink via-ink/75 to-transparent lg:hidden" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-linear-to-t from-ink via-ink/80 to-transparent lg:hidden" aria-hidden="true"></div>
+
+        <div class="shell pointer-events-none relative z-10 grid min-h-svh grid-rows-[auto_1fr_auto] gap-6 py-24 lg:py-28">
+          <div class="pointer-events-auto max-w-xl">
+            <p class="eyebrow text-bronze-light">New development · Santa Monica</p>
+            <h2 id="residences-title" class="display mt-5 text-[clamp(3.2rem,7vw,7rem)]">Linea <em class="italic">Residences</em></h2>
+            <p class="mt-5 max-w-md text-[17px] leading-relaxed text-white/75">Twenty-four residences across six levels, three blocks from the ocean. Scroll to explore the building floor by floor.</p>
+            <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <a href="#contact" class="btn btn-light" data-cta="register-interest">Register interest <span class="arrow" aria-hidden="true">→</span></a>
+              <p class="hidden max-w-[16rem] text-xs text-white/55 sm:block">Illustrative development. Pricing, plans and completion are demo values.</p>
+            </div>
+          </div>
+          <div></div>
+          <div class="pointer-events-auto">
+            <ol class="grid grid-cols-2 gap-x-6 gap-y-5 lg:w-[560px]" data-levels>
+              <li class="level-item" data-level="0">
+                <span class="level-bar mb-3 block h-px bg-bronze-light" aria-hidden="true"></span>
+                <p class="eyebrow text-white/60">Level 1</p>
+                <p class="display mt-1 text-[1.7rem] leading-none sm:text-3xl">Arrival &amp; wellness</p>
+                <p class="mt-2 hidden text-sm text-white/65 sm:block">Lobby lounge, spa, gym and a residents’ garden.</p>
+              </li>
+              <li class="level-item" data-level="1">
+                <span class="level-bar mb-3 block h-px bg-bronze-light" aria-hidden="true"></span>
+                <p class="eyebrow text-white/60">Levels 2–3</p>
+                <p class="display mt-1 text-[1.7rem] leading-none sm:text-3xl">Garden residences</p>
+                <p class="mt-2 hidden text-sm text-white/65 sm:block">Two and three bedrooms with planted terraces, from $2.4M.</p>
+              </li>
+              <li class="level-item" data-level="2">
+                <span class="level-bar mb-3 block h-px bg-bronze-light" aria-hidden="true"></span>
+                <p class="eyebrow text-white/60">Levels 4–5</p>
+                <p class="display mt-1 text-[1.7rem] leading-none sm:text-3xl">Sky residences</p>
+                <p class="mt-2 hidden text-sm text-white/65 sm:block">Three bedrooms with ocean-facing balconies, from $3.9M.</p>
+              </li>
+              <li class="level-item" data-level="3">
+                <span class="level-bar mb-3 block h-px bg-bronze-light" aria-hidden="true"></span>
+                <p class="eyebrow text-white/60">Level 6</p>
+                <p class="display mt-1 text-[1.7rem] leading-none sm:text-3xl">Penthouses</p>
+                <p class="mt-2 hidden text-sm text-white/65 sm:block">Two full-floor homes with rooftop pools, from $9.8M.</p>
+              </li>
+            </ol>
+            <p class="mt-5 text-xs text-white/55 sm:hidden">Illustrative development. Pricing, plans and completion are demo values.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Film frame that expands to full-bleed on scroll -->
+    <section id="film" class="relative bg-paper" data-expand aria-labelledby="film-title">
+      <div class="expand-stage relative flex min-h-svh items-center justify-center overflow-hidden">
+        <div class="absolute inset-0" data-expand-frame>
+          <video class="h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/images/interior-living.webp" aria-hidden="true" data-ambient>
+            <source src="assets/video/interiors.mp4" type="video/mp4">
+          </video>
+          <div class="absolute inset-0 bg-ink/40"></div>
+        </div>
+        <div class="on-dark relative z-10 px-5 text-center text-white" data-expand-copy>
+          <p class="eyebrow text-white/85">Included with every listing</p>
+          <h2 id="film-title" class="display mt-5 text-[clamp(3.4rem,9vw,9rem)]">Interiors, <em class="italic text-bronze-light">considered.</em></h2>
+          <p class="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-white/85">Architectural photography, cinematic film, 3D walkthroughs and professional staging, produced in-house and ready the day your home goes live.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seller journey + valuation -->
+    <section id="sell" class="bg-paper py-24 md:py-36" aria-labelledby="sell-title">
+      <div class="shell grid gap-16 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <p class="eyebrow text-bronze" data-reveal>Selling with Calder Hale</p>
+          <h2 id="sell-title" class="display mt-5 text-[clamp(2.9rem,5.6vw,5.6rem)]" data-reveal>A sale, <em class="italic">choreographed.</em></h2>
+          <p class="mt-6 max-w-md text-[17px] leading-relaxed text-stone" data-reveal>Four deliberate stages, one senior advisor and a weekly report you can actually read. Most of our homes go to contract within six weeks of launch.</p>
+
+          <ol class="relative mt-14 space-y-12 pl-10" data-steps>
+            <span class="absolute left-0 top-2 h-[calc(100%-1rem)] w-px bg-line" aria-hidden="true"></span>
+            <span class="absolute left-0 top-2 h-[calc(100%-1rem)] w-px origin-top scale-y-0 bg-ink" aria-hidden="true" data-steps-line></span>
+            <li class="relative" data-reveal>
+              <span class="absolute -left-10 top-1.5 size-2.5 -translate-x-[4.5px] rounded-full bg-ink" aria-hidden="true"></span>
+              <p class="eyebrow text-stone">01 · Week one</p>
+              <h3 class="display mt-2 text-[2.1rem] leading-none">Private valuation</h3>
+              <p class="mt-3 text-stone">A walkthrough, a comparative market analysis and a pricing strategy grounded in closed sales, not hope.</p>
+            </li>
+            <li class="relative" data-reveal>
+              <span class="absolute -left-10 top-1.5 size-2.5 -translate-x-[4.5px] rounded-full bg-ink" aria-hidden="true"></span>
+              <p class="eyebrow text-stone">02 · Weeks two to three</p>
+              <h3 class="display mt-2 text-[2.1rem] leading-none">Preparation &amp; staging</h3>
+              <p class="mt-3 text-stone">Our designers edit, repair and stage, so every room photographs, films and tours at its best.</p>
+            </li>
+            <li class="relative" data-reveal>
+              <span class="absolute -left-10 top-1.5 size-2.5 -translate-x-[4.5px] rounded-full bg-ink" aria-hidden="true"></span>
+              <p class="eyebrow text-stone">03 · Launch</p>
+              <h3 class="display mt-2 text-[2.1rem] leading-none">Film, photography &amp; debut</h3>
+              <p class="mt-3 text-stone">A cinematic listing, private previews for qualified buyers, then a coordinated public launch.</p>
+            </li>
+            <li class="relative" data-reveal>
+              <span class="absolute -left-10 top-1.5 size-2.5 -translate-x-[4.5px] rounded-full bg-ink" aria-hidden="true"></span>
+              <p class="eyebrow text-stone">04 · Offer to keys</p>
+              <h3 class="display mt-2 text-[2.1rem] leading-none">Negotiation &amp; close</h3>
+              <p class="mt-3 text-stone">Clear advice on every offer, and a calm, managed escrow through to the final walkthrough.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="lg:col-span-6 lg:col-start-7">
+          <form class="on-dark rounded-[28px] bg-ink p-6 text-paper sm:p-10 lg:sticky lg:top-28" data-demo-form data-reveal>
+            <p class="eyebrow text-bronze-light">Private valuation</p>
+            <h3 class="display mt-4 text-[clamp(2.4rem,4vw,3.6rem)] leading-none">What is your home worth?</h3>
+            <p class="mt-4 max-w-md text-white/70">A senior advisor will prepare a confidential, data-backed valuation within 48 hours.</p>
+            <div class="mt-8 grid gap-5 sm:grid-cols-2">
+              <div class="sm:col-span-2">
+                <label class="field-label" for="val-address">Property address</label>
+                <input class="field" id="val-address" name="address" type="text" autocomplete="street-address" required>
+              </div>
+              <div>
+                <label class="field-label" for="val-type">Property type</label>
+                <select class="field" id="val-type" name="type" required>
+                  <option value="">Select</option>
+                  <option>Single-family home</option>
+                  <option>Condominium</option>
+                  <option>Estate or land</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="val-timeline">Timeline</label>
+                <select class="field" id="val-timeline" name="timeline" required>
+                  <option value="">Select</option>
+                  <option>Within 3 months</option>
+                  <option>3 to 6 months</option>
+                  <option>6 to 12 months</option>
+                  <option>Just curious</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="val-name">Full name</label>
+                <input class="field" id="val-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div>
+                <label class="field-label" for="val-email">Email</label>
+                <input class="field" id="val-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="field-label" for="val-phone">Phone <span class="normal-case tracking-normal">(optional)</span></label>
+                <input class="field" id="val-phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+              <label class="flex items-start gap-3 text-sm text-white/75 sm:col-span-2">
+                <input type="checkbox" name="consent" required class="mt-1 size-4 accent-[#d1a676]">
+                <span>I agree to be contacted by Calder Hale about this request.</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-light mt-8 w-full sm:w-auto" data-cta="valuation-submit">Request my valuation <span class="arrow" aria-hidden="true">→</span></button>
+            <p class="form-status mt-6 rounded-2xl border border-white/15 bg-white/5 p-4 text-sm text-white/85" role="status" tabindex="-1">Thank you. This is a demonstration site, so nothing was sent or stored. On a live site your request would go straight to a Calder Hale advisor.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neighborhoods -->
+    <section id="neighborhoods" class="on-dark relative bg-ink text-paper" aria-labelledby="hoods-title">
+      <div class="relative h-[72svh] min-h-[480px] overflow-hidden">
+        <video class="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover" muted loop playsinline preload="none" poster="assets/images/hills-aerial.webp" aria-hidden="true" data-ambient data-parallax>
+          <source src="assets/video/hills.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-linear-to-b from-ink/40 via-ink/25 to-ink" aria-hidden="true"></div>
+        <div class="shell relative flex h-full flex-col justify-end pb-14">
+          <p class="eyebrow text-bronze-light" data-reveal>Where we work</p>
+          <h2 id="hoods-title" class="display mt-5 max-w-[13ch] text-[clamp(3.2rem,8vw,8rem)]" data-reveal>Six neighborhoods. <em class="italic">One team.</em></h2>
+        </div>
+      </div>
+
+      <div class="shell pb-24 md:pb-36" data-hoods>
+        <ul class="border-t border-white/15">
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Malibu" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/villa-serein-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">01</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Malibu</span>
+              <span class="hidden text-sm text-white/65 md:block">Beachfront estates, bluff-top villas and quiet canyon retreats.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Pacific+Palisades" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/cedar-pavilion-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">02</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Pacific Palisades</span>
+              <span class="hidden text-sm text-white/65 md:block">Village life, tree-lined streets and the Riviera’s landmark homes.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Santa+Monica" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/linden-patio-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">03</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Santa Monica</span>
+              <span class="hidden text-sm text-white/65 md:block">North of Montana family homes and new residences near the ocean.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Brentwood" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/graphite-house-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">04</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Brentwood</span>
+              <span class="hidden text-sm text-white/65 md:block">Private, gated homes on generous lots minutes from the coast.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Beverly+Hills" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/courtyard-house-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">05</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Beverly Hills</span>
+              <span class="hidden text-sm text-white/65 md:block">The Flats, Trousdale and the estates north of Sunset.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="border-b border-white/15">
+            <a href="listings.html?area=Hollywood+Hills" class="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[4rem_1fr_minmax(0,22rem)_auto] md:py-9" data-hood-image="assets/images/hills-aerial-sm.webp">
+              <span class="text-[12px] font-bold tracking-[0.2em] text-white/45">06</span>
+              <span class="display text-[clamp(2.3rem,5vw,4.6rem)] leading-none transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:translate-x-3">Hollywood Hills</span>
+              <span class="hidden text-sm text-white/65 md:block">View homes above the city, from the Bird Streets to Laurel Canyon.</span>
+              <span class="grid size-11 place-items-center rounded-full border border-white/25 transition group-hover:border-white group-hover:bg-white group-hover:text-ink" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+        <div class="hood-preview fixed left-0 top-0 z-40 hidden aspect-[4/5] w-[260px] overflow-hidden rounded-2xl shadow-2xl lg:block" aria-hidden="true" data-hood-preview>
+          <img src="assets/images/villa-serein-sm.webp" alt="" class="h-full w-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-ivory py-24 md:py-36" aria-labelledby="contact-title">
+      <div class="shell grid gap-14 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <p class="eyebrow text-bronze" data-reveal>Contact</p>
+          <h2 id="contact-title" class="display mt-5 text-[clamp(2.9rem,5.6vw,5.6rem)]" data-reveal>Let’s talk about your <em class="italic">next move.</em></h2>
+          <p class="mt-6 max-w-md text-[17px] leading-relaxed text-stone" data-reveal>Buying, selling or simply curious about what your home is worth: tell us a little about it and an advisor will be in touch the same day.</p>
+          <!-- CUSTOMIZE: verified office address, phone, email, hours and license number -->
+          <dl class="mt-12 grid gap-7 sm:grid-cols-2" data-reveal>
+            <div><dt class="field-label">Studio</dt><dd class="font-semibold">Montana Avenue<br>Santa Monica, California</dd></div>
+            <div><dt class="field-label">Hours</dt><dd class="font-semibold">Mon–Sat, 9am–7pm<br>Sundays by appointment</dd></div>
+            <div><dt class="field-label">Phone</dt><dd><a class="link-line font-semibold" href="tel:+13105550148" data-cta="contact-call">(310) 555-0148</a></dd></div>
+            <div><dt class="field-label">Email</dt><dd><a class="link-line font-semibold" href="mailto:hello@calderhale.example" data-cta="contact-email">hello@calderhale.example</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="grid gap-5 self-start rounded-[28px] border border-line bg-white p-6 sm:grid-cols-2 sm:p-10 lg:col-span-6 lg:col-start-7" data-demo-form data-reveal>
+          <div>
+            <label class="field-label" for="c-first">First name</label>
+            <input class="field" id="c-first" name="first" type="text" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label class="field-label" for="c-last">Last name</label>
+            <input class="field" id="c-last" name="last" type="text" autocomplete="family-name" required>
+          </div>
+          <div>
+            <label class="field-label" for="c-email">Email</label>
+            <input class="field" id="c-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label class="field-label" for="c-phone">Phone <span class="normal-case tracking-normal">(optional)</span></label>
+            <input class="field" id="c-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="field-label" for="c-interest">I’m interested in</label>
+            <select class="field" id="c-interest" name="interest" required>
+              <option value="">Select</option>
+              <option>Buying a home</option>
+              <option>Selling my home</option>
+              <option>Leasing a home</option>
+              <option>Linea Residences</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="field-label" for="c-message">Message</label>
+            <textarea class="field" id="c-message" name="message" rows="4" placeholder="Neighborhoods, timing, anything that matters to you"></textarea>
+          </div>
+          <label class="flex items-start gap-3 text-sm text-stone sm:col-span-2">
+            <input type="checkbox" name="consent" required class="mt-1 size-4 accent-[#8a5c32]">
+            <span>I agree to be contacted by Calder Hale about my enquiry.</span>
+          </label>
+          <div class="sm:col-span-2">
+            <button type="submit" class="btn btn-dark w-full sm:w-auto" data-cta="contact-submit">Send enquiry <span class="arrow" aria-hidden="true">→</span></button>
+            <p class="form-status mt-5 rounded-2xl bg-ivory p-4 text-sm" role="status" tabindex="-1">Thank you. This is a demonstration site, so nothing was sent or stored. On a live site an advisor would reply the same day.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="on-dark overflow-hidden bg-ink text-paper">
+    <div class="shell pb-10 pt-20">
+      <p class="display whitespace-nowrap text-[clamp(4rem,27vw,26rem)] leading-[0.8] tracking-[-0.03em]" aria-hidden="true" data-reveal>Calder Hale</p>
+      <div class="mt-14 grid gap-10 border-t border-white/15 pt-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <p class="field-label">Explore</p>
+          <ul class="space-y-2.5">
+            <li><a class="hover:text-bronze-light" href="listings.html?status=sale">Homes for sale</a></li>
+            <li><a class="hover:text-bronze-light" href="listings.html?status=lease">Homes for lease</a></li>
+            <li><a class="hover:text-bronze-light" href="#sell">Sell with us</a></li>
+            <li><a class="hover:text-bronze-light" href="#residences">Linea Residences</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="field-label">Neighborhoods</p>
+          <ul class="space-y-2.5">
+            <li><a class="hover:text-bronze-light" href="listings.html?area=Malibu">Malibu</a></li>
+            <li><a class="hover:text-bronze-light" href="listings.html?area=Santa+Monica">Santa Monica</a></li>
+            <li><a class="hover:text-bronze-light" href="listings.html?area=Beverly+Hills">Beverly Hills</a></li>
+            <li><a class="hover:text-bronze-light" href="listings.html?area=Hollywood+Hills">Hollywood Hills</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="field-label">Contact</p>
+          <ul class="space-y-2.5">
+            <li><a class="hover:text-bronze-light" href="tel:+13105550148">(310) 555-0148</a></li>
+            <li><a class="hover:text-bronze-light" href="mailto:hello@calderhale.example">hello@calderhale.example</a></li>
+            <li>Montana Avenue, Santa Monica</li>
+          </ul>
+        </div>
+        <div class="text-white/60">
+          <p class="field-label">About this demo</p>
+          <p>Calder Hale is a fictional brokerage created to demonstrate a website concept. Listings, prices, figures and contact details are illustrative.</p>
+        </div>
+      </div>
+      <div class="mt-14 flex flex-col gap-3 text-xs text-white/50 md:flex-row md:justify-between">
+        <!-- CUSTOMIZE: brokerage license (CA DRE #), fair housing statement and MLS/IDX disclaimers -->
+        <p>© <span data-year>2026</span> Calder Hale · CA DRE #00000000 (placeholder) · Equal Housing Opportunity</p>
+        <p>Film and photography: Pexels contributors, used under the Pexels License.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
