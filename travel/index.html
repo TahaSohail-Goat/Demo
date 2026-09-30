@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safarnama Travel &amp; Tours</title>
+<meta name="description" content="Umrah packages, northern Pakistan tours and international holidays from Lahore, Karachi and Islamabad. Flights, hotels, visas and transfers in one price.">
+<meta name="theme-color" content="#0b1b3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-navy: var(--navy);
+    --color-sun: var(--sun);
+    --color-sky: var(--sky);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-sun focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Safarnama Travel and Tours, home">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#ff6d2e"/><path d="M6 22c6-10 18-14 26-10" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/><path d="M27 8l5 4-6 1.5z" fill="#fff"/><circle cx="7" cy="23" r="2.2" fill="#0b1b3a"/></svg>
+      <span>Safarnama<small>TRAVEL &amp; TOURS</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary"><a href="#packages">Packages</a><a href="#why">Why us</a><a href="#visa">Visas</a><a href="#enquire">Enquire</a></nav>
+    <div class="nav-right">
+      <a href="#enquire" class="btn btn-sun" data-magnetic>Plan my trip</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#packages">Packages</a><a href="#why">Why us</a><a href="#visa">Visas</a><a href="#enquire">Plan my trip</a></div>
+
+<main id="main">
+<!-- ================= GLOBE FILM ================= -->
+<section class="film" id="top" data-nav="dark" aria-label="Where we fly">
+  <div class="film-sticky">
+    <div class="film-bg" aria-hidden="true"></div>
+    <canvas id="globeCanvas" aria-hidden="true"></canvas>
+    <div class="city-labels" id="cityLabels" aria-hidden="true"></div>
+
+    <div class="ch" data-ch="0" data-in="-1" data-out="0.1">
+      <span class="code">Lahore · Karachi · Islamabad</span>
+      <h1 data-split>Pack light. <span class="hl">We'll carry the rest.</span></h1>
+      <p data-hero-fade>Flights, hotels, visas and transfers in one price per person. Umrah, the northern valleys, or a week somewhere new.</p>
+      <div class="ctas" data-hero-fade><a href="#packages" class="btn btn-sun" data-magnetic>Browse packages <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a href="#enquire" class="btn btn-ghost">Talk to an agent</a></div>
+    </div>
+    <div class="ch" data-in="0.13" data-out="0.28">
+      <span class="code">01 · Umrah</span>
+      <h2>Umrah, arranged <span class="hl">down to the ziyarat.</span></h2>
+      <p>Visa, flights, hotels a short walk from the Haram and a group leader who has done it many times before.</p>
+      <span class="from">KHI → JED · 15 to 28 days</span>
+    </div>
+    <div class="ch" data-in="0.31" data-out="0.46">
+      <span class="code">02 · Northern Pakistan</span>
+      <h2>Hunza, Skardu <span class="hl">and the roads between.</span></h2>
+      <p>Fly into Gilgit or Skardu, or take the Karakoram Highway with a driver who has done it a hundred times.</p>
+      <span class="from">ISB → GIL / KDU · 5 to 8 days</span>
+    </div>
+    <div class="ch" data-in="0.49" data-out="0.64">
+      <span class="code">03 · Istanbul &amp; Baku</span>
+      <h2>Two cities, <span class="hl">one long weekend each.</span></h2>
+      <p>Bosphorus ferries, Cappadocia balloons and Baku's old city, with visas handled before you pack.</p>
+      <span class="from">LHE → IST · ISB → GYD</span>
+    </div>
+    <div class="ch" data-in="0.67" data-out="0.82">
+      <span class="code">04 · Dubai &amp; Malaysia</span>
+      <h2>Short flights, <span class="hl">easy family trips.</span></h2>
+      <p>Theme parks, beaches and malls for the children, with hotels chosen for location, not just the lobby photo.</p>
+      <span class="from">KHI → DXB · LHE → KUL</span>
+    </div>
+    <div class="ch" data-in="0.86">
+      <span class="code">Your trip</span>
+      <h2>Tell us where. <span class="hl">We'll send a plan today.</span></h2>
+      <p>A written itinerary with the full price per person, usually within a few hours.</p>
+      <div class="ctas"><a href="#enquire" class="btn btn-sun" data-magnetic>Plan my trip</a></div>
+    </div>
+
+    <div class="board" aria-hidden="true">
+      <div class="title">Departures this week</div>
+      <div class="row"><span>LHE → JED</span><span>Umrah group · Thu</span></div>
+      <div class="row"><span>ISB → GIL</span><span>Hunza · Sat</span></div>
+      <div class="row"><span>LHE → IST</span><span>Turkey · Sun</span></div>
+      <div class="row"><span>KHI → DXB</span><span>Dubai · Daily</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+<div class="wrap search" data-nav="light">
+  <form id="search" novalidate>
+    <div class="sfield"><label for="s-from">From</label><select id="s-from"><option value="any">Any city</option><option value="LHE">Lahore (LHE)</option><option value="KHI">Karachi (KHI)</option><option value="ISB">Islamabad (ISB)</option></select></div>
+    <div class="sfield"><label for="s-to">Going to</label><select id="s-to"><option value="any">Anywhere</option><option value="umrah">Umrah</option><option value="north">Northern Pakistan</option><option value="turkey">Turkey</option><option value="azerbaijan">Azerbaijan</option><option value="uae">UAE</option><option value="malaysia">Malaysia</option><option value="maldives">Maldives</option></select></div>
+    <div class="sfield"><label for="s-month">Month</label><input id="s-month" type="month"></div>
+    <div class="sfield"><label for="s-pax">Travellers</label><select id="s-pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+    <button class="btn btn-sun" type="submit"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>Search</button>
+  </form>
+</div>
+
+<!-- ================= PACKAGES ================= -->
+<section class="section" id="packages" data-nav="light" aria-labelledby="pk-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="code">Packages</span><h2 id="pk-h" data-reveal>Priced per person. Everything written down.</h2></div>
+      <p data-reveal>Prices include return flights, hotels, transfers and visa processing unless marked. Totals update for your group size.</p>
+    </div>
+    <div class="tabs" id="tabs" data-choice role="group" aria-label="Package type"></div>
+    <div class="passes" id="passes" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="section dark" id="why" data-nav="dark" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="code">Why Safarnama</span><h2 id="why-h" data-reveal>The boring parts, done properly.</h2></div>
+      <p data-reveal>Twenty years of Umrah groups and family holidays. Most of our bookings come from people who travelled with us before.</p>
+    </div>
+    <div class="why">
+      <article class="w" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg></span><h3>Visas prepared for you</h3><p>We check every document before submission, so files don't come back.</p></article>
+      <article class="w" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span><h3>24/7 on WhatsApp</h3><p>A named agent for the whole trip, reachable any hour you're away.</p></article>
+      <article class="w" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Pay in instalments</h3><p>Book with 30% and pay the rest in two parts before you fly.</p></article>
+      <article class="w" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg></span><h3>Group leaders</h3><p>Umrah groups travel with an experienced leader and a scholar for guidance.</p></article>
+    </div>
+    <div class="license"><span>DTS licence no. 0000 (placeholder)</span><span>IATA accredited no. 00-0 0000 0 (placeholder)</span><span>Umrah operator reg. no. 000 (placeholder)</span></div>
+  </div>
+</section>
+
+<!-- ================= VISA ================= -->
+<section class="section" id="visa" data-nav="light" aria-labelledby="visa-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="code">Visa services</span><h2 id="visa-h" data-reveal>We prepare the file. You sign it.</h2></div>
+      <p data-reveal>Processing times change often, so we confirm the current timeline when you enquire.</p>
+    </div>
+    <div class="visa">
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>Saudi Arabia</b><span>Umrah &amp; visit visas</span></div></div>
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>United Arab Emirates</b><span>Tourist visas, 30 or 60 days</span></div></div>
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>Turkey</b><span>Sticker &amp; e-visa guidance</span></div></div>
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>Azerbaijan</b><span>E-visa applications</span></div></div>
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>Malaysia &amp; Thailand</b><span>E-visas and entry forms</span></div></div>
+      <div class="v" data-reveal><span class="flag" style="display:grid;place-items:center;background:#fff1ea;color:#d24f14"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg></span><div><b>Schengen &amp; UK</b><span>File preparation &amp; appointments</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section flush-top" data-nav="light" aria-labelledby="rv-h">
+  <div class="wrap">
+    <div class="head"><div><span class="code">Travellers</span><h2 id="rv-h" data-reveal>Home, and already planning the next one.</h2></div><p data-reveal>4.8 from 3,400+ reviews.</p></div>
+    <div class="revs">
+      <article class="rev" data-reveal><div class="stars" aria-label="5 out of 5"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div><p>“My parents did their first Umrah with Safarnama's group. The leader called me every evening to say they were fine.”</p><div class="who"><b>Faisal A.</b><span>Umrah Premium</span></div></article>
+      <article class="rev" data-reveal><div class="stars" aria-label="5 out of 5"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div><p>“Our Skardu flight was cancelled twice. They rebooked us by road the same night and nobody lost a day.”</p><div class="who"><b>Hira &amp; Kamran</b><span>Skardu &amp; Deosai</span></div></article>
+      <article class="rev" data-reveal><div class="stars" aria-label="5 out of 5"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div><p>“Turkey visa, flights, hotels and the balloon ride, all on one sheet with one price. No surprises.”</p><div class="who"><b>The Qureshi family</b><span>Istanbul &amp; Cappadocia</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRY ================= -->
+<section class="section dark enq" id="enquire" data-nav="dark" aria-labelledby="enq-h">
+  <div class="wrap enq-grid">
+    <div>
+      <span class="code">Plan my trip</span>
+      <h2 id="enq-h" class="mt-5">Where to <span style="color:var(--sun)">next?</span></h2>
+      <div class="contact">
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span><b class="num">WhatsApp +92 300 000 0000</b>Replies within the hour, 9 am – 11 pm</span></div>
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span><b>Offices</b>Lahore · Karachi · Islamabad</span></div>
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Licensed operator</b>Licence numbers on every quote</span></div>
+      </div>
+    </div>
+    <form class="form" id="enqForm" novalidate>
+      <div class="field"><label for="e-trip">Trip</label><select id="e-trip"><option>Umrah</option><option>Northern Pakistan</option><option>Turkey</option><option>Azerbaijan</option><option>Dubai</option><option>Malaysia</option><option>Honeymoon</option><option>Something else</option></select></div>
+      <div class="field"><label for="e-from">Departing from</label><select id="e-from"><option>Lahore</option><option>Karachi</option><option>Islamabad</option></select></div>
+      <div class="field"><label for="e-month">Month</label><input id="e-month" type="month"></div>
+      <div class="field"><label for="e-pax">Travellers</label><input id="e-pax" type="number" inputmode="numeric" min="1" max="60" value="2"></div>
+      <div class="field"><label for="e-name">Name</label><input id="e-name" autocomplete="name"></div>
+      <div class="field"><label for="e-phone">WhatsApp number</label><input id="e-phone" type="tel" autocomplete="tel" placeholder="+92 3xx xxxxxxx"></div>
+      <div class="field full"><label for="e-notes">Anything else?</label><textarea id="e-notes" placeholder="e.g. elderly parents, wheelchair at the airport, halal food only"></textarea></div>
+      <button class="btn btn-sun" type="submit">Send my request <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <p class="form-note" id="enqNote">An agent will WhatsApp you a written plan with the full price.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><h4>Safarnama</h4>Travel &amp; tours since 2006.<br>Lahore · Karachi · Islamabad</div>
+      <div><h4>Trips</h4><a href="#packages">Umrah</a><a href="#packages">Northern Pakistan</a><a href="#packages">International</a></div>
+      <div><h4>Help</h4><a href="#visa">Visas</a><a href="#why">Why us</a><a href="#enquire">Enquire</a></div>
+      <div><h4>Contact</h4><span class="num">+92 300 000 0000</span><br>trips@safarnama.pk</div>
+    </div>
+    <div class="footer-word" aria-hidden="true">safarnama<span>.</span></div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Safarnama Travel &amp; Tours</span><span>Demo brand. Names, reviews, licence numbers and prices are placeholders. Map data: Natural Earth.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

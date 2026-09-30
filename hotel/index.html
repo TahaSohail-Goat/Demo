@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kestrel House Hunza</title>
+<meta name="description" content="A 14-room boutique hotel in Karimabad, Hunza. Every room faces Rakaposhi. Glacier walks, apricot-season dinners and dark-sky nights.">
+<meta name="theme-color" content="#15232c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sora:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-slate: var(--slate);
+    --color-apricot: var(--apricot);
+    --color-glacier: var(--glacier);
+    --font-display: var(--font-display);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-slate focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Kestrel House, home">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#ec8a37"/><path d="M4 25l8-11 4 5 5-9 9 15z" fill="#15232c"/><path d="M21 10l2.6 4.4-2.2-1-1.6 2z" fill="#fff"/></svg>Kestrel House
+    </a>
+    <nav class="nav-links" aria-label="Primary"><a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#seasons">When to visit</a><a href="#getting-here">Getting here</a></nav>
+    <div class="nav-right">
+      <a href="#rooms" class="btn btn-apricot" data-magnetic>Book a room</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#seasons">When to visit</a><a href="#getting-here">Getting here</a></div>
+
+<main id="main">
+<!-- ================= VALLEY FILM ================= -->
+<section class="film" id="top" data-nav="dark" aria-label="A day in the valley">
+  <div class="film-sticky">
+    <canvas id="valleyCanvas" aria-hidden="true"></canvas>
+    <div class="film-shade" aria-hidden="true"></div>
+
+    <div class="ch" data-ch="0" data-in="-1" data-out="0.1">
+      <span class="over">Kestrel House · Karimabad, Hunza · 2,500 m</span>
+      <h1 data-split>Wake up facing Rakaposhi.</h1>
+      <p data-hero-fade>Fourteen rooms on the terraces above the Hunza River, each with a window on a 7,788-metre mountain. Scroll through a day here.</p>
+      <div class="ctas" data-hero-fade><a href="#rooms" class="btn btn-apricot" data-magnetic>Check availability <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a href="#experiences" class="btn btn-glass">What to do</a></div>
+    </div>
+    <div class="ch" data-in="0.13" data-out="0.28">
+      <span class="over">06:10 · Sunrise</span>
+      <h2>The peak turns pink before anything else does.</h2>
+      <p>Every room faces south-west over the valley. Leave the curtains open; it's worth the early start.</p>
+    </div>
+    <div class="ch" data-in="0.31" data-out="0.46">
+      <span class="over">11:00 · Out on the ice</span>
+      <h2>Days on glaciers and turquoise lakes.</h2>
+      <p>Guided walks on the Hopper Glacier, boats on Attabad Lake and the drive to the Passu Cones, all booked from the front desk.</p>
+    </div>
+    <div class="ch" data-in="0.49" data-out="0.64">
+      <span class="over">18:20 · Golden hour</span>
+      <h2>Apricot season, on the table.</h2>
+      <p>Chapshuro, diram fitti and apricot soup, cooked by a family who have farmed these terraces for generations.</p>
+    </div>
+    <div class="ch" data-in="0.67" data-out="0.82">
+      <span class="over">22:00 · Lights out</span>
+      <h2>Stars you forgot existed.</h2>
+      <p>Almost no light pollution. We lend telescopes and blankets and leave the terrace lights low after ten.</p>
+    </div>
+    <div class="ch" data-in="0.86">
+      <span class="over">Your stay</span>
+      <h2>Keep a window for yourself.</h2>
+      <p>Rooms from Rs 28,000 a night with breakfast. Spring blossom and autumn weekends go first.</p>
+      <div class="ctas"><a href="#rooms" class="btn btn-apricot" data-magnetic>See rooms</a></div>
+    </div>
+
+    <div class="alt" aria-hidden="true"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg><span>Rakaposhi · 7,788 m</span></div>
+    <div class="clock" aria-hidden="true"><div class="time" id="clock">05:40</div><div class="meta"><span id="clockLabel">Before sunrise</span><span id="clockTemp">4 °C</span></div></div>
+  </div>
+</section>
+
+<!-- ================= BOOKING BAR ================= -->
+<div class="wrap booker" data-nav="light">
+  <form id="booker" novalidate>
+    <div class="bfield"><label for="in">Check in</label><input id="in" type="date"></div>
+    <div class="bfield"><label for="out">Check out</label><input id="out" type="date"></div>
+    <div class="bfield"><label for="guests">Guests</label><select id="guests"><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">2 adults, 1 child</option><option value="4">4 guests</option><option value="5">5 guests</option></select></div>
+    <button class="btn btn-slate" type="submit">Check rooms <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+  </form>
+</div>
+
+<!-- ================= ROOMS ================= -->
+<section class="section" id="rooms" data-nav="light" aria-labelledby="rooms-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="over">Rooms</span><h2 id="rooms-h" data-reveal>Three ways to face the mountain.</h2></div>
+      <p data-reveal>Rates are per night and include breakfast, heating and airport pick-up planning. Prices update for your dates.</p>
+    </div>
+    <div class="rooms" id="roomList">
+      <article class="room" data-reveal data-rate="28000" data-cap="2" data-name="Valley Room">
+        <svg class="view" viewBox="0 0 400 250" role="img" aria-label="Window view at dawn"><defs><linearGradient id="sky-dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b38a"/><stop offset="1" stop-color="#8aa6c9"/></linearGradient></defs><rect width="400" height="250" fill="url(#sky-dawn)"/><circle cx="86" cy="150" r="18" fill="#fde3c8" opacity=".95"/><path d="M0 250 L0.0 175.2 L10.0 172.3 L20.0 174.7 L30.0 180.8 L40.0 190.2 L50.0 198.6 L60.0 196.9 L70.0 184.0 L80.0 174.3 L90.0 165.9 L100.0 160.8 L110.0 165.6 L120.0 166.3 L130.0 165.8 L140.0 159.6 L150.0 157.5 L160.0 157.6 L170.0 166.1 L180.0 180.6 L190.0 189.7 L200.0 192.7 L210.0 190.9 L220.0 181.5 L230.0 178.7 L240.0 181.0 L250.0 184.5 L260.0 179.8 L270.0 174.0 L280.0 161.5 L290.0 151.2 L300.0 149.6 L310.0 154.7 L320.0 167.1 L330.0 173.6 L340.0 177.9 L350.0 174.5 L360.0 173.8 L370.0 180.7 L380.0 188.3 L390.0 195.4 L400.0 193.7 L400 250 Z" fill="#6f7f93" opacity=".75"/><path d="M120 250 L200 58 L222 84 L236 70 L300 250 Z" fill="#56616f"/><path d="M200 58 L222 84 L236 70 L252 104 L238 98 L226 112 L212 96 L196 116 L184 96 Z" fill="#f7fbff"/><path d="M0 250 L0.0 198.4 L10.0 198.1 L20.0 200.6 L30.0 207.7 L40.0 208.6 L50.0 208.2 L60.0 207.6 L70.0 207.7 L80.0 215.7 L90.0 223.4 L100.0 231.3 L110.0 231.7 L120.0 224.9 L130.0 215.3 L140.0 211.6 L150.0 209.6 L160.0 209.6 L170.0 209.0 L180.0 207.0 L190.0 201.5 L200.0 194.4 L210.0 197.5 L220.0 201.3 L230.0 213.1 L240.0 221.9 L250.0 225.2 L260.0 222.8 L270.0 217.9 L280.0 219.0 L290.0 220.1 L300.0 223.1 L310.0 223.7 L320.0 217.3 L330.0 209.2 L340.0 200.3 L350.0 196.2 L360.0 197.4 L370.0 204.4 L380.0 209.8 L390.0 210.2 L400.0 209.3 L400 250 Z" fill="#3d4d3a"/><rect x="0" y="222" width="400" height="28" fill="#2aa9b3" opacity=".85"/><rect x="0" y="222" width="400" height="3" fill="#fff" opacity=".35"/><circle cx="10" cy="217" r="6" fill="#5c7a3a"/><circle cx="32" cy="216" r="8" fill="#5c7a3a"/><circle cx="54" cy="215" r="10" fill="#e9a0a8"/><circle cx="76" cy="214" r="7" fill="#5c7a3a"/><circle cx="98" cy="220" r="9" fill="#5c7a3a"/><circle cx="120" cy="219" r="6" fill="#e9a0a8"/><circle cx="142" cy="218" r="8" fill="#5c7a3a"/><circle cx="164" cy="217" r="10" fill="#5c7a3a"/><circle cx="186" cy="216" r="7" fill="#e9a0a8"/><circle cx="208" cy="215" r="9" fill="#5c7a3a"/><circle cx="230" cy="214" r="6" fill="#5c7a3a"/><circle cx="252" cy="220" r="8" fill="#e9a0a8"/><circle cx="274" cy="219" r="10" fill="#5c7a3a"/><circle cx="296" cy="218" r="7" fill="#5c7a3a"/><circle cx="318" cy="217" r="9" fill="#e9a0a8"/><circle cx="340" cy="216" r="6" fill="#5c7a3a"/><circle cx="362" cy="215" r="8" fill="#5c7a3a"/><circle cx="384" cy="214" r="10" fill="#e9a0a8"/><rect x="4" y="4" width="392" height="242" fill="none" stroke="#fbfcfb" stroke-width="8"/><path d="M200 4V246M4 125H396" stroke="#fbfcfb" stroke-width="6"/></svg>
+        <div class="body"><h3>Valley Room</h3><p>Queen bed, walnut floors and a window seat above the orchards.</p>
+          <div class="amen"><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Queen</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>2 guests</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>Heated floor</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>Wi-Fi</span></div>
+          <div class="foot"><div><div class="rate num">Rs 28,000<small>per night</small></div><div class="stay num"></div></div><button class="btn btn-slate pick" type="button">Select</button></div>
+        </div>
+      </article>
+      <article class="room" data-reveal data-rate="46000" data-cap="3" data-name="Peak Suite">
+        <svg class="view" viewBox="0 0 400 250" role="img" aria-label="Window view at day"><defs><linearGradient id="sky-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb7e6"/><stop offset="1" stop-color="#cfe6f5"/></linearGradient></defs><rect width="400" height="250" fill="url(#sky-day)"/><circle cx="320" cy="60" r="18" fill="#ffffff" opacity=".95"/><path d="M0 250 L0.0 175.2 L10.0 172.3 L20.0 174.7 L30.0 180.8 L40.0 190.2 L50.0 198.6 L60.0 196.9 L70.0 184.0 L80.0 174.3 L90.0 165.9 L100.0 160.8 L110.0 165.6 L120.0 166.3 L130.0 165.8 L140.0 159.6 L150.0 157.5 L160.0 157.6 L170.0 166.1 L180.0 180.6 L190.0 189.7 L200.0 192.7 L210.0 190.9 L220.0 181.5 L230.0 178.7 L240.0 181.0 L250.0 184.5 L260.0 179.8 L270.0 174.0 L280.0 161.5 L290.0 151.2 L300.0 149.6 L310.0 154.7 L320.0 167.1 L330.0 173.6 L340.0 177.9 L350.0 174.5 L360.0 173.8 L370.0 180.7 L380.0 188.3 L390.0 195.4 L400.0 193.7 L400 250 Z" fill="#6f7f93" opacity=".75"/><path d="M120 250 L200 58 L222 84 L236 70 L300 250 Z" fill="#56616f"/><path d="M200 58 L222 84 L236 70 L252 104 L238 98 L226 112 L212 96 L196 116 L184 96 Z" fill="#f7fbff"/><path d="M0 250 L0.0 198.4 L10.0 198.1 L20.0 200.6 L30.0 207.7 L40.0 208.6 L50.0 208.2 L60.0 207.6 L70.0 207.7 L80.0 215.7 L90.0 223.4 L100.0 231.3 L110.0 231.7 L120.0 224.9 L130.0 215.3 L140.0 211.6 L150.0 209.6 L160.0 209.6 L170.0 209.0 L180.0 207.0 L190.0 201.5 L200.0 194.4 L210.0 197.5 L220.0 201.3 L230.0 213.1 L240.0 221.9 L250.0 225.2 L260.0 222.8 L270.0 217.9 L280.0 219.0 L290.0 220.1 L300.0 223.1 L310.0 223.7 L320.0 217.3 L330.0 209.2 L340.0 200.3 L350.0 196.2 L360.0 197.4 L370.0 204.4 L380.0 209.8 L390.0 210.2 L400.0 209.3 L400 250 Z" fill="#3d4d3a"/><rect x="0" y="222" width="400" height="28" fill="#2aa9b3" opacity=".85"/><rect x="0" y="222" width="400" height="3" fill="#fff" opacity=".35"/><circle cx="10" cy="217" r="6" fill="#5c7a3a"/><circle cx="32" cy="216" r="8" fill="#5c7a3a"/><circle cx="54" cy="215" r="10" fill="#5c7a3a"/><circle cx="76" cy="214" r="7" fill="#5c7a3a"/><circle cx="98" cy="220" r="9" fill="#5c7a3a"/><circle cx="120" cy="219" r="6" fill="#5c7a3a"/><circle cx="142" cy="218" r="8" fill="#5c7a3a"/><circle cx="164" cy="217" r="10" fill="#5c7a3a"/><circle cx="186" cy="216" r="7" fill="#5c7a3a"/><circle cx="208" cy="215" r="9" fill="#5c7a3a"/><circle cx="230" cy="214" r="6" fill="#5c7a3a"/><circle cx="252" cy="220" r="8" fill="#5c7a3a"/><circle cx="274" cy="219" r="10" fill="#5c7a3a"/><circle cx="296" cy="218" r="7" fill="#5c7a3a"/><circle cx="318" cy="217" r="9" fill="#5c7a3a"/><circle cx="340" cy="216" r="6" fill="#5c7a3a"/><circle cx="362" cy="215" r="8" fill="#5c7a3a"/><circle cx="384" cy="214" r="10" fill="#5c7a3a"/><rect x="4" y="4" width="392" height="242" fill="none" stroke="#fbfcfb" stroke-width="8"/><path d="M200 4V246M4 125H396" stroke="#fbfcfb" stroke-width="6"/></svg>
+        <div class="body"><h3>Peak Suite</h3><p>King bed, a wood stove and a private balcony pointed straight at Rakaposhi.</p>
+          <div class="amen"><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>King</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>3 guests</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>Wood stove</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>Balcony</span></div>
+          <div class="foot"><div><div class="rate num">Rs 46,000<small>per night</small></div><div class="stay num"></div></div><button class="btn btn-slate pick" type="button">Select</button></div>
+        </div>
+      </article>
+      <article class="room" data-reveal data-rate="58000" data-cap="5" data-name="Family Chalet">
+        <svg class="view" viewBox="0 0 400 250" role="img" aria-label="Window view at dusk"><defs><linearGradient id="sky-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a67"/><stop offset="1" stop-color="#e58a5a"/></linearGradient></defs><rect width="400" height="250" fill="url(#sky-dusk)"/><circle cx="0" cy="6" r="1" fill="#fff" opacity=".8"/><circle cx="53" cy="35" r="1" fill="#fff" opacity=".8"/><circle cx="106" cy="64" r="1" fill="#fff" opacity=".8"/><circle cx="159" cy="93" r="1" fill="#fff" opacity=".8"/><circle cx="212" cy="32" r="1" fill="#fff" opacity=".8"/><circle cx="265" cy="61" r="1" fill="#fff" opacity=".8"/><circle cx="318" cy="90" r="1" fill="#fff" opacity=".8"/><circle cx="371" cy="29" r="1" fill="#fff" opacity=".8"/><circle cx="24" cy="58" r="1" fill="#fff" opacity=".8"/><circle cx="77" cy="87" r="1" fill="#fff" opacity=".8"/><circle cx="130" cy="26" r="1" fill="#fff" opacity=".8"/><circle cx="183" cy="55" r="1" fill="#fff" opacity=".8"/><circle cx="236" cy="84" r="1" fill="#fff" opacity=".8"/><circle cx="289" cy="23" r="1" fill="#fff" opacity=".8"/><circle cx="342" cy="52" r="1" fill="#fff" opacity=".8"/><circle cx="395" cy="81" r="1" fill="#fff" opacity=".8"/><circle cx="48" cy="20" r="1" fill="#fff" opacity=".8"/><circle cx="101" cy="49" r="1" fill="#fff" opacity=".8"/><circle cx="154" cy="78" r="1" fill="#fff" opacity=".8"/><circle cx="207" cy="17" r="1" fill="#fff" opacity=".8"/><circle cx="260" cy="46" r="1" fill="#fff" opacity=".8"/><circle cx="313" cy="75" r="1" fill="#fff" opacity=".8"/><circle cx="366" cy="14" r="1" fill="#fff" opacity=".8"/><circle cx="19" cy="43" r="1" fill="#fff" opacity=".8"/><circle cx="72" cy="72" r="1" fill="#fff" opacity=".8"/><circle cx="125" cy="11" r="1" fill="#fff" opacity=".8"/><circle cx="178" cy="40" r="1" fill="#fff" opacity=".8"/><circle cx="231" cy="69" r="1" fill="#fff" opacity=".8"/><circle cx="284" cy="8" r="1" fill="#fff" opacity=".8"/><circle cx="337" cy="37" r="1" fill="#fff" opacity=".8"/><circle cx="330" cy="150" r="18" fill="#ffd9a0" opacity=".95"/><path d="M0 250 L0.0 175.2 L10.0 172.3 L20.0 174.7 L30.0 180.8 L40.0 190.2 L50.0 198.6 L60.0 196.9 L70.0 184.0 L80.0 174.3 L90.0 165.9 L100.0 160.8 L110.0 165.6 L120.0 166.3 L130.0 165.8 L140.0 159.6 L150.0 157.5 L160.0 157.6 L170.0 166.1 L180.0 180.6 L190.0 189.7 L200.0 192.7 L210.0 190.9 L220.0 181.5 L230.0 178.7 L240.0 181.0 L250.0 184.5 L260.0 179.8 L270.0 174.0 L280.0 161.5 L290.0 151.2 L300.0 149.6 L310.0 154.7 L320.0 167.1 L330.0 173.6 L340.0 177.9 L350.0 174.5 L360.0 173.8 L370.0 180.7 L380.0 188.3 L390.0 195.4 L400.0 193.7 L400 250 Z" fill="#6f7f93" opacity=".75"/><path d="M120 250 L200 58 L222 84 L236 70 L300 250 Z" fill="#56616f"/><path d="M200 58 L222 84 L236 70 L252 104 L238 98 L226 112 L212 96 L196 116 L184 96 Z" fill="#f7fbff"/><path d="M0 250 L0.0 198.4 L10.0 198.1 L20.0 200.6 L30.0 207.7 L40.0 208.6 L50.0 208.2 L60.0 207.6 L70.0 207.7 L80.0 215.7 L90.0 223.4 L100.0 231.3 L110.0 231.7 L120.0 224.9 L130.0 215.3 L140.0 211.6 L150.0 209.6 L160.0 209.6 L170.0 209.0 L180.0 207.0 L190.0 201.5 L200.0 194.4 L210.0 197.5 L220.0 201.3 L230.0 213.1 L240.0 221.9 L250.0 225.2 L260.0 222.8 L270.0 217.9 L280.0 219.0 L290.0 220.1 L300.0 223.1 L310.0 223.7 L320.0 217.3 L330.0 209.2 L340.0 200.3 L350.0 196.2 L360.0 197.4 L370.0 204.4 L380.0 209.8 L390.0 210.2 L400.0 209.3 L400 250 Z" fill="#3d4d3a"/><rect x="0" y="222" width="400" height="28" fill="#2aa9b3" opacity=".85"/><rect x="0" y="222" width="400" height="3" fill="#fff" opacity=".35"/><circle cx="10" cy="217" r="6" fill="#5c7a3a"/><circle cx="32" cy="216" r="8" fill="#5c7a3a"/><circle cx="54" cy="215" r="10" fill="#5c7a3a"/><circle cx="76" cy="214" r="7" fill="#5c7a3a"/><circle cx="98" cy="220" r="9" fill="#5c7a3a"/><circle cx="120" cy="219" r="6" fill="#5c7a3a"/><circle cx="142" cy="218" r="8" fill="#5c7a3a"/><circle cx="164" cy="217" r="10" fill="#5c7a3a"/><circle cx="186" cy="216" r="7" fill="#5c7a3a"/><circle cx="208" cy="215" r="9" fill="#5c7a3a"/><circle cx="230" cy="214" r="6" fill="#5c7a3a"/><circle cx="252" cy="220" r="8" fill="#5c7a3a"/><circle cx="274" cy="219" r="10" fill="#5c7a3a"/><circle cx="296" cy="218" r="7" fill="#5c7a3a"/><circle cx="318" cy="217" r="9" fill="#5c7a3a"/><circle cx="340" cy="216" r="6" fill="#5c7a3a"/><circle cx="362" cy="215" r="8" fill="#5c7a3a"/><circle cx="384" cy="214" r="10" fill="#5c7a3a"/><rect x="4" y="4" width="392" height="242" fill="none" stroke="#fbfcfb" stroke-width="8"/><path d="M200 4V246M4 125H396" stroke="#fbfcfb" stroke-width="6"/></svg>
+        <div class="body"><h3>Family Chalet</h3><p>Two bedrooms, a kitchenette and a lawn for the children. Sleeps five.</p>
+          <div class="amen"><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>2 bedrooms</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>5 guests</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>Kitchenette</span><span><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Lawn</span></div>
+          <div class="foot"><div><div class="rate num">Rs 58,000<small>per night</small></div><div class="stay num"></div></div><button class="btn btn-slate pick" type="button">Select</button></div>
+        </div>
+      </article>
+    </div>
+    <div class="summary" id="summary" aria-live="polite"><span class="line" id="sumLine">Choose dates and a room to see your total.</span><button class="btn btn-apricot" id="reserve" type="button" disabled>Request to book</button></div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCES ================= -->
+<section class="section dark" id="experiences" data-nav="dark" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="over">Experiences</span><h2 id="exp-h" data-reveal>Book it at breakfast. Be there by ten.</h2></div>
+      <p data-reveal>Our guides grew up in the valley. Every trip includes transport, a packed lunch and a driver who knows the Karakoram Highway.</p>
+    </div>
+    <div class="exp">
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 2v2"/><path d="M12 9.189V13"/><path d="M19 12V6a2 2 0 00-2-2H7a2 2 0 00-2 2v6"/><path d="M19.38 19A11.6 11.6 0 0021 13l-8.188-3.639a2 2 0 00-1.624 0L3 13.001a11.6 11.6 0 002.81 7.76"/><path d="M2 20c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><h3>Attabad Lake</h3><p>Boats on the turquoise lake formed by the 2010 landslide.</p><span class="meta">Half day · 1 h drive</span></article>
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span><h3>Passu Cones</h3><p>The cathedral-spire peaks of Gojal and the Hussaini suspension bridge.</p><span class="meta">Full day · 2 h drive</span></article>
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M10 5V3"/><path d="M14 5V3"/><path d="M15 21v-3a3 3 0 0 0-6 0v3"/><path d="M18 3v8"/><path d="M18 5H6"/><path d="M22 11H2"/><path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9"/><path d="M6 3v8"/></svg></span><h3>Baltit &amp; Altit forts</h3><p>Seven hundred years of Hunza history, walking distance from the hotel.</p><span class="meta">2–3 hours · on foot</span></article>
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span><h3>Hopper Glacier walk</h3><p>An easy guided walk to the edge of one of Nagar's glaciers.</p><span class="meta">Full day · moderate</span></article>
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 10V2"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span><h3>Eagle's Nest sunset</h3><p>The best viewpoint in the valley for sunset over five peaks.</p><span class="meta">Evening · 30 min drive</span></article>
+      <article class="x" data-reveal><span class="ic-w"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44"/><path d="m13.56 11.747 4.332-.924"/><path d="m16 21-3.105-6.21"/><path d="M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z"/><path d="m6.158 8.633 1.114 4.456"/><path d="m8 21 3.105-6.21"/><circle cx="12" cy="13" r="2"/></svg></span><h3>Stargazing</h3><p>Telescope, blankets and kahwa on the terrace with our host.</p><span class="meta">Nightly · free for guests</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEASONS ================= -->
+<section class="section" id="seasons" data-nav="light" aria-labelledby="sea-h">
+  <div class="wrap season">
+    <div>
+      <span class="over">When to visit</span>
+      <h2 id="sea-h" class="mt-4" style="font-size:var(--step-3)" data-reveal>Blossom in April. Gold in October.</h2>
+      <div class="season-notes">
+        <div><b>Mar–Apr</b><p>Apricot and cherry blossom across the terraces. Cool nights; bring layers.</p></div>
+        <div><b>May–Sep</b><p>Warm days, open passes and the longest light for glacier trips.</p></div>
+        <div><b>Oct–Nov</b><p>Poplars turn gold and the air is clearest for views of the peaks.</p></div>
+      </div>
+    </div>
+    <div class="chart-card" data-reveal>
+      <h3>Average daytime high in Karimabad, °C (approximate)</h3>
+      <svg id="tempChart" viewBox="0 0 640 300" role="img" aria-labelledby="chartDesc"><desc id="chartDesc">Bar chart of approximate average daytime highs by month, lowest in January around 4 °C and highest in July around 31 °C.</desc></svg>
+      <div class="tip" id="tip"></div>
+      <table class="sr-only"><caption>Average daytime high, °C</caption><tbody id="tempTable"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GETTING HERE ================= -->
+<section class="section flush-top" id="getting-here" data-nav="light" aria-labelledby="get-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="over">Getting here</span><h2 id="get-h" data-reveal>Fly to Gilgit, we'll drive you up.</h2></div>
+      <p data-reveal>Flights to Gilgit depend on clear weather. We plan a backup road day for every guest arriving by air.</p>
+    </div>
+    <div class="route">
+      <article class="leg" data-reveal><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg><h3>Islamabad → Gilgit</h3><p>Daily flights through the Karakoram, weather permitting.</p><span class="dur">≈ 1 hour</span></article>
+      <article class="leg" data-reveal><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></svg><h3>Gilgit → Karimabad</h3><p>Our driver meets you at arrivals. Tea stop at Rakaposhi viewpoint.</p><span class="dur">≈ 2 hours</span></article>
+      <article class="leg" data-reveal><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg><h3>By road from Islamabad</h3><p>The Karakoram Highway via Chilas, usually with an overnight stop.</p><span class="dur">≈ 16–18 hours</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section flush-top" data-nav="light" aria-labelledby="q-h">
+  <div class="wrap">
+    <span class="over" id="q-h">Guests</span>
+    <div class="quotes mt-8">
+      <div class="quote" data-reveal><p>“We opened the curtains at six and Rakaposhi was pink. Nobody spoke for five minutes.”</p><div class="who">Sana &amp; Ali · Peak Suite · April</div></div>
+      <div class="quote" data-reveal><p>“Our flight was cancelled and they had a driver waiting in Islamabad within the hour.”</p><div class="who">The Fischer family · Family Chalet</div></div>
+      <div class="quote" data-reveal><p>“The apricot soup and the stargazing were the two best things we did in Pakistan.”</p><div class="who">Maryam K. · Valley Room · October</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><h4>Kestrel House</h4>Upper terraces, Karimabad<br>Hunza, Gilgit-Baltistan</div>
+      <div><h4>Stay</h4><a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#getting-here">Getting here</a></div>
+      <div><h4>Contact</h4><span class="num">+92 300 000 0000</span><br>stay@kestrelhouse.pk</div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Kestrel House</div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Kestrel House</span><span>Demo brand. Names, reviews and prices are placeholders; climate figures approximate.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

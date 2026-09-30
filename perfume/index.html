@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anbar Parfums</title>
+<meta name="description" content="Eau de parfum and alcohol-free attars, blended in small batches. Saffron Oud, Rose Taifi, Vetiver Rain and White Musk. Free delivery across Pakistan.">
+<meta name="theme-color" content="#17111a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-pearl: var(--pearl);
+    --color-smoke: var(--smoke);
+    --color-rose: var(--rose);
+    --font-display: var(--font-display);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-pearl focus:text-smoke focus:px-4 focus:py-2">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="nav-links" aria-label="Primary"><a href="#collection">Collection</a><a href="#notes">Notes</a><a href="#finder">Scent finder</a><a href="#guide">Guide</a></nav>
+    <a href="#top" class="logo" aria-label="Anbar Parfums, home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 4 6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 9c1.5 2 3 3.3 3 5.5a3 3 0 0 1-6 0C9 12.3 10.5 11 12 9z" fill="currentColor"/></svg>
+      <b>ANBAR</b><small>PARFUMS</small>
+    </a>
+    <div class="nav-right">
+      <button class="bag" id="bagBtn" aria-label="Bag, 0 items"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg><b id="bagCount" hidden>0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#collection">Collection</a><a href="#notes">Notes</a><a href="#finder">Scent finder</a><a href="#guide">Guide</a><a href="#discovery">Discovery set</a>
+</div>
+
+<main id="main">
+<!-- ================= BOTTLE FILM ================= -->
+<section class="film" id="top" aria-label="Inside a fragrance">
+  <div class="film-sticky">
+    <div class="film-bg" aria-hidden="true"></div>
+    <canvas id="bottleCanvas" aria-hidden="true"></canvas>
+
+    <div class="ch" data-ch="0" data-in="-1" data-out="0.1">
+      <span class="label accent">Anbar Parfums · Blended in small batches</span>
+      <h1 data-split>A scent is a story told in three acts.</h1>
+      <p data-hero-fade>Eau de parfum at 20% concentration and alcohol-free attars, aged six weeks before bottling. Scroll to open the bottle.</p>
+      <div class="ctas" data-hero-fade><a href="#collection" class="btn btn-pearl" data-magnetic>Shop the collection</a><a href="#finder" class="btn btn-line">Find your scent</a></div>
+    </div>
+    <div class="ch" data-in="0.13" data-out="0.3">
+      <span class="label accent">Act one · Top notes</span>
+      <h2>The first fifteen minutes.</h2>
+      <p>Bright, fast and gone before you leave the house. The top notes are what you smell on the tester strip.</p>
+      <div class="notes" id="nTop"></div><div class="time">0 – 15 minutes</div>
+    </div>
+    <div class="ch" data-in="0.34" data-out="0.5">
+      <span class="label accent">Act two · Heart notes</span>
+      <h2>Who you smell like all afternoon.</h2>
+      <p>The heart settles in as the top notes fade, and carries the character of the fragrance.</p>
+      <div class="notes" id="nHeart"></div><div class="time">15 minutes – 4 hours</div>
+    </div>
+    <div class="ch" data-in="0.54" data-out="0.7">
+      <span class="label accent">Act three · Base notes</span>
+      <h2>What's still there tomorrow morning.</h2>
+      <p>Heavy, slow molecules that anchor everything above them. This is what stays on a scarf for days.</p>
+      <div class="notes" id="nBase"></div><div class="time">4 hours and beyond</div>
+    </div>
+    <div class="ch" data-in="0.74" data-out="0.86">
+      <span class="label accent">Concentration</span>
+      <h2>20% oil. Six weeks of patience.</h2>
+      <p>Most eau de parfums sit at 15 to 20%. We blend at the top of that range, then rest every batch for six weeks so the notes marry.</p>
+    </div>
+    <div class="ch" data-in="0.89">
+      <span class="label accent">Your turn</span>
+      <h2>Try all four before you choose.</h2>
+      <p>The discovery set is four 2 ml vials, and its price comes off your first full bottle.</p>
+      <div class="ctas"><a href="#discovery" class="btn btn-pearl" data-magnetic>Get the discovery set</a></div>
+    </div>
+
+    <div class="film-foot" aria-hidden="true"><span>Opening</span><span class="line"><i id="filmLine"></i></span></div>
+    <div class="switcher">
+      <span class="now" id="scentNow">Saffron Oud</span>
+      <div class="swatches" id="swatches" role="group" aria-label="Choose a fragrance"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>Free delivery across Pakistan</div>
+    <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>Cash on delivery</div>
+    <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>Free 2 ml sample with every order</div>
+    <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>Unopened returns within 14 days</div>
+  </div>
+</div>
+
+<!-- ================= COLLECTION ================= -->
+<section class="section" id="collection" aria-labelledby="col-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label accent">The collection</span><h2 id="col-h" data-reveal>Four fragrances. No filler.</h2></div>
+      <p data-reveal>Tap a bottle to see its notes in the film above and the pyramid below. Each comes as 50 ml or 100 ml eau de parfum, or as a 12 ml attar.</p>
+    </div>
+    <div class="collection" id="collectionGrid"></div>
+  </div>
+</section>
+
+<!-- ================= NOTES PYRAMID ================= -->
+<section class="section flush-top" id="notes" aria-labelledby="notes-h">
+  <div class="wrap pyr">
+    <svg viewBox="0 0 500 440" role="img" aria-labelledby="pyrTitle">
+      <title id="pyrTitle">Fragrance pyramid</title>
+      <defs><linearGradient id="pyrShine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+      <path class="tier" id="pyrTop" d="M250 20L325 150H175Z" style="fill:var(--t1,#e0a560)"/>
+      <path class="tier" id="pyrHeart" d="M171 158H329L404 288H96Z" style="fill:var(--t2,#b3542f)"/>
+      <path class="tier" id="pyrBase" d="M92 296H408L483 426H17Z" style="fill:var(--t3,#5b2a14)"/>
+      <path d="M250 20L483 426H17Z" fill="url(#pyrShine)"/>
+      <g font-family="Jost, sans-serif" font-size="13" letter-spacing="3" fill="#17111a" text-anchor="middle"><text x="250" y="122">TOP</text><text x="250" y="236">HEART</text><text x="250" y="372" fill="#efe7df">BASE</text></g>
+    </svg>
+    <div>
+      <span class="label accent">Notes pyramid</span>
+      <h2 class="mt-4" style="font-size:var(--step-3)" id="notes-h" data-reveal><span id="pyrName">Saffron Oud</span></h2>
+      <p class="mt-4" style="color:var(--pearl-2);font-weight:300;max-width:44ch" id="pyrDesc">Saffron and pink pepper over Taif rose, settling on Cambodian oud and amber.</p>
+      <div class="tiers mt-8">
+        <div class="tier-row"><span class="when">0–15 min</span><div><h3>Top</h3><div class="names" id="pTop"></div></div></div>
+        <div class="tier-row"><span class="when">15 min–4 h</span><div><h3>Heart</h3><div class="names" id="pHeart"></div></div></div>
+        <div class="tier-row"><span class="when">4 h +</span><div><h3>Base</h3><div class="names" id="pBase"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCENT FINDER ================= -->
+<section class="section flush-top" id="finder" aria-labelledby="find-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label accent">Scent finder</span><h2 id="find-h" data-reveal>Three questions. One match.</h2></div>
+      <p data-reveal>No sign-up. Your match updates as you answer.</p>
+    </div>
+    <div class="quiz">
+      <div class="qs">
+        <div class="q"><h3>When will you wear it most?</h3><div class="opts" data-choice data-q="0"><button aria-pressed="false" data-v="day"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>Daytime</button><button aria-pressed="false" data-v="night"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>Evenings</button><button aria-pressed="false" data-v="both">Both</button></div></div>
+        <div class="q"><h3>Which of these do you reach for?</h3><div class="opts" data-choice data-q="1"><button aria-pressed="false" data-v="warm"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>Warm &amp; spicy</button><button aria-pressed="false" data-v="floral"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/><path d="m8 8 1.88 1.88"/><path d="M14.12 9.88 16 8"/><path d="m8 16 1.88-1.88"/><path d="M14.12 14.12 16 16"/></svg>Floral</button><button aria-pressed="false" data-v="fresh"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>Fresh &amp; green</button><button aria-pressed="false" data-v="soft"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>Soft &amp; clean</button></div></div>
+        <div class="q"><h3>How close should people get before they notice?</h3><div class="opts" data-choice data-q="2"><button aria-pressed="false" data-v="room">Across the room</button><button aria-pressed="false" data-v="hug">At a hug</button></div></div>
+      </div>
+      <aside class="match" aria-live="polite">
+        <span class="label">Your match</span>
+        <div class="pct num" id="mPct">—</div>
+        <h3 id="mName">Answer to see your match</h3>
+        <p id="mWhy">Each answer narrows the four fragrances down.</p>
+        <button class="btn btn-pearl" id="mAdd" type="button" disabled>Add 50 ml to bag</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONCENTRATION GUIDE ================= -->
+<section class="section flush-top" id="guide" aria-labelledby="guide-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label accent">Guide</span><h2 id="guide-h" data-reveal>What the label actually means.</h2></div>
+      <p data-reveal>Concentration is the share of perfume oil in the bottle. More oil usually means a longer-lasting, closer scent.</p>
+    </div>
+    <div class="conc">
+      <div class="conc-row" data-reveal><div><h3>Eau de cologne</h3><small>2–4% oil</small></div><span class="bar"><i style="left:0;width:13%"></i></span><span class="hrs">≈ 2 hours</span></div>
+      <div class="conc-row" data-reveal><div><h3>Eau de toilette</h3><small>5–15% oil</small></div><span class="bar"><i style="left:0;width:40%"></i></span><span class="hrs">3–5 hours</span></div>
+      <div class="conc-row ours" data-reveal><div><h3>Eau de parfum</h3><small>15–20% oil · ours at 20%</small></div><span class="bar"><i style="left:0;width:67%"></i></span><span class="hrs">6–8 hours</span></div>
+      <div class="conc-row" data-reveal><div><h3>Extrait de parfum</h3><small>20–30% oil</small></div><span class="bar"><i style="left:0;width:85%"></i></span><span class="hrs">8–12 hours</span></div>
+      <div class="conc-row ours" data-reveal><div><h3>Attar</h3><small>Oil-based, alcohol-free</small></div><span class="bar"><i style="left:0;width:100%"></i></span><span class="hrs">12 hours +</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DISCOVERY SET ================= -->
+<section class="section flush-top" id="discovery" aria-labelledby="disc-h">
+  <div class="wrap">
+    <div class="disc" data-reveal>
+      <div>
+        <span class="label accent">Discovery set</span>
+        <h2 id="disc-h" class="mt-4">All four, two millilitres each.</h2>
+        <p>Wear each one for a full day. When you find the one, the price of the set comes off your first 50 ml or 100 ml bottle.</p>
+        <div class="price num">Rs 2,800<small>credited to your bottle</small></div>
+        <div class="flex flex-wrap gap-3 mt-6"><button class="btn btn-pearl" id="discAdd" type="button">Add to bag <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+      </div>
+      <svg viewBox="0 0 520 300" role="img" aria-label="Discovery set box with four vials">
+        <defs><linearGradient id="boxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d2432"/><stop offset="1" stop-color="#1b141e"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".3" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient></defs>
+        <rect x="30" y="120" width="460" height="160" rx="10" fill="url(#boxg)" stroke="#3a3040"/>
+        <rect x="30" y="120" width="460" height="22" fill="#d9a48f" opacity=".85"/>
+        <g>
+          <g transform="translate(90,40)"><rect x="18" y="0" width="24" height="22" rx="3" fill="#d9a48f"/><rect x="10" y="20" width="40" height="150" rx="8" fill="#c8741f" opacity=".85"/><rect x="10" y="20" width="40" height="150" rx="8" fill="url(#glass)"/></g>
+          <g transform="translate(190,40)"><rect x="18" y="0" width="24" height="22" rx="3" fill="#d9a48f"/><rect x="10" y="20" width="40" height="150" rx="8" fill="#c43d5c" opacity=".85"/><rect x="10" y="20" width="40" height="150" rx="8" fill="url(#glass)"/></g>
+          <g transform="translate(290,40)"><rect x="18" y="0" width="24" height="22" rx="3" fill="#d9a48f"/><rect x="10" y="20" width="40" height="150" rx="8" fill="#6f8f6a" opacity=".85"/><rect x="10" y="20" width="40" height="150" rx="8" fill="url(#glass)"/></g>
+          <g transform="translate(390,40)"><rect x="18" y="0" width="24" height="22" rx="3" fill="#d9a48f"/><rect x="10" y="20" width="40" height="150" rx="8" fill="#e6ddd2" opacity=".85"/><rect x="10" y="20" width="40" height="150" rx="8" fill="url(#glass)"/></g>
+        </g>
+        <text x="260" y="255" text-anchor="middle" font-family="Marcellus, serif" font-size="22" letter-spacing="10" fill="#efe7df">ANBAR</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section flush-top" aria-labelledby="rev-h">
+  <div class="wrap">
+    <span class="label accent" id="rev-h">From our customers</span>
+    <div class="revs mt-10">
+      <div class="rev" data-reveal><p>“Saffron Oud lasted through a twelve-hour shaadi. Three people asked what I was wearing.”</p><div class="who">Hassan R. · Saffron Oud 100 ml</div></div>
+      <div class="rev" data-reveal><p>“I bought the discovery set expecting to pick Rose Taifi and ended up with Vetiver Rain.”</p><div class="who">Mahnoor A. · Discovery set</div></div>
+      <div class="rev" data-reveal><p>“The White Musk attar is soft enough for the office and I still smell it on my scarf the next day.”</p><div class="who">Zara K. · White Musk attar</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><h4>Newsletter</h4><p>New batches and restocks, once a month.</p><form class="news" id="newsForm" novalidate><label for="nEmail" class="sr-only">Email</label><input id="nEmail" type="email" placeholder="you@email.com" autocomplete="email"><button type="submit">Join</button></form></div>
+      <div><h4>Shop</h4><a href="#collection">Collection</a><a href="#discovery">Discovery set</a><a href="#finder">Scent finder</a></div>
+      <div><h4>Help</h4><span>WhatsApp +92 300 000 0000</span><br><span>Delivery in 2–4 working days</span></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">ANBAR</div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> Anbar Parfums</span><span>Demo brand. Names, reviews and prices are placeholders.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KILO Strength Club</title>
+<meta name="description" content="Strength and conditioning club with 14 lifting platforms, coach-written programs and classes from 5 am to midnight. Try a free week.">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- Tailwind v4 (browser build). For production, compile with the Tailwind CLI — see README. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-ink: var(--ink);
+    --color-red: var(--red);
+    --color-chalk: var(--chalk);
+    --font-display: var(--font-display);
+    --font-mono: var(--font-mono);
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-red focus:text-white focus:px-4 focus:py-2">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="KILO Strength Club, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#d7262e"/><circle cx="20" cy="20" r="13.5" fill="none" stroke="#121212" stroke-width="1.5" opacity=".35"/><circle cx="20" cy="20" r="6.5" fill="#d9d9d4"/><circle cx="20" cy="20" r="3" fill="#121212"/></svg>KILO
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#programs">Programs</a><a href="#timetable">Timetable</a><a href="#calculator">1RM tool</a><a href="#coaches">Coaches</a><a href="#membership">Membership</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#trial" class="btn btn-red" data-magnetic>Free week</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#programs">Programs</a><a href="#timetable">Timetable</a><a href="#calculator">1RM tool</a><a href="#coaches">Coaches</a><a href="#membership">Membership</a><a href="#trial">Free week</a>
+</div>
+
+<main id="main">
+<!-- ================= LOADING FILM ================= -->
+<section class="film" id="top" data-nav="dark" aria-label="A barbell being loaded">
+  <div class="film-sticky">
+    <canvas id="barCanvas" aria-hidden="true"></canvas>
+    <div class="film-shade" aria-hidden="true"></div>
+
+    <div class="ch" data-ch="0" data-in="-1" data-out="0.1">
+      <span class="kicker">KILO Strength Club · Open 5 am – midnight</span>
+      <h1 data-split>Stronger is a number. <span class="hot">Let's move it.</span></h1>
+      <p data-hero-fade>Coach-written programs, 14 lifting platforms and classes that start before work and finish after it. Your first week is free.</p>
+      <div class="ctas" data-hero-fade>
+        <a href="#trial" class="btn btn-red" data-magnetic>Claim a free week <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#membership" class="btn btn-line">See memberships</a>
+      </div>
+    </div>
+    <div class="ch" data-in="0.13" data-out="0.28">
+      <span class="kicker">01 · Learn the colours</span>
+      <h2>Red is <span class="hot">25.</span></h2>
+      <p>Competition plates follow one colour code: red 25 kg, blue 20, yellow 15, green 10. You'll know it by the end of week one.</p>
+    </div>
+    <div class="ch" data-in="0.31" data-out="0.46">
+      <span class="kicker">02 · Coached</span>
+      <h2>Coached, not just <span class="hot">counted.</span></h2>
+      <p>Every member gets a program written by a coach and reviewed every four weeks. No guessing what to do on Tuesday.</p>
+    </div>
+    <div class="ch" data-in="0.49" data-out="0.64">
+      <span class="kicker">03 · Space</span>
+      <h2>Platforms, <span class="hot">not queues.</span></h2>
+      <p>14 platforms, 10 racks and a 30-metre turf lane. Peak-hour wait for a rack last month: under four minutes.</p>
+    </div>
+    <div class="ch" data-in="0.67" data-out="0.82">
+      <span class="kicker">04 · Proof</span>
+      <h2>Progress you can <span class="hot">see.</span></h2>
+      <p>Testing day on the first Saturday of every month. Your lifts, bodyweight and conditioning land in the app the same afternoon.</p>
+    </div>
+    <div class="ch" data-in="0.86">
+      <span class="kicker">05 · Lift</span>
+      <h2>Your first 100 kg is <span class="hot">closer than you think.</span></h2>
+      <p>Seven days, every class, one coached session. No card needed.</p>
+      <div class="ctas"><a href="#trial" class="btn btn-red" data-magnetic>Start my free week</a></div>
+    </div>
+
+    <div class="film-progress" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    <div class="hud" aria-live="off">
+      <div><div class="label">On the bar</div><div class="kg"><span id="kg">20</span><small>kg</small></div></div>
+      <div class="legend" aria-hidden="true">
+        <span data-plate="25"><i style="background:#d7262e"></i>25</span>
+        <span data-plate="20"><i style="background:#1f5fbf"></i>20</span>
+        <span data-plate="15"><i style="background:#f2c230"></i>15</span>
+        <span data-plate="10"><i style="background:#2e9b4f"></i>10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="section" data-nav="light" aria-label="The club in numbers" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat" data-reveal><b><span data-count="1850" data-format="comma">1,850</span></b><span>Members training this month</span></div>
+      <div class="stat" data-reveal><b><span data-count="14">14</span></b><span>Lifting platforms with bumper sets</span></div>
+      <div class="stat" data-reveal><b><span data-count="22">22</span></b><span>Certified coaches on the floor</span></div>
+      <div class="stat" data-reveal><b>19<small style="font-size:.4em">h</small></b><span>Open every day, 5 am to midnight</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMS ================= -->
+<section class="section" id="programs" data-nav="light" aria-labelledby="prog-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Programs</span><h2 id="prog-h" data-reveal>Pick a goal. We'll write the plan.</h2></div>
+      <p data-reveal>All programs are included in every membership. Switch whenever your goal changes.</p>
+    </div>
+    <div class="programs">
+      <article class="prog feature" data-reveal>
+        <span class="ic-wrap"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg></span><span class="tag">Most popular</span>
+        <h3>Strength</h3>
+        <p>Squat, bench, deadlift and press, programmed in four-week blocks. Beginners start with the empty bar and a coach beside them.</p>
+        <p class="kicker" style="color:#fff">3–4 sessions a week</p>
+      </article>
+      <article class="prog" data-reveal><span class="ic-wrap"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2"/><path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2"/><path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3"/></svg></span><span class="tag">Technical</span><h3>Olympic lifting</h3><p>Snatch and clean &amp; jerk on dedicated platforms with a national-level coach.</p></article>
+      <article class="prog" data-reveal><span class="ic-wrap"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg></span><span class="tag">45 min</span><h3>Conditioning</h3><p>Sleds, rowers and assault bikes. Hard, short and scaled to you.</p></article>
+      <article class="prog" data-reveal><span class="ic-wrap"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12.035 17.012a3 3 0 0 0-3-3l-.311-.002a.72.72 0 0 1-.505-1.229l1.195-1.195A2 2 0 0 1 10.828 11H12a2 2 0 0 0 0-4H9.243a3 3 0 0 0-2.122.879l-2.707 2.707A4.83 4.83 0 0 0 3 14a8 8 0 0 0 8 8h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v2a2 2 0 1 0 4 0"/><path d="M13.888 9.662A2 2 0 0 0 17 8V5A2 2 0 1 0 13 5"/><path d="M9 5A2 2 0 1 0 5 5V10"/><path d="M9 7V4A2 2 0 1 1 13 4V7.268"/></svg></span><span class="tag">Pads &amp; bags</span><h3>Boxing</h3><p>Footwork, pad work and bag rounds. No sparring unless you ask for it.</p></article>
+      <article class="prog" data-reveal><span class="ic-wrap"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg></span><span class="tag">Recovery</span><h3>Mobility</h3><p>Hips, shoulders and ankles, so the lifts feel better next week.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIMETABLE ================= -->
+<section class="section dark" id="timetable" data-nav="dark" aria-labelledby="tt-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Timetable</span><h2 id="tt-h" data-reveal>Classes from 5:30 am.</h2></div>
+      <p data-reveal>Book a spot in two taps. Members can book seven days ahead; free-week guests, three.</p>
+    </div>
+    <div class="tt-tools">
+      <div class="days" id="days" data-choice role="group" aria-label="Day"></div>
+      <div class="filters" id="filters" data-choice role="group" aria-label="Class type">
+        <button class="filter" aria-pressed="true" data-f="all">All</button>
+        <button class="filter" aria-pressed="false" data-f="strength">Strength</button>
+        <button class="filter" aria-pressed="false" data-f="conditioning">Conditioning</button>
+        <button class="filter" aria-pressed="false" data-f="boxing">Boxing</button>
+        <button class="filter" aria-pressed="false" data-f="mobility">Mobility</button>
+      </div>
+    </div>
+    <div class="tt" id="tt" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= 1RM CALCULATOR ================= -->
+<section class="section" id="calculator" data-nav="light" aria-labelledby="calc-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Coach's tool</span><h2 id="calc-h" data-reveal>What's your one-rep max?</h2></div>
+      <p data-reveal>Enter a set you did recently. We estimate your max with the Epley formula and show exactly which plates to load for each percentage.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-in" data-reveal>
+        <div class="field"><label for="w">Weight lifted (kg)</label>
+          <div class="stepper"><button type="button" data-step="w" data-d="-2.5" aria-label="Less weight">−</button><input id="w" type="number" inputmode="decimal" min="20" max="400" step="2.5" value="80"><button type="button" data-step="w" data-d="2.5" aria-label="More weight">+</button></div>
+        </div>
+        <div class="field"><label for="r">Reps completed</label>
+          <div class="stepper"><button type="button" data-step="r" data-d="-1" aria-label="Fewer reps">−</button><input id="r" type="number" inputmode="numeric" min="1" max="12" step="1" value="5"><button type="button" data-step="r" data-d="1" aria-label="More reps">+</button></div>
+        </div>
+        <div><span class="lbl kicker">Estimated 1RM</span><div class="big-out num" id="orm" aria-live="polite">93<small>kg</small></div></div>
+        <p class="calc-note">Estimates are most accurate between 2 and 10 reps. Plates per side on a 20 kg bar, using 25 / 20 / 15 / 10 / 5 / 2.5 / 1.25 kg plates.</p>
+      </div>
+      <div class="pct-table" id="pctTable" data-reveal></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COACHES ================= -->
+<section class="section flush-top" id="coaches" data-nav="light" aria-labelledby="coach-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Coaches</span><h2 id="coach-h" data-reveal>People who've lifted what you're chasing.</h2></div>
+      <p data-reveal>Every coach holds a recognised certification and trains here too. You'll see them on the platform, not behind a desk.</p>
+    </div>
+    <div class="coaches">
+      <article class="coach-card" data-reveal>
+        <div class="portrait"><svg viewBox="0 0 400 440" aria-hidden="true"><rect width="400" height="440" fill="#1c1c1b"/><circle cx="330" cy="70" r="140" fill="#d7262e" opacity=".9"/><path d="M200 120a62 62 0 1 1 0 124a62 62 0 1 1 0-124zM70 440c8-96 62-150 130-150s122 54 130 150z" fill="#2e2e2c"/></svg><span class="ph">Portrait</span></div>
+        <div class="body"><h3>Hamza Tariq</h3><p class="role">Head strength coach</p><div class="prs"><span>DL 280 kg</span><span>12 yrs coaching</span><span>Powerlifting</span></div></div>
+      </article>
+      <article class="coach-card" data-reveal>
+        <div class="portrait"><svg viewBox="0 0 400 440" aria-hidden="true"><rect width="400" height="440" fill="#1c1c1b"/><circle cx="330" cy="70" r="140" fill="#1f5fbf" opacity=".9"/><path d="M200 120a62 62 0 1 1 0 124a62 62 0 1 1 0-124zM70 440c8-96 62-150 130-150s122 54 130 150z" fill="#2e2e2c"/></svg><span class="ph">Portrait</span></div>
+        <div class="body"><h3>Sara Iqbal</h3><p class="role">Olympic lifting lead</p><div class="prs"><span>C&amp;J 95 kg</span><span>National level</span><span>Weightlifting</span></div></div>
+      </article>
+      <article class="coach-card" data-reveal>
+        <div class="portrait"><svg viewBox="0 0 400 440" aria-hidden="true"><rect width="400" height="440" fill="#1c1c1b"/><circle cx="330" cy="70" r="140" fill="#2e9b4f" opacity=".9"/><path d="M200 120a62 62 0 1 1 0 124a62 62 0 1 1 0-124zM70 440c8-96 62-150 130-150s122 54 130 150z" fill="#2e2e2c"/></svg><span class="ph">Portrait</span></div>
+        <div class="body"><h3>Daniyal Khan</h3><p class="role">Conditioning &amp; boxing</p><div class="prs"><span>2k row 6:41</span><span>Boxing coach</span><span>HIIT</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEMBERSHIP ================= -->
+<section class="section dark" id="membership" data-nav="dark" aria-labelledby="mem-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Membership</span><h2 id="mem-h" data-reveal>No joining fee. No lock-in on monthly.</h2></div>
+      <p data-reveal>Freeze for up to 8 weeks a year at no cost. Student and family rates at the front desk.</p>
+    </div>
+    <div class="bill" data-choice id="bill" role="group" aria-label="Billing period">
+      <button aria-pressed="true" data-b="m">Monthly</button>
+      <button aria-pressed="false" data-b="y">Yearly <em>2 months free</em></button>
+    </div>
+    <div class="plans">
+      <article class="plan" data-reveal data-m="39" data-y="390">
+        <h3>Open gym</h3>
+        <div class="price num">$<span class="amt">39</span><small class="per">/ month</small></div><div class="save"></div>
+        <ul><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Full floor &amp; platform access</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Program in the app</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Monthly testing day</li><li class="no"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>Classes</li><li class="no"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>1:1 coach check-ins</li></ul>
+        <a href="#trial" class="btn btn-line">Try free for 7 days</a>
+      </article>
+      <article class="plan pop" data-reveal data-m="69" data-y="690">
+        <h3>Club</h3>
+        <div class="price num">$<span class="amt">69</span><small class="per">/ month</small></div><div class="save"></div>
+        <ul><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Everything in Open gym</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Unlimited classes</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Coach-written program</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Program review every 4 weeks</li><li class="no"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>Weekly 1:1 sessions</li></ul>
+        <a href="#trial" class="btn btn-red">Try free for 7 days</a>
+      </article>
+      <article class="plan" data-reveal data-m="149" data-y="1490">
+        <h3>Coached</h3>
+        <div class="price num">$<span class="amt">149</span><small class="per">/ month</small></div><div class="save"></div>
+        <ul><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Everything in Club</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Weekly 1:1 session</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Nutrition check-ins</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Video form reviews</li><li><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5"/></svg>Priority class booking</li></ul>
+        <a href="#trial" class="btn btn-line">Book a consult</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="section" data-nav="light" aria-labelledby="res-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Member results</span><h2 id="res-h" data-reveal>Numbers, not before-and-afters.</h2></div>
+      <p data-reveal>Recorded on testing days by a coach.</p>
+    </div>
+    <div class="results">
+      <article class="result" data-reveal><div class="lift">Deadlift · 9 months</div><div class="delta num">60 <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 140 kg</div><p>“I came in unable to pick a bar up off the floor without my back hurting. Now it's my favourite lift.”</p><div class="who">Ayesha M. · Club member</div></article>
+      <article class="result" data-reveal><div class="lift">5 km run · 12 weeks</div><div class="delta num">34:10 <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 26:45</div><p>“Conditioning classes three times a week. I didn't run once outside of them.”</p><div class="who">Bilal R. · Club member</div></article>
+      <article class="result" data-reveal><div class="lift">Back squat · 6 months</div><div class="delta num">40 <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 105 kg</div><p>“Having a coach write my program meant I stopped wasting sessions.”</p><div class="who">Omar S. · Coached member</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FREE TRIAL ================= -->
+<section class="section dark trial" id="trial" data-nav="dark" aria-labelledby="trial-h">
+  <div class="wrap trial-grid">
+    <div>
+      <span class="kicker">Free week</span>
+      <h2 id="trial-h" class="mt-6">Seven days. <span style="color:var(--red)">On us.</span></h2>
+      <div class="perks">
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></svg>Every class, every day for a week</div>
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>One coached session to check your technique</div>
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>No card, no contract, no sales pitch</div>
+        <div><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>14 Foundry Road, open 5 am – midnight</div>
+      </div>
+    </div>
+    <form class="form" id="trialForm" novalidate>
+      <div class="field full"><span class="lbl" id="goalLbl">Your main goal</span>
+        <div class="goals" data-choice role="group" aria-labelledby="goalLbl">
+          <button type="button" aria-pressed="true">Get stronger</button><button type="button" aria-pressed="false">Lose fat</button><button type="button" aria-pressed="false">Get fitter</button><button type="button" aria-pressed="false">Learn to lift</button>
+        </div>
+      </div>
+      <div class="field"><label for="t-name">Name</label><input id="t-name" autocomplete="name"></div>
+      <div class="field"><label for="t-phone">Phone</label><input id="t-phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="t-start">Start date</label><input id="t-start" type="date"></div>
+      <div class="field"><label for="t-time">Usual time</label><select id="t-time"><option>Early (5–8 am)</option><option>Midday</option><option>Evening (5–9 pm)</option><option>Late (after 9 pm)</option></select></div>
+      <button class="btn btn-red" type="submit">Claim my free week <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <p class="form-note" id="trialNote">We'll text you a pass to show at the front desk.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><h4>Club</h4>14 Foundry Road<br>Open daily 5:00–24:00</div>
+      <div><h4>Train</h4><a href="#programs">Programs</a><a href="#timetable">Timetable</a><a href="#calculator">1RM tool</a></div>
+      <div><h4>Join</h4><a href="#membership">Membership</a><a href="#trial">Free week</a></div>
+      <div><h4>Contact</h4><span class="num">+1 (555) 014 2200</span><br>coach@kilo.club</div>
+    </div>
+    <div class="footer-word" aria-hidden="true">KILO<span>.</span></div>
+    <div class="footer-bottom"><span>© <span id="yr">2026</span> KILO Strength Club</span><span>Demo brand. Names, results and prices are placeholders.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>
