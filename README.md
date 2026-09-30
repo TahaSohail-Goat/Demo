@@ -12,11 +12,12 @@ Independent niche demos, with everything specific to a niche kept in its own fol
 | Specialty café / roastery | Morrow Coffee Roasters | [cafe/index.html](cafe/index.html) | https://cafe.webdemos.app/ |
 | Dental practice | Ivora Dental Studio | [dental/index.html](dental/index.html) | https://dental.webdemos.app/ |
 | Multi-specialty clinic | Aldena Health Clinic | [clinic/index.html](clinic/index.html) | https://clinic.webdemos.app/ |
-| Fitness club | KILO Strength Club | [gym/index.html](gym/index.html) | — |
-| Wedding &amp; catering | Shehnai Events &amp; Caterers | [wedding-catering/index.html](wedding-catering/index.html) | — |
-| Fragrance | Anbar Parfums | [perfume/index.html](perfume/index.html) | — |
-| Boutique hotel | Kestrel House, Hunza | [hotel/index.html](hotel/index.html) | — |
-| Travel agency | Safarnama Travel &amp; Tours | [travel/index.html](travel/index.html) | — |
+| Fitness club | KILO Strength Club | [gym/index.html](gym/index.html) | https://gym.webdemos.app/ |
+| Wedding &amp; catering | Shehnai Events &amp; Caterers | [wedding-catering/index.html](wedding-catering/index.html) | https://wedding.webdemos.app/ |
+| Fragrance | Anbar Parfums | [perfume/index.html](perfume/index.html) | https://perfume.webdemos.app/ |
+| Boutique hotel | Kestrel House, Hunza | [hotel/index.html](hotel/index.html) | https://hotel.webdemos.app/ |
+| Travel agency | Safarnama Travel &amp; Tours | [travel/index.html](travel/index.html) | https://travel.webdemos.app/ |
+| Riverside boutique hotel | Saksiri Riverside | [saksiri-riverside/index.html](saksiri-riverside/index.html) | https://saksiri-riverside.vercel.app/ |
 
 Open the root `index.html` for the demo directory, or open any niche HTML entry point directly. No install or build step is required to preview or deploy. The real estate demo commits its compiled Tailwind CSS and bundled JavaScript; its sources and build command are in [real-estate/README.md](real-estate/README.md). Its 3D section needs a local server, and shows a photograph instead when opened from disk.
 
@@ -51,12 +52,18 @@ This repository is deployed as one Vercel project per folder, all connected to t
 | Café | `cafe` | `cafe.webdemos.app` |
 | Dental | `dental` | `dental.webdemos.app` |
 | Clinic | `clinic` | `clinic.webdemos.app` |
+| Gym | `gym` | `gym.webdemos.app` |
+| Wedding &amp; catering | `wedding-catering` | `wedding.webdemos.app` |
+| Perfume | `perfume` | `perfume.webdemos.app` |
+| Hotel | `hotel` | `hotel.webdemos.app` |
+| Travel | `travel` | `travel.webdemos.app` |
+| Saksiri Riverside | `saksiri-riverside` | `saksiri-riverside.vercel.app` |
 
 Each folder has its own `vercel.json`, which Vercel reads from the project's Root Directory. The demo folders use clean URLs without trailing slashes so relative stylesheet, script, and image paths resolve from every page. The root `vercel.json` redirects each niche's folder path (for example `/hvac/…`) to the matching subdomain. See [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json).
 
 Each niche is self-contained and works as a direct prospect URL.
 
-The five newer demos are included in the repository as root-level folders and are ready to receive their own Vercel projects and domains when you assign them.
+All demos are deployed as separate static sites. The root collection links to each live domain.
 
 ## Adding a niche
 
