@@ -1,0 +1,13 @@
+/* ---- shared base (from niches/_shared/base.css) ---- */
+html { -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.ic { width: 1.15em; height: 1.15em; flex: none; vertical-align: -0.18em; stroke-width: 1.75; }
+.word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.word > span { display: inline-block; will-change: transform; }
+.js .film [data-in]:not([data-in^="-"]) { opacity: 0; visibility: hidden; }
+.js [data-reveal] { opacity: 0; transform: translateY(28px); }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, calc(100% + 60px)); visibility: hidden; background: var(--toast-bg, #111); color: var(--toast-fg, #fff); padding: .85rem 1.25rem; border-radius: 999px; font-weight: 600; font-size: .95rem; z-index: 80; transition: transform .5s cubic-bezier(.16,1,.3,1); max-width: calc(100vw - 32px); box-sizing: border-box; text-align: center; }
+.toast.show { transform: translate(-50%, 0); visibility: visible; }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal] { transform: none !important; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+/* ---- end shared base ---- */
