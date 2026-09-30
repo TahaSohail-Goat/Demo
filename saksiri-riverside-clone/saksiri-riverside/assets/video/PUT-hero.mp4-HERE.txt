@@ -1,0 +1,2 @@
+Put hero.mp4 here (run get-media.sh from the site folder, or see README.md).
+Until then the page streams the Pexels clip.

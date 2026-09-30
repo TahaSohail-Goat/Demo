@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saksiri Riverside Boutique Hotel · Vang Vieng, Laos</title>
+<meta name="description" content="A tranquil riverside escape in the heart of Vang Vieng, Laos. 36 rooms beside the Nam Song, a pool beneath the karst mountains, breakfast included.">
+<meta name="theme-color" content="#0d0d0b">
+<meta property="og:title" content="Saksiri Riverside Boutique Hotel">
+<meta property="og:description" content="Where the river meets the mountains. A tranquil riverside escape in Vang Vieng, Laos.">
+<meta property="og:image" content="https://saksiri-riverside.vercel.app/images/aerial.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  // Motion on unless the visitor asked for less: enables the sticky scroll scenes in CSS.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
+</script>
+</head>
+<body>
+<a class="sr" href="#story">Skip to content</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Saksiri Riverside, back to top">
+    <span class="brand-name">Saksiri</span>
+    <span class="brand-sub">Riverside · Vang Vieng</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#story">About</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#dining">Dining</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-book" href="#reserve">Book now</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+  <div class="nav-progress" aria-hidden="true"><i id="progress"></i></div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-links" aria-label="Menu">
+    <a class="m-link" href="#top"><span class="ln"><span class="li">Home</span></span><small>01</small></a>
+    <a class="m-link" href="#story"><span class="ln"><span class="li">About us</span></span><small>02</small></a>
+    <a class="m-link" href="#rooms"><span class="ln"><span class="li">Rooms</span></span><small>03</small></a>
+    <a class="m-link" href="#dining"><span class="ln"><span class="li">Dining</span></span><small>04</small></a>
+    <a class="m-link" href="#tour"><span class="ln"><span class="li">Visual tour</span></span><small>05</small></a>
+    <a class="m-link" href="#contact"><span class="ln"><span class="li">Contact us</span></span><small>06</small></a>
+  </nav>
+  <div class="menu-foot">
+    <p>Nam Song River, Vang Vieng, Laos</p>
+    <a class="btn btn-book" href="#reserve">Book your stay</a>
+  </div>
+</div>
+
+<main>
+<!-- ================= HERO — scroll-scrubbed film ================= -->
+<section class="hero-scroll" id="top" aria-label="Welcome">
+  <div class="hero" id="hero">
+    <div class="hero-frame" aria-hidden="true">
+      <div class="hero-pz" id="hero-pz">
+        <!-- The film. script.js tries these in order (your own file first, then the free stock clips)
+             and loads the winner into memory so scroll-scrubbing is instant. -->
+        <video class="hero-video" id="hero-video" muted playsinline preload="auto" disablepictureinpicture tabindex="-1">
+          <source data-src="assets/video/hero.mp4" type="video/mp4">
+          <!-- Pexels, free to use: "Cozy Modern Restaurant Interior at Night" by gusat silviu -->
+          <source data-src="https://videos.pexels.com/video-files/31631562/13476221_2560_1440_25fps.mp4" type="video/mp4">
+          <!-- Pexels, free to use: "Elegant Chairs and Tables in Restaurant" by utopia 36 -->
+          <source data-src="https://videos.pexels.com/video-files/12188718/12188718-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <!-- Fallback frames (the hotel's own photos) if the video can't load: still scrubbed by scroll -->
+        <div class="hs on" data-k="hero"><div class="hk"><img class="cover" src="https://saksiri-riverside.vercel.app/images/hero.webp" alt="" fetchpriority="high"></div></div>
+        <div class="hs" data-k="buffet"><div class="hk"><img class="cover" src="https://saksiri-riverside.vercel.app/images/buffet.webp" alt="" loading="lazy"></div></div>
+        <div class="hs" data-k="gardendine"><div class="hk"><img class="cover" src="https://saksiri-riverside.vercel.app/images/gardendine.webp" alt="" loading="lazy"></div></div>
+        <div class="hs" data-k="dinnernight"><div class="hk"><img class="cover" src="https://saksiri-riverside.vercel.app/images/dinnernight.webp" alt="" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-warm" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-dim" id="hero-dim" aria-hidden="true"></div>
+
+    <!-- chapters that surface while the film plays -->
+    <div class="hero-chapters" aria-hidden="true">
+      <p class="hero-chapter" data-a="0.17" data-b="0.33"><span class="k">01 · The dining room</span><span class="t">Warm light, <em>slow evenings</em></span><span class="s">Breakfast is included with every room.</span></p>
+      <p class="hero-chapter" data-a="0.35" data-b="0.50"><span class="k">02 · At the table</span><span class="t">Vegan on request. <em>Halal by pre-order.</em></span><span class="s">Vegan meals are available, and Muslim guests can pre-order.</span></p>
+      <p class="hero-chapter" data-a="0.52" data-b="0.70"><span class="k">03 · Evening</span><span class="t">Dinner <em>under the palms</em></span><span class="s">The garden, lantern-lit, a few steps from the Nam Song.</span></p>
+    </div>
+
+    <div class="hero-content" id="hero-content">
+      <div class="hero-inner">
+        <h1>
+          <span class="h1-name" data-hero>Saksiri Riverside · Vang Vieng, Laos</span>
+          <span class="h1-line"><span class="ln"><span class="li">Where the river</span></span><span class="ln"><span class="li">meets the <em>mountains.</em></span></span></span>
+        </h1>
+        <p class="hero-sub" data-hero>A tranquil riverside escape in the heart of Vang Vieng, Laos.</p>
+        <p class="hero-trust" data-hero><span>From <b>US$85</b> / night</span><span>Breakfast included</span><span><span class="star">★</span> <b>4.5</b> Google</span></p>
+        <div class="hero-cta" data-hero>
+          <a class="btn btn-light magnetic" href="#reserve">Book your stay <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="btn btn-glass" href="#rooms">Explore the rooms</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-cue" id="hero-cue" aria-hidden="true">Scroll<i></i></div>
+
+    <div class="hero-foot">
+      <p class="hero-cap" aria-live="polite"><b id="hero-count">01 / 04</b><span id="hero-cap">Arriving at the riverside</span></p>
+      <div class="hero-tabs" role="group" aria-label="Film chapters">
+        <button class="hero-tab on" type="button" data-go="0">Arrive<i></i></button>
+        <button class="hero-tab" type="button" data-go="1">Dining<i></i></button>
+        <button class="hero-tab" type="button" data-go="2">Table<i></i></button>
+        <button class="hero-tab" type="button" data-go="3">Evening<i></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="intro paper" id="story" aria-labelledby="story-h">
+  <div class="intro-grid">
+    <div class="intro-media">
+      <figure class="fig fig-tall" data-par><img class="cover" src="https://saksiri-riverside.vercel.app/images/gardenportrait.webp" alt="Palms and flowering gardens around the hotel" loading="lazy"></figure>
+      <figure class="fig fig-small"><img class="cover" src="https://saksiri-riverside.vercel.app/images/welcome.webp" alt="The welcome at reception" loading="lazy"></figure>
+    </div>
+    <div>
+      <p class="label" data-rv>About us</p>
+      <h2 class="d" id="story-h"><span class="ln"><span class="li">A place to</span></span><span class="ln"><span class="li"><em>slow down.</em></span></span></h2>
+      <p class="lede" data-rv>Wake beside the Nam Song to birdsong and the soft murmur of the river. Limestone mountains rise beyond the palms, the pool catches the morning light, and every hour of the day asks very little of you.</p>
+      <dl class="facts" data-rv>
+        <div><dt>Rooms</dt><dd>36</dd></div>
+        <div><dt>Room types</dt><dd>3</dd></div>
+        <div><dt>From</dt><dd>US$85</dd></div>
+        <div><dt>Breakfast</dt><dd>Included</dd></div>
+      </dl>
+      <a class="btn btn-dark" href="#rooms" data-rv>See the rooms <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RIVER (expands to full screen) ================= -->
+<section class="river" id="river" aria-labelledby="river-h">
+  <div class="river-stage">
+    <div class="river-frame" id="river-frame"><img class="cover" src="https://saksiri-riverside.vercel.app/images/aerial.webp" alt="Aerial view of the hotel beside the Nam Song river, with karst mountains behind" loading="lazy"></div>
+    <div class="shade-b" id="river-shade" aria-hidden="true"></div>
+    <div class="river-content on-dark" id="river-content">
+      <p class="label">The river</p>
+      <h2 class="d" id="river-h">The river, just outside <em>your door.</em></h2>
+      <p class="lede">The Nam Song flows right beside the hotel. Start the day with the water, the birds and the mountains, and let the rest wait.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROOMS (horizontal on desktop) ================= -->
+<section class="rooms" id="rooms" aria-labelledby="rooms-h">
+  <div class="rooms-stage" id="rooms-stage">
+    <div class="rooms-track" id="rooms-track">
+      <div class="rooms-intro">
+        <p class="label">Rooms</p>
+        <h2 class="d" id="rooms-h">Rooms made for <em>quiet mornings.</em></h2>
+        <p>Three room types, all with breakfast included, from US$85 a night.</p>
+        <p class="rooms-hint" aria-hidden="true"><i></i>Keep scrolling to walk through each room</p>
+      </div>
+      <!-- rooms are rendered from the ROOMS list in script.js; this is the no-JS copy -->
+      <div id="rooms-list" style="display:contents"></div>
+    </div>
+    <div class="rooms-progress" aria-hidden="true"><span id="rooms-count">01 / 03</span><span class="bar"><i id="rooms-bar"></i></span></div>
+  </div>
+</section>
+
+<!-- ================= DINING ================= -->
+<section class="dining" id="dining" aria-labelledby="dining-h">
+  <div class="dining-wrap">
+    <div class="dining-head">
+      <div>
+        <p class="label on-dark" data-rv>Dining</p>
+        <h2 class="d" id="dining-h"><span class="ln"><span class="li">Farm-to-table dining</span></span><span class="ln"><span class="li"><em>on the lawn.</em></span></span></h2>
+      </div>
+      <p class="lede" data-rv>Breakfast is included with every room. Vegan meals are available, and Muslim guests can pre-order.</p>
+    </div>
+    <div class="dining-grid">
+      <figure class="dn dn-main" data-drift="0"><div class="fig" data-par><img class="cover" src="https://saksiri-riverside.vercel.app/images/dinnernight.webp" alt="Dinner tables under the palms at dusk" loading="lazy"></div><figcaption>Dinner tables under the palms at dusk</figcaption></figure>
+      <figure class="dn dn-a" data-drift="-60"><div class="fig"><img class="cover" src="https://saksiri-riverside.vercel.app/images/buffet.webp" alt="Breakfast buffet in the restaurant" loading="lazy"></div><figcaption>Breakfast buffet in the restaurant</figcaption></figure>
+      <figure class="dn dn-b" data-drift="40"><div class="fig"><img class="cover" src="https://saksiri-riverside.vercel.app/images/gardendine.webp" alt="An evening meal on the lawn" loading="lazy"></div><figcaption>An evening meal on the lawn</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISUAL TOUR ================= -->
+<section class="tour" id="tour" aria-labelledby="tour-h">
+  <div class="tour-head">
+    <div>
+      <p class="label on-dark">Visual tour</p>
+      <h2 class="d" id="tour-h">A visual tour</h2>
+    </div>
+    <div class="side">
+      <p>Walk the grounds from the pool to the balcony. All 16 photos of the hotel are in the full gallery.</p>
+      <button class="btn btn-ghost gallery-btn" type="button" data-lb="0">Open all 16 photos</button>
+    </div>
+  </div>
+  <div class="tour-pin" id="tour-pin">
+    <div class="tour-stage" id="tour-stage"></div>
+  </div>
+</section>
+
+<!-- ================= BAND ================= -->
+<div class="band" aria-hidden="true">
+  <div class="band-line b1"><span>Where the river meets the mountains</span><span class="dot">·</span><span>Where the river meets the mountains</span><span class="dot">·</span></div>
+  <div class="band-line b2"><span>Nam Song</span><span class="dot">·</span><span>Vang Vieng</span><span class="dot">·</span><span>Laos</span><span class="dot">·</span><span>Nam Song</span><span class="dot">·</span><span>Vang Vieng</span><span class="dot">·</span><span>Laos</span></div>
+</div>
+
+<!-- ================= VANG VIENG ================= -->
+<section class="land" id="landscape" aria-labelledby="land-h">
+  <div class="land-media" id="land-media"><img class="cover" src="https://saksiri-riverside.vercel.app/images/mountains.webp" alt="Green karst mountains above Vang Vieng" loading="lazy"></div>
+  <div class="shade-b" aria-hidden="true"></div>
+  <div class="land-content on-dark">
+    <div>
+      <p class="label">Vang Vieng</p>
+      <h2 class="d" id="land-h">Vang Vieng, in its <em>purest form.</em></h2>
+    </div>
+    <ul class="land-notes">
+      <li>Limestone peaks above the courtyard.</li>
+      <li>Palm-shaded terraces and open lawns.</li>
+      <li>Loungers, umbrellas and mountain air.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="exp paper" id="experience" aria-labelledby="exp-h">
+  <div class="exp-wrap">
+    <p class="label" data-rv>The experience</p>
+    <h2 class="d" id="exp-h">At Saksiri</h2>
+    <div class="exp-list" id="exp-list"></div>
+  </div>
+  <div class="exp-float" id="exp-float" aria-hidden="true"></div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews" aria-labelledby="rev-h">
+  <div class="reviews-wrap">
+    <div class="score" aria-label="Rated 4.5 out of 5"><span class="score-n" id="score">4.5</span><span class="score-of">/ 5</span></div>
+    <div>
+      <div class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="currentColor" stop-opacity=".25"/></linearGradient></defs><path fill="url(#half)" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      </div>
+      <p class="src" id="rev-h">From 58 guest reviews on Google</p>
+      <p class="note">Rooms from US$85 a night, breakfast included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL (framed, then full) ================= -->
+<section class="final" id="final" aria-labelledby="final-h">
+  <div class="final-stage">
+    <div class="final-frame" id="final-frame"><img class="cover" src="https://saksiri-riverside.vercel.app/images/hero.webp" alt="The pool beneath the mountains" loading="lazy"></div>
+    <div class="shade-b" aria-hidden="true"></div>
+    <div class="final-content on-dark" id="final-content">
+      <p class="label">Book your stay</p>
+      <h2 class="d" id="final-h">Your escape <em>starts here.</em></h2>
+      <p class="lede">Discover a slower, quieter side of Vang Vieng.</p>
+      <a class="btn btn-book magnetic" href="#reserve">Book your stay <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESERVE ================= -->
+<section class="reserve paper" id="reserve" aria-labelledby="res-h">
+  <div class="reserve-wrap">
+    <div>
+      <p class="label" data-rv>Reserve</p>
+      <h2 class="d" id="res-h">Reserve your room</h2>
+      <p class="lede" data-rv>Send your dates and we'll confirm availability and rates by email.</p>
+      <div class="summary" id="summary" aria-live="polite"></div>
+    </div>
+    <div>
+      <form id="stay-form" novalidate>
+        <div class="fld"><label for="in">Check-in</label><input id="in" name="in" type="date" required></div>
+        <div class="fld"><label for="out">Check-out</label><input id="out" name="out" type="date" required></div>
+        <div class="fld"><label for="guests">Guests</label>
+          <select id="guests" name="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 or more</option></select></div>
+        <div class="fld"><label for="room">Room</label><select id="room" name="room"></select></div>
+        <div class="fld"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="fld"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="fld full"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" placeholder="Vegan breakfast, halal pre-order, late arrival…"></textarea></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn btn-dark" type="submit">Request booking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </form>
+      <div class="done" id="done" hidden tabindex="-1">
+        <h3 class="d">Thank you, request received.</h3>
+        <p id="done-msg"></p>
+        <button class="btn btn-line" type="button" id="again">Make another request</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot" id="contact">
+  <div class="foot-wrap">
+    <div>
+      <p class="brand"><span class="brand-name">Saksiri Riverside Boutique Hotel</span></p>
+      <p style="margin-top:1rem;max-width:34ch">Nam Song River, Vang Vieng, Laos</p>
+    </div>
+    <div>
+      <h3>Contact us</h3>
+      <ul>
+        <li><a class="f-link" href="#reserve">Send a booking request</a></li>
+        <li><a class="f-link" href="https://saksirihotel.com" target="_blank" rel="noopener">saksirihotel.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#story">About us</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#dining">Dining</a></li>
+        <li><a href="#tour">Visual tour</a></li>
+      </ul>
+    </div>
+    <p class="fnote">Concept redesign by Muhammad Ali for FASTAI GLOBAL, using Saksiri's own photography. The booking form is a front-end demo and is not yet connected to a live reservation system. Hero film: “Cozy Modern Restaurant Interior at Night” by gusat silviu on Pexels. © <span id="yr">2026</span></p>
+    <p class="foot-mark" aria-hidden="true">Saksiri</p>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo gallery" aria-hidden="true">
+  <div class="lb-top"><span class="lb-count" id="lb-count">01 / 16</span><button class="lb-close" type="button" id="lb-close">Close</button></div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <img class="lb-img" id="lb-img" alt="">
+    <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <p class="lb-cap" id="lb-cap"></p>
+  <div class="lb-thumbs" id="lb-thumbs"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.6/dist/motion.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
